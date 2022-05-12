@@ -1,0 +1,9 @@
+[
+  {
+    "outputFile": "mirroricon.css",
+    "inputFile": "stylus/index.styl",
+    "minify": {
+      "enabled": false
+    }
+  }
+]

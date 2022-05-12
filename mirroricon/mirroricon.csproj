@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{127CA60C-CF20-4A21-BB97-8882DEE9FF92}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>mirroricon</RootNamespace>
+    <AssemblyName>mirroricon</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="publish.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="stylus\base.styl" />
+    <None Include="stylus\icons\anglearr.styl" />
+    <None Include="stylus\icons\ball8.styl" />
+    <None Include="stylus\icons\bookmark.styl" />
+    <None Include="stylus\icons\chart.styl" />
+    <None Include="stylus\icons\code.styl" />
+    <None Include="stylus\icons\disabled.styl" />
+    <None Include="stylus\icons\download.styl" />
+    <None Include="stylus\icons\envelop.styl" />
+    <None Include="stylus\icons\eye.styl" />
+    <None Include="stylus\icons\face.styl" />
+    <None Include="stylus\icons\flag.styl" />
+    <None Include="stylus\icons\font.styl" />
+    <None Include="stylus\icons\home.styl" />
+    <None Include="stylus\icons\info.styl" />
+    <None Include="stylus\icons\lang.styl" />
+    <None Include="stylus\icons\lock.styl" />
+    <None Include="stylus\icons\mail.styl" />
+    <None Include="stylus\icons\map.styl" />
+    <None Include="stylus\icons\menu.styl" />
+    <None Include="stylus\icons\minus.styl" />
+    <None Include="stylus\icons\moon.styl" />
+    <None Include="stylus\icons\num.styl" />
+    <None Include="stylus\icons\pc.styl" />
+    <None Include="stylus\icons\phone.styl" />
+    <None Include="stylus\icons\pic.styl" />
+    <None Include="stylus\icons\plus.styl" />
+    <None Include="stylus\icons\powonff.styl" />
+    <None Include="stylus\icons\search.styl" />
+    <None Include="stylus\icons\set.styl" />
+    <None Include="stylus\icons\share.styl" />
+    <None Include="stylus\icons\star4.styl" />
+    <None Include="stylus\icons\star5.styl" />
+    <None Include="stylus\icons\sun.styl" />
+    <None Include="stylus\icons\triarr.styl" />
+    <None Include="stylus\icons\user.styl" />
+    <None Include="stylus\icons\well.styl" />
+    <None Include="stylus\icons\wlan.styl" />
+    <None Include="stylus\index.styl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="doc\about.html" />
+    <Content Include="doc\anglearr.html" />
+    <Content Include="doc\ball8.html" />
+    <Content Include="doc\bookmark.html" />
+    <Content Include="doc\chart.html" />
+    <Content Include="doc\code.html" />
+    <Content Include="doc\disabled.html" />
+    <Content Include="doc\download.html" />
+    <Content Include="doc\envelop.html" />
+    <Content Include="doc\eye.html" />
+    <Content Include="doc\face.html" />
+    <Content Include="doc\flag.html" />
+    <Content Include="doc\font.html" />
+    <Content Include="doc\home.html" />
+    <Content Include="doc\info.html" />
+    <Content Include="doc\lang.html" />
+    <Content Include="doc\lock.html" />
+    <Content Include="doc\mail.html" />
+    <Content Include="doc\map.html" />
+    <Content Include="doc\menu.html" />
+    <Content Include="doc\minus.html" />
+    <Content Include="doc\moon.html" />
+    <Content Include="doc\num.html" />
+    <Content Include="doc\pc.html" />
+    <Content Include="doc\phone.html" />
+    <Content Include="doc\pic.html" />
+    <Content Include="doc\plus.html" />
+    <Content Include="doc\powonff.html" />
+    <Content Include="doc\search.html" />
+    <Content Include="doc\set.html" />
+    <Content Include="doc\share.html" />
+    <Content Include="doc\star4.html" />
+    <Content Include="doc\star5.html" />
+    <Content Include="doc\sun.html" />
+    <Content Include="doc\triarr.html" />
+    <Content Include="doc\user.html" />
+    <Content Include="doc\well.html" />
+    <Content Include="doc\wlan.html" />
+    <Content Include="index.html" />
+    <Content Include="mirroricon.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
