@@ -1,2 +1,0 @@
-D:\Mirror\Project_git\webicon\mirroricon\obj\Debug\mirroricon.csproj.AssemblyReference.cache
-D:\Mirror\Project_git\webicon\mirroricon\obj\Debug\mirroricon.csproj.CoreCompileInputs.cache
