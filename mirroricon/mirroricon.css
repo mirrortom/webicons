@@ -872,3 +872,27 @@
   border-width: 0.42em 0.242em 0;
   border-bottom: none;
 }
+.ico-money {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(90deg, transparent 0.48em, currentColor 0.48em 0.54em, transparent 0.54em);
+}
+.ico-money:before,
+.ico-money:after {
+  width: 0.5em;
+  height: 0.4em;
+  border-style: solid;
+  transform: rotate(38deg);
+}
+.ico-money:before {
+  border-width: 0.06em 0.08em 0.08em 0.06em;
+  border-radius: 50% 50% 0% 50%;
+  border-right-color: transparent;
+}
+.ico-money:after {
+  border-width: 0.08em 0.06em 0.06em 0.08em;
+  border-radius: 0% 50% 50% 50%;
+  border-left-color: transparent;
+}

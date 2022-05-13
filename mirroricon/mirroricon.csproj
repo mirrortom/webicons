@@ -40,6 +40,7 @@
     <None Include="stylus\icons\ball8.styl" />
     <None Include="stylus\icons\bookmark.styl" />
     <None Include="stylus\icons\chart.styl" />
+    <None Include="stylus\icons\money.styl" />
     <None Include="stylus\icons\code.styl" />
     <None Include="stylus\icons\disabled.styl" />
     <None Include="stylus\icons\download.styl" />
@@ -76,6 +77,8 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\money.html" />
+    <Content Include="doc\-模板.part.html" />
     <Content Include="doc\about.html" />
     <Content Include="doc\anglearr.html" />
     <Content Include="doc\ball8.html" />
