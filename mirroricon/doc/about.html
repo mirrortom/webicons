@@ -4,17 +4,18 @@
   <p>html标签用 &lt;i&gt; 标记,加上css的:after :before伪类,实际有3个元素可用.</p>
   <p>一个质量很高的项目,参考搬运. <a href="https://viglino.github.io/iconicss" target="_blank">https://viglino.github.io/iconicss</a>&emsp;(github) <a href="https://github.com/Viglino/iconicss" target="_blank">https://github.com/Viglino/iconicss</a></p>
   <h4>基本样式</h4>
-  <p>所有元素的box-sizing:border-box</p>
+  <p>i和:before,:after的box-sizing:border-box</p>
   <pre class="bg-gray-lt">
 
     .ico
+        &,&:before,&:after
+            box-sizing: border-box
+
         // 图片默认都是块级行内元素
         display:inline-block
         pointer-events:none
-        // 垂直对齐,
+        // 垂直居中,面积1emX1em
         vertical-align:middle
-
-        //面积 1em X 1em
         width:1em
         height:1em
 
@@ -35,6 +36,19 @@
 
 </pre>
   <br />
+  <p>设计时按照 100px X 100px 范本.尺寸上最小到 16px X 16px 勉强看清.</p>
+  <div class="grids-3 text-center" style="width:320px">
+    <div><p>100px</p><i class="ico ico-face" style="font-size:100px"></i></div>
+    <div><p>64px</p><i class="ico ico-face" style="font-size:64px"></i></div>
+    <div><p>48px</p><i class="ico ico-face" style="font-size:48px"></i></div>
+  </div>
+  <br />
+  <div class="grids-3 text-center" style="width:320px">
+    <div><p>32px</p><i class="ico ico-face" style="font-size:32px"></i></div>
+    <div><p>24px</p><i class="ico ico-face" style="font-size:24px"></i></div>
+    <div><p>16px</p><i class="ico ico-face" style="font-size:16px"></i></div>
+  </div>
+  <br />
   <h4>常用规则</h4>
   <p>制作css图标用到的一些样式规则</p>
   <style scoped>
@@ -48,11 +62,32 @@
       background-color: #eee;
     }
 
-    .borderdemo1 {
-      display: inline-block;
+    .borderdemo-1 {
       width: 0;
       height: 0;
-      border: 15px solid transparent;
+      border-width: 30px;
+    }
+
+    .borderdemo-2 {
+      border-width: 40px 30px 20px 30px;
+    }
+
+    .borderdemo-3 {
+      border-width: 40px 20px 20px 40px;
+    }
+
+    .borderdemo-4 {
+      border-width: 60px 30px 0px 30px;
+    }
+
+    .borderdemo-5 {
+      border-width: 60px 60px 0px 0px;
+    }
+
+    .borderdemo-6 {
+      border-width: 60px 30px 0px 30px;
+      border-left-color: transparent;
+      border-right-color: transparent;
     }
 
     .contentTxt {
@@ -60,11 +95,13 @@
       border-radius: 50%;
       border: 1px solid;
       text-align: center;
+      box-shadow: inset 0 -.1em;
     }
 
       .contentTxt:before {
+        content: 'OK!';
         font-style: normal;
-        content: 'i';
+        font-size: .5em;
         vertical-align: bottom;
       }
 
@@ -151,12 +188,15 @@
       width: 30px;
       transform: rotate(45deg);
     }
+
     .scale-5:before {
       transform: rotate(45deg);
     }
+
     .scale-6:before {
       transform: scaleX(.3) rotate(45deg);
     }
+
     .scale-7:before {
       transform: scaleX(.7) rotate(45deg);
     }
@@ -166,7 +206,7 @@
   <p><i class="ico contentTxt"></i></p>
   <pre class="bg-gray-lt">
 
-  content: 'i';
+  content: 'OK!';
 
 </pre>
   <br />
@@ -177,64 +217,31 @@
 
       width: 60px;
       height: 45px;
-      border-width:10px;
+      border-width:15px;
       border-color:#f35325 #81bc06 #05a6f0 #ffba08;
       border-style:solid;
 
 </pre>
   <br />
-  <p>如果把盒子高度宽度设置为0,border不变,那么看起来就像4个三角形拼接成一个正方形.</p>
-  <p>可以将其它3边的颜色设置为透明,那么看起来就成了一个三角形.相邻的两个小三角形可以组合成一个大的.</p>
-  <i class="borderdemo" style="width:0;height:0"></i>
-  <i class="borderdemo1 mg-l-10" style="border-top-color:#f35325"></i>
-  <i class="borderdemo1 mg-l-10" style="border-top:30px solid #f35325;border-bottom:none"></i>
-  <i class="borderdemo1 mg-l-10" style="border-right-color:#81bc06"></i>
-  <i class="borderdemo1 mg-l-10" style="border-right:30px solid #81bc06;border-left:none"></i>
-  <i class="borderdemo1 mg-l-10" style="border-bottom-color:#05a6f0"></i>
-  <i class="borderdemo1 mg-l-10" style="border-left-color:#ffba08"></i>
-  <i class="borderdemo1 mg-l-10" style="border-right-color: #81bc06;border-left-color:#ffba08"></i>
-  <i class="borderdemo1 mg-l-10" style="border-top-color: #f35325;border-bottom-color:#05a6f0"></i>
-  <i class="borderdemo1 mg-l-10" style="border-color: #f35325 #f35325 transparent transparent"></i>
-  <i class="borderdemo1 mg-l-10" style="border-color: transparent #81bc06 #81bc06 transparent"></i>
-  <i class="borderdemo1 mg-l-10" style="border-color: transparent transparent #05a6f0 #05a6f0"></i>
-  <i class="borderdemo1 mg-l-10" style="border-color: #ffba08 transparent transparent #ffba08"></i>
-  <pre class="bg-gray-lt">
-
-      width: 0;
-      height: 0;
-      border: 15px solid transparent;
-      border-top-color:#f35325
-      border-top:30px solid #f35325;border-bottom:none;
-
-</pre>
+  <p>如果把盒子高度宽度设置为0,border不变,那么看起来就像4个三角形拼接成一个正方形.或者认为4个边框挤在一起了.</p>
+  <div class="borderdemo borderdemo-1"></div>
+  <p>如果以盒模型的4边为为这4个三角形的底边,那么底边上的高就是该边的border-width值.</p>
+  <p>例如: border-top-width:30px,那么上边为底顶点朝下的三角形高就是30px.顶点的水平位置受左右两边影响,如果border-left/right-width相同,那么就是等腰三角形.</p>
+  <p>为每个边设置不同的width值,可以形成不同的三角形.比如等边,等腰等.</p>
+  <div class="grids">
+    <div class="borderdemo borderdemo-1 borderdemo-2"></div>
+    <div class="borderdemo borderdemo-1 borderdemo-3"></div>
+  </div>
   <br />
-  <p>调整border的width值,为4边设置不同的width.那么三角形看起来是任意的,不再是等腰三角形.</p>
-  <p>width值是边框的厚度,对应的是三角形的高,这个高是以三角形在图案中间那个点为顶点,到对应底边的高.</p>
-  <p>用这个特点结合透明其它边可以做出一些图案</p>
-  <i class="borderdemo1" style="border-width: 10px 20px 30px 40px;
-    border-color: #f35325 #81bc06 #05a6f0 #ffba08;"></i>
-  <i class="borderdemo1 mg-l-10" style="border-width: 40px 10px 10px 10px;
-    border-color: #f35325 #81bc06 #05a6f0 #ffba08;"></i>
-  <i class="borderdemo1 mg-l-10" style="border-width: 10px 40px 10px 10px;
-    border-color: #f35325 #81bc06 #05a6f0 #ffba08;"></i>
-  <i class="borderdemo1 mg-l-10" style="border-width: 10px 10px 40px 10px;
-    border-color: #f35325 #81bc06 #05a6f0 #ffba08;"></i>
-  <i class="borderdemo1 mg-l-10" style="border-width: 10px 10px 10px 40px;
-    border-color: #f35325 #81bc06 #05a6f0 #ffba08;"></i>
-  <i class="borderdemo1" style="border-width: 10px 10px 25px 25px;
-    border-color: #f35325 #81bc06 transparent transparent;"></i>
-  <pre class="bg-gray-lt">
-
-      border-width: 10px 20px 30px 40px
-      border-width: 40px 10px 10px 10px
-      border-width: 10px 40px 10px 10px
-      border-width: 10px 10px 40px 10px
-      border-width: 10px 10px 10px 40px
-      //
-      border-width: 10px 10px 25px 25px;
-      border-color: #f35325 #81bc06 transparent transparent;
-
-</pre>
+  <p>将1边或者2边设为0,或者none</p>
+  <div class="grids">
+    <div class="borderdemo borderdemo-1 borderdemo-4"></div>
+    <div class="borderdemo borderdemo-1 borderdemo-5"></div>
+  </div>
+  <br />
+  <p>如果将2边设置为0,那么不能同时是上/下或者左/右两边.可想而知,上/下两边的三角形的高度之和,其实是盒模型(width,height为0情况)的高度,如果这2边框高度也为0,那么盒模型高度为0,于是不会显示.左右2边同理.</p>
+  <p>只需要上边的三角形,不需要下边和左右2边,那么可以将下边设为none,左右2边的颜色透明.</p>
+  <div class="borderdemo borderdemo-1 borderdemo-6"></div>
   <br />
   <h5>border-radius</h5>
   <p>边框圆角效果,设置圆角border-radius:50% 50%,图案像一个游泳圈.三角形成了扇形.</p>
