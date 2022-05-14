@@ -495,7 +495,7 @@
 .ico-face {
   position: relative;
   border-radius: 50%;
-  border: 0.04em solid currentColor;
+  border: max(.05em,1px) solid currentColor;
 }
 .ico-face:before,
 .ico-face:after {
@@ -505,19 +505,18 @@
 .ico-face:before {
   top: 0.3em;
   left: 0.18em;
-  width: 0.1em;
-  height: 0.15em;
+  width: max(.1em,2px);
+  height: max(.15em,3px);
   background-color: currentColor;
   box-shadow: 0.46em 0;
 }
 .ico-face:after {
+  left: 50%;
   top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  transform: translateX(-50%);
   width: 0.8em;
   height: 0.8em;
-  border: 0.04em solid transparent;
+  border: max(.04em,2px) solid transparent;
   border-bottom-color: currentColor;
 }
 .ico-num {

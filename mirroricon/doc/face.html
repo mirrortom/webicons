@@ -24,7 +24,7 @@
     .ico-face
         position: relative
         border-radius: 50%
-        border: .04em solid currentColor
+        border: @css{max(.05em,1px)} solid currentColor
     
         &:before,&:after
             position: absolute
@@ -33,19 +33,18 @@
         &:before
             top: .3em
             left: .18em
-            width: .1em
-            height: .15em
+            width: @css{max(.1em,2px)}
+            height: @css{max(.15em,3px)}
             background-color: currentColor
             box-shadow: .46em 0
 
         &:after
+            left: 50%
             top: 0
-            left: 0
-            right: 0
-            margin: auto
+            transform:translateX(-50%)
             width: .8em
             height: .8em
-            border: .04em solid transparent
+            border: @css{max(.04em,2px)} solid transparent
             border-bottom-color: currentColor
 
 </pre>
