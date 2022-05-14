@@ -201,6 +201,9 @@
       transform: scaleX(.7) rotate(45deg);
     }
   </style>
+  <h5>max,min</h5>
+  <p>css也有max(v1,v2),min(v3,v4)函数,取参数里较大/小的值.</p>
+  <p>由于主要使用em单位,在图标较小时,比如16px X 16px, 那么.05em的大小的部位,就不到1px了,可能不会显示.这时用 max(.05em,1px) 就起作用了.让图标该部位至少为1px.</p>
   <h5>content</h5>
   <p>:before,:after伪类的属性,可以写入符号,可做文字类的图标.</p>
   <p><i class="ico contentTxt"></i></p>
