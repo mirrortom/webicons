@@ -896,3 +896,20 @@
   border-radius: 0% 50% 50% 50%;
   border-left-color: transparent;
 }
+.ico-cny {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ico-cny:before {
+  width: 0.576em;
+  height: 0.5em;
+  box-shadow: inset 0 min(-.08em,-1px);
+  background-image: linear-gradient(60deg, transparent 0.24em, currentColor 0.25em 0.33em, transparent 0.34em), linear-gradient(-60deg, transparent 0.24em, currentColor 0.25em 0.33em, transparent 0.34em);
+}
+.ico-cny:after {
+  width: max(.08em,1px);
+  height: 0.3em;
+  background-color: currentColor;
+}
