@@ -2,8 +2,8 @@
   <h2>无线网络</h2>
   <p>wlan图标,表示无线网络的.</p>
   <div class="mg-20">
-    <i class="ico ico-wlan text-md"></i>
-    <i class="ico ico-wlan text-xxxl text-primary"></i>
+    <i class="i-a-wlan text-md"></i>
+    <i class="i-a-wlan text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
@@ -13,13 +13,11 @@
   <br />
   <style>
     .wlandemo {
-      position: relative;
       font-size: 100px;
       border: 1px solid;
     }
 
       .wlandemo:before {
-        position: absolute;
         left: 50%;
         top: 50%;
         width: .7em;
@@ -35,12 +33,14 @@
     .wlandemo-2:before {
       background-image: radial-gradient(at 0 0,transparent .1em,#0026ff60 .11em .22em,currentColor .23em .3em,#ffd80060 .31em .42em,currentColor .43em .5em,#ff000060 .51em .62em,currentColor .63em .7em,transparent .71em);
     }
+
     .wlandemo-3:before {
       transform: translate(-50%,-50%) rotate(-135deg);
     }
+
     .wlandemo-3:after {
       position: absolute;
-      left:50%;
+      left: 50%;
       top: 84%;
       width: .14em;
       height: .14em;
@@ -54,28 +54,27 @@
   <canvas id="canva1"></canvas>
   <br />
   <p>圆弧用径向渐变实现,元素用:before.边长是容器的70%.因为边长0.707(sin45)的正方形,旋转45度后,占地面积是1.</p>
-  <div class="ico wlandemo wlandemo-1"></div>
+  <div>
+    <i class="i-a wlandemo wlandemo-1"></i>
+  </div>
   <p>从渐变圆心到最远圆弧的距离是0.7em,这个范围内有圆弧,还有圆点.</p>
   <p>实际上,3条圆弧是6条,分别是圆弧和透明圆弧交错而成的.</p>
   <p>另外,圆心和第一道圆弧之间还要放圆点.那么,给圆点留出.1em的距离.剩下0.6em给6个圆弧,平均宽度0.1em.</p>
   <p>设计透明圆弧宽度为.12em,圆弧宽度为0.08em,圆点直径为.14em(容器的14%).</p>
   <div class="grids">
-    <div><span class="ico wlandemo wlandemo-2"></span></div>
-    <div><span class="ico wlandemo wlandemo-2 wlandemo-3 mg-l-10"></span></div>
+    <div><i class="i-a wlandemo wlandemo-2"></i></div>
+    <div><i class="i-a wlandemo wlandemo-2 wlandemo-3 mg-l-10"></i></div>
   </div>
   <br />
   <p>圆点用:after实现,定位在底部中间,距离容器底部一个直径的位置.这个位置也刚好是渐变圆心垂直上方,使得圆点刚好位于顶角内.</p>
 
   <br />
-  <p><i class="ico ico-wlan fs100"></i></p>
+  <p><i class="i-a-wlan fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-wlan
-        position: relative
-
+    .i-a-wlan
         &:before,&:after
-            position: absolute
             left: 50%
 
         &:before
@@ -83,11 +82,11 @@
             width: .7em
             height: .7em
             transform: translate(-50%,-50%) rotate(-135deg)
-            background-image: radial-gradient(at 0 0
-                              ,transparent .22em,currentColor .23em .3em
-                              ,transparent .31em .42em,currentColor .43em .5em
-                              ,transparent .51em .62em,currentColor .63em .7em
-                              ,transparent .71em)
+            background-image: radial-gradient(at 0 0,
+                                              transparent .22em,currentColor .23em .3em,
+                                              transparent .31em .42em,currentColor .43em .5em,
+                                              transparent .51em .62em,currentColor .63em .7em,
+                                              transparent .71em)
  
         &:after
             top: 84%

@@ -2,12 +2,12 @@
   <h2>下载</h2>
   <p>下载图标,箭头和下划线组成</p>
   <div class="mg-20">
-    <i class="ico ico-download text-md"></i>
-    <i class="ico ico-download text-xxxl text-primary"></i>
+    <i class="i-a-download text-md"></i>
+    <i class="i-a-download text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-download</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-a-download</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -16,16 +16,14 @@
   <p>箭头竖线,定位在容器top:20%处,水平居中.长度为40%,宽度为长度的一半.用:before实现.</p>
   <p>箭头三角形底边与高比例为5:3,底边为容器的50%,水平居中.定位在容器top:60%处,即刚好与箭头竖线衔接.用:after画三角形法实现.</p>
   <br />
-  <p><i class="ico ico-download fs100"></i></p>
+  <p><i class="i-a-download fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-download
-        position: relative
-        border-bottom: .04em solid
+    .i-a-download
+        border-bottom: 1px solid
 
         &:before,&:after
-            position: absolute
             left: 50%
             transform: translateX(-50%)
 

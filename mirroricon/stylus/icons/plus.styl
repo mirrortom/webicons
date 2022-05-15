@@ -1,22 +1,12 @@
 ﻿// 加号
 
-.ico-plus
-    position: relative
+.i-ac-plus
     
     &:before, &:after
-        position: absolute
-        left: 0
-        right: 0
-        top: 0
-        bottom: 0
-        margin: auto
         background-color: currentColor
-
-    &:before
         width: 1em
-        height: 4px
+        height: @css{max(.1em,2px)}
 
-    &:after
-        width: 4px
-        height: 1em
+    &[class^=i-]:after
+        transform: translate(-50%,-50%) rotate(90deg)
     

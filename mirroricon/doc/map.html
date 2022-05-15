@@ -2,12 +2,12 @@
   <h2>地图</h2>
   <p>地图,地图软件上常见的定位点图标</p>
   <div class="mg-20">
-    <i class="ico ico-map text-md"></i>
-    <i class="ico ico-map text-xxxl text-primary"></i>
+    <i class="i-a-map text-md"></i>
+    <i class="i-a-map text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-map</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>ico ico-map</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -36,16 +36,12 @@
   <p>AE = EJ + AJ = OE + OC = EC = CA / 2</p>
   <p>还有三角形KAH的top定位值,从图的C点到A点容易看出: top = 圆top + OC + OE = 圆top + AE</p>
   <p>调整后,高度取了.84em,图标上下留出0.08em空间.</p>
-  <p><i class="ico ico-map fs100"></i></p>
+  <p><i class="i-a-map fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    // 等边三角形高 h=.84em, cos30=0.866
-    .ico-map
-        position: relative
-    
+    .i-a-map
         &:before,&:after
-            position: absolute
             left: 50%
             transform: translateX(-50%)
 
@@ -62,7 +58,7 @@
             top: .5em
             border-style: solid
             border-color: currentColor transparent transparent
-            // 高h/2 底(半) cos30*h/3
+            // 高: h/2 ,底(半): cos30*h/3
             border-width: .42em .242em 0
             border-bottom: none
 

@@ -3,50 +3,79 @@
   <p>使用css3功能实现一些简易的常用的图标.</p>
   <p>html标签用 &lt;i&gt; 标记,加上css的:after :before伪类,实际有3个元素可用.</p>
   <p>一个质量很高的项目,参考搬运. <a href="https://viglino.github.io/iconicss" target="_blank">https://viglino.github.io/iconicss</a>&emsp;(github) <a href="https://github.com/Viglino/iconicss" target="_blank">https://github.com/Viglino/iconicss</a></p>
-  <h4>基本样式</h4>
+  <h4>公用样式</h4>
   <p>i和:before,:after的box-sizing:border-box</p>
   <pre class="bg-gray-lt">
 
-    .ico
-        &,&:before,&:after
-            box-sizing: border-box
+    // 基本
+    i[class^=i-]
+        display: inline-block
+        pointer-events: none
+        width: 1em
+        height: 1em
+        box-sizing: border-box
 
-        // 图片默认都是块级行内元素
-        display:inline-block
-        pointer-events:none
-        // 垂直居中,面积1emX1em
-        vertical-align:middle
-        width:1em
-        height:1em
-
-        // 
-        &:before,&:after
+        &:before, &::after
             content: ''
             display: inline-block
+            box-sizing: border-box
+
+    // 布局定位公用样式
+    // flex布局,VH居中
+    i[class^=i-f]
+        display: inline-flex
+        justify-content: center
+        align-items: center
+    
+    // flex布局,VH居中,竖直排布
+    i[class^=i-fv]
+        flex-direction: column
+    
+    // 绝对定位 absolute
+    i[class^=i-a]
+        position: relative
+
+    i[class^=i-a]:before, i[class^=i-a]:after
+        position: absolute
+
+    // 绝对定位 absolute,VH居中
+    i[class^=i-ac]:before, i[class^=i-ac]:after
+        left:50%
+        top:50%
+        transform: translate(-50%,-50%)
 
 </pre>
   <br />
+  <p>样式名字规则: i-layout-iconname</p>
+  <p>layout: 布局和对齐方式.</p>
+  <ul class="list num">
+    <li>i-f- : flex布局,水平垂直居中</li>
+    <li>i-fv- : flex布局,水平垂直居中,竖直排列</li>
+    <li>i-a- : 绝对定位</li>
+    <li>i-ac- : 绝对定位,水平垂直居中</li>
+  </ul>
+  <p>iconname: 图标样式名字</p>
   <p>用法</p>
   <pre class="bg-gray-lt">
 
-    // 颜色和大小使用文本颜色和大小样式类设定
-    &lt;i class="ico ico-xxx"&gt;&lt;/i&gt;
-    &lt;i class="ico ico-xxx text-xxl"&gt;&lt;/i&gt;
-    &lt;i class="ico ico-xxx text-danger"&gt;&lt;/i&gt;
+    &lt;i class="i-a-home"&gt;&lt;/i&gt;
+    // 颜色和大小使用文本颜色和大小的样式类设定
+    &lt;i class="i-a-home text-xxl"&gt;&lt;/i&gt;
+    &lt;i class="i-a-home text-danger"&gt;&lt;/i&gt;
 
 </pre>
   <br />
   <p>设计时按照 100px X 100px 范本.尺寸上最小到 16px X 16px 勉强看清.</p>
   <div class="grids-3 text-center" style="width:320px">
-    <div><p>100px</p><i class="ico ico-face" style="font-size:100px"></i></div>
-    <div><p>64px</p><i class="ico ico-face" style="font-size:64px"></i></div>
-    <div><p>48px</p><i class="ico ico-face" style="font-size:48px"></i></div>
+    <div><p>100px</p><i class="i-a-face" style="font-size:100px"></i></div>
+    <div><p>64px</p><i class="i-a-face" style="font-size:64px"></i></div>
+    <div><p>48px</p><i class="i-a-face" style="font-size:48px"></i></div>
   </div>
   <br />
   <div class="grids-3 text-center" style="width:320px">
-    <div><p>32px</p><i class="ico ico-face" style="font-size:32px"></i></div>
-    <div><p>24px</p><i class="ico ico-face" style="font-size:24px"></i></div>
-    <div><p>16px</p><i class="ico ico-face" style="font-size:16px"></i></div>
+    <div><p>32px</p><i class="i-a-face" style="font-size:32px"></i></div>
+    <div><p>24px</p><i class="i-a-face" style="font-size:24px"></i></div>
+    <div><p>16px</p><i class="i-a-face" style="font-size:16px"></i></div>
   </div>
   <br />
   <h4>常用规则</h4>
@@ -91,6 +120,10 @@
     }
 
     .contentTxt {
+      display: inline-block;
+      position: relative;
+      width: 1em;
+      height: 1em;
       font-size: 100px;
       border-radius: 50%;
       border: 1px solid;
@@ -100,9 +133,13 @@
 
       .contentTxt:before {
         content: 'OK!';
+        position:absolute;
+        display: inline-block;
         font-style: normal;
         font-size: .5em;
-        vertical-align: bottom;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
       }
 
     .transform-1 {
@@ -206,7 +243,7 @@
   <p>由于主要使用em单位,在图标较小时,比如16px X 16px, 那么.05em的大小的部位,就不到1px了,可能不会显示.这时用 max(.05em,1px) 就起作用了.让图标该部位至少为1px.</p>
   <h5>content</h5>
   <p>:before,:after伪类的属性,可以写入符号,可做文字类的图标.</p>
-  <p><i class="ico contentTxt"></i></p>
+  <p><i class="contentTxt"></i></p>
   <pre class="bg-gray-lt">
 
   content: 'OK!';

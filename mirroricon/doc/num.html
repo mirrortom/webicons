@@ -1,22 +1,22 @@
 ﻿<div class="doc-page">
   <h2>LCD数字</h2>
   <p>模仿LCD数字显示</p>
-  <div class="mg-20 text-xxxl text-primary">
-    <i class="ico ico-num n0"></i>
-    <i class="ico ico-num n1"></i>
-    <i class="ico ico-num n2"></i>
-    <i class="ico ico-num n3"></i>
-    <i class="ico ico-num n4"></i>
-    <i class="ico ico-num n5"></i>
-    <i class="ico ico-num n6"></i>
-    <i class="ico ico-num n7"></i>
-    <i class="ico ico-num"></i>
-    <i class="ico ico-num n9"></i>
+  <div class="mg-20 text-md text-primary">
+    <i class="i-fv-num n0"></i>
+    <i class="i-fv-num n1"></i>
+    <i class="i-fv-num n2"></i>
+    <i class="i-fv-num n3"></i>
+    <i class="i-fv-num n4"></i>
+    <i class="i-fv-num n5"></i>
+    <i class="i-fv-num n6"></i>
+    <i class="i-fv-num n7"></i>
+    <i class="i-fv-num"></i>
+    <i class="i-fv-num n9"></i>
   </div>
   <pre class="bg-gray-lt">
 
   // n0 - n9 没有n8
-  &lt;i class="ico <b>ico-num n0</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-fv-num n0</b>"&gt;&lt;/i&gt;
 
 </pre>
   <style>
@@ -103,26 +103,21 @@
   </div>
   <br />
   <p>
-    <i class="ico ico-num n0 fs100"></i>
-    <i class="ico ico-num n1 fs100"></i>
-    <i class="ico ico-num n2 fs100"></i>
-    <i class="ico ico-num n3 fs100"></i>
-    <i class="ico ico-num n4 fs100"></i>
-    <i class="ico ico-num n5 fs100"></i>
-    <i class="ico ico-num n6 fs100"></i>
-    <i class="ico ico-num n7 fs100"></i>
-    <i class="ico ico-num fs100"></i>
-    <i class="ico ico-num n9 fs100"></i>
+    <i class="i-fv-num n0 fs100"></i>
+    <i class="i-fv-num n1 fs100"></i>
+    <i class="i-fv-num n2 fs100"></i>
+    <i class="i-fv-num n3 fs100"></i>
+    <i class="i-fv-num n4 fs100"></i>
+    <i class="i-fv-num n5 fs100"></i>
+    <i class="i-fv-num n6 fs100"></i>
+    <i class="i-fv-num n7 fs100"></i>
+    <i class="i-fv-num fs100"></i>
+    <i class="i-fv-num n9 fs100"></i>
   </p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-num
-        display: inline-flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-    
+    .i-fv-num
         &:before,&:after
             width: .4em
             height: .4em
@@ -137,12 +132,13 @@
         &.n0:after, &.n1:before, &.n1:after, &.n4:before, &.n7:after
             border-top-color: transparent
 
-        &.n0:before, &.n1:before, &.n1:after, &.n4:after, &.n7:before, &.n7:after,
-        &.n9:after
+        &.n0:before, &.n1:before, &.n1:after
+      , &.n4:after, &.n7:before, &.n7:after, &.n9:after
             border-bottom-color: transparent
 
-        &.n1:before, &.n1:after, &.n2:before, &.n3:before, &.n3:after, &.n4:after,
-        &.n5:after, &.n7:before, &.n7:after, &.n9:after
+        &.n1:before, &.n1:after, &.n2:before
+      , &.n3:before, &.n3:after, &.n4:after
+      , &.n5:after, &.n7:before, &.n7:after, &.n9:after
             border-left-color: transparent
 
         &.n2:after, &.n5:before, &.n6:before

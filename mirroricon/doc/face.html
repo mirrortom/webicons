@@ -2,12 +2,12 @@
   <h2>脸</h2>
   <p>脸表情图标</p>
   <div class="mg-20">
-    <i class="ico ico-face text-md"></i>
-    <i class="ico ico-face text-xxxl text-primary"></i>
+    <i class="i-a-face text-md"></i>
+    <i class="i-a-face text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-face</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-a-face</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -17,17 +17,15 @@
   <p>嘴是圆的一部分(1/4),圆半径为容器的40%.脸轮廓和嘴轮廓的厚度为容器的4%.嘴所在的圆与脸内相切,嘴部扇形(红色圆弧)的起点和终点位置,所对应的弦长度,大约与眼距相等.</p>
   <canvas id="canva1"></canvas>
   <br />
-  <p><i class="ico ico-face fs100"></i></p>
+  <p><i class="i-a-face fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-face
-        position: relative
+     .i-a-face
         border-radius: 50%
         border: @css{max(.05em,1px)} solid currentColor
     
         &:before,&:after
-            position: absolute
             border-radius: 50%
 
         &:before

@@ -2,12 +2,12 @@
   <h2>代码</h2>
   <p>程序代码图标,2个尖括号和1个斜杠.</p>
   <div class="mg-20">
-    <i class="ico ico-code text-md"></i>
-    <i class="ico ico-code text-xxxl text-primary"></i>
+    <i class="i-ac-code text-md"></i>
+    <i class="i-ac-code text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-code</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-ac-code</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -18,39 +18,28 @@
   <p>尖括号是用:after的线性渐变画出的.使用4个渐变叠加,每个渐变画出一个边.</p>
   <p>渐变的角度是45度,这个已知.要画出括号的一条边,需要计算出渐变位置.就是上图的CH(红线)的长度.</p>
   <p>这容易得出,CEF是等腰直角,那么CH(高)就是 CE/sqrt(2). 如此,尖括号矩形高为0.4em, CH = 0.4em / 2 / 1.414 = 0.14em</p>
-  <p>尖括号厚度设计为0.04em,以0.14em渐变点为分界,前后各0.04/2em.所以css渐变线设为(0.12em~0.16).</p>
+  <p>尖括号厚度设计为0.06em,以0.14em渐变点为分界,前后各0.06/2em.所以css渐变线设为(0.12em~0.16).</p>
   <br />
-  <p><i class="ico ico-code fs100"></i></p>
+  <p><i class="i-ac-code fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-code
-        position: relative
-
-        &:before,&:after
-            position: absolute
-            left: 0
-            right: 0
-            bottom:0
-            top:0
-            margin: auto
-
-        &:before
-            width: .04em
-            min-width:1px
+    .i-ac-code
+        &[class^=i-]:before
+            width: @css{max(.06em,1px)}
             height: .8em
             background-color:currentColor
-            transform: rotate(15deg)
+            transform: translate(-50%,-50%) rotate(15deg)
  
         &:after
             width: .9em
             height: .4em
             background-image:
-                // 线厚度0.04em,以0.14em渐变点为分界,前后各0.04/2.
-                linear-gradient(45deg,transparent .12em,currentColor .12em .16em,transparent .16em),
-                linear-gradient(-45deg,transparent .12em,currentColor .12em .16em,transparent .16em),
-                linear-gradient(135deg,transparent .12em,currentColor .12em .16em,transparent .16em),
-                linear-gradient(-135deg,transparent .12em,currentColor .12em .16em,transparent .16em)
+                // 线厚度0.06em,以0.14em渐变点为分界,前后各0.06/2.
+                linear-gradient(45deg,transparent .11em,currentColor .11em .17em,transparent .17em),
+                linear-gradient(-45deg,transparent .11em,currentColor .11em .17em,transparent .17em),
+                linear-gradient(135deg,transparent .11em,currentColor .11em .17em,transparent .17em),
+                linear-gradient(-135deg,transparent .11em,currentColor .11em .17em,transparent .17em)
 
 </pre>
   <br />

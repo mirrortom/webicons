@@ -1,16 +1,15 @@
 ﻿// 禁止
 
-.ico-home
-    position: relative
-    // 屋顶边长 L*sin45
-    width: .707em
-    height: .707em
-    // 5%的阴影,实现屋顶厚度
-    box-shadow: inset .05em .05em
-    transform: rotate(45deg)
+.i-a-home
+    &[class^=i-]
+        // 屋顶边长 L*sin45
+        width: .7em
+        height: .7em
+        // 5%的阴影,实现屋顶厚度
+        box-shadow: inset .05em .05em
+        transform: rotate(45deg)
     
     &:before,&:after
-        position: absolute
         left: .1em
 
     &:before
@@ -20,7 +19,8 @@
         border-style: solid
         border-color: currentColor transparent transparent currentColor
     &:after
-        top: calc(.707em - .1em)
+        // .707em - .1em
+        top: .6em
         // (L*sin45 - 2 * 2 * 0.05L) / sin45 => L - 2 * 2 * 0.05L / sin45
         width: .717em
         height: .4em

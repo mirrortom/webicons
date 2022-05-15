@@ -1,24 +1,14 @@
 ﻿// 程序代码
 
-.ico-code
-    position: relative
-
-    &:before,&:after
-        position: absolute
-        left: 0
-        right: 0
-        bottom:0
-        top:0
-        margin: auto
-
-    &:before
-        width: .04em
-        min-width:1px
+.i-ac-code
+    &[class^=i-]:before
+        width: @css{max(.06em,1px)}
         height: .8em
         background-color:currentColor
-        transform: rotate(15deg)
+        transform: translate(-50%,-50%) rotate(15deg)
  
     &:after
         width: .9em
         height: .4em
-        background-image: linear-gradient(45deg,transparent .12em,currentColor .12em .16em,transparent .16em),linear-gradient(-45deg,transparent .12em,currentColor .12em .16em,transparent .16em),linear-gradient(135deg,transparent .12em,currentColor .12em .16em,transparent .16em),linear-gradient(-135deg,transparent .12em,currentColor .12em .16em,transparent .16em)
+        // 线厚度0.06em,以0.14em渐变点为分界,前后各0.06/2.
+        background-image: linear-gradient(45deg,transparent .11em,currentColor .11em .17em,transparent .17em),linear-gradient(-45deg,transparent .11em,currentColor .11em .17em,transparent .17em),linear-gradient(135deg,transparent .11em,currentColor .11em .17em,transparent .17em),linear-gradient(-135deg,transparent .11em,currentColor .11em .17em,transparent .17em)

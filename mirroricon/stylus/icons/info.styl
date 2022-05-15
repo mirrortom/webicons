@@ -1,24 +1,21 @@
 ﻿// info 信息 information
 
-.ico-info
-    position: relative
+.i-a-info
     border: .08em solid currentColor
     border-radius: 50%
     
     &:before, &:after
-        position: absolute
         background-color: currentColor
-        left: 0
-        right: 0
-        margin: auto
+        left: 50%
+        transform: translateX(-50%)
 
     &:before
-        top: 10%
-        width: .18em
-        height: .18em
-        border-radius: 50%
+        top: 15%
+        width: .1em
+        height: .1em
+        box-shadow: -0.04em 0.17em,-0.05em .47em,0.05em .47em
 
     &:after
-        bottom: 15%
-        width: .14em
+        top: 35%
+        width: .1em
         height: .4em

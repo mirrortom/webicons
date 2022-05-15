@@ -2,13 +2,13 @@
   <h2>邮件</h2>
   <p>mail</p>
   <div class="mg-20">
-    <i class="ico ico-mail text-md"></i>
-    <i class="ico ico-mail text-xxl text-primary"></i>
+    <i class="i-ac-mail text-md"></i>
+    <i class="i-ac-mail text-xxl text-primary"></i>
   </div>
 
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-mail</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-ac-mail</b>"&gt;&lt;/i&gt;
 
 </pre>
   <style>
@@ -75,20 +75,12 @@
   </p>
   <p>为了显示对角线,上下部分:after伪类的高度重新设置为0.56em,即比初始高度多出了0.06em.它的上下边框之和小于0.56em,多出的就是开口处的横线.它的左右边框略大于上下部分:before的左右边框,即, :after的左右边框(透明)面积大于:befter的左右边框(绿色)面积,那么重合后会显现4条对角线(就是透明部分).</p>
   <br />
-  <p><i class="ico ico-mail fs100"></i></p>
+  <p><i class="i-ac-mail fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-mail
-        position: relative
-    
+    .i-ac-mail
         &:before, &:after
-            position: absolute
-            left: 0
-            right: 0
-            top: 0
-            bottom: 0
-            margin: auto
             width: .8em
             height: .5em
             border-style: solid

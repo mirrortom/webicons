@@ -2,14 +2,14 @@
   <h2>太阳</h2>
   <p>太阳图标,由太阳和8个方向的光线组成.</p>
   <div class="mg-20">
-    <i class="ico ico-sun text-md"></i>
-    <i class="ico ico-sun text-xxl text-danger"></i>
-    <i class="ico ico-sun text-xxl text-warning"></i>
+    <i class="i-a-sun text-md"></i>
+    <i class="i-a-sun text-xxl text-danger"></i>
+    <i class="i-a-sun text-xxl text-warning"></i>
   </div>
 
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-sun</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-a-sun</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -90,32 +90,32 @@
   <p>这8个方向的光线其实是两组阴影,所以用到两个伪类:before和:after.使用绝对定位并且垂直居中,让2个伪类置于太阳的中心,并且是叠起的.然后设置它们的box-shadow,4个阴影一组,设置2层.光线实现了.</p>
   <p>太阳圈圈背景 background-color: currentColor ,便于通过设置字体颜色改变太阳颜色.</p>
   <br />
-  <p><i class="ico ico-sun fs100"></i></p>
+  <p><i class="i-a-sun fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-sun
-        position: relative
-        width: .6em
-        height: .6em
-        border-radius: 50%
-        margin: .2em
-        background-color: currentColor
+    .i-a-sun
+        // [class^=i-]优先高,叠加后超过它
+        &[class^=i-]
+            width: .6em
+            height: .6em
+        &
+            border-radius: 50%
+            margin: .2em
+            background-color: currentColor
 
         &:before, &:after
-            position: absolute
+            left:50%
+            top:50%
             width: .1em
             height: .1em
             background-color: transparent
-            top: 0
-            bottom: 0
-            left: 0
-            right: 0
-            margin: auto
+            transform: translate(-50%,-50%)
+      
         &:before
             box-shadow: .45em 0, 0 .45em, -.45em 0, 0 -.45em, .38em 0, 0 .38em, -.38em 0, 0 -.38em
         &:after
-            transform: rotate(45deg)
+            transform: translate(-50%,-50%) rotate(45deg)
             box-shadow: .45em 0, 0 .45em, -.45em 0, 0 -.45em, .38em 0, 0 .38em, -.38em 0, 0 -.38em
 
 </pre>

@@ -1,34 +1,30 @@
 ﻿// 直角箭头
 
-.ico-anglearr
-    position: relative
-
+.i-a-anglearr
     &:before
-        position: absolute
-        margin: auto
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        width: calc(0.7 * 1em)
-        height: calc(0.7 * 1em)
-        border: .07em solid currentColor
+        width: .7em
+        height: .7em
+        border: .1em solid currentColor
         border-right: none
         border-bottom: none
 
     &.down:before
-        transform: rotate(-135deg)
         // L/4 + L/2 - L/2 * sin45,下同
-        bottom: calc(1em * 0.396)
+        bottom: .396em
+        left:50%
+        transform: translateX(-50%) rotate(-135deg)
 
     &.up:before
-        transform: rotate(45deg)
-        top: calc(1em * 0.396)
+        top: .396em
+        left:50%
+        transform: translateX(-50%) rotate(45deg)
 
     &.left:before
-        transform: rotate(-45deg)
-        left: calc(1em * 0.396)
+        left: .396em
+        top:50%
+        transform: translateY(-50%) rotate(-45deg)
 
     &.right:before
-        transform: rotate(135deg)
-        right: calc(1em * 0.396)
+        right: .396em
+        top:50%
+        transform: translateY(-50%) rotate(135deg)

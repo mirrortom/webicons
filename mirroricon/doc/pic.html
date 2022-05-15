@@ -35,12 +35,12 @@
   <h2>图片</h2>
   <p>表示图片的图标.参考印象中的图片,有月亮和山峰2种元素.</p>
   <div class="mg-20">
-    <i class="ico ico-pic text-md"></i>
-    <i class="ico ico-pic text-xxxl text-primary"></i>
+    <i class="i-a-pic text-md"></i>
+    <i class="i-a-pic text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-pic</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-a-pic</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -51,17 +51,16 @@
   <p>根据<a target="_blank" href="/canvas/transfer.html">坐标变换</a>公式: x = x0 * cos(θ) + y0 * sin(θ) ,y = y0 * cos(θ) - x0 * sin(θ) 可以得出: </p>
   <p>left: (.4em - .1em ) * 0.707 , top: (-.4em - .1em ) * 0.707</p>
   <br />
-  <p><i class="ico ico-pic fs100"></i></p>
+  <p><i class="i-a-pic fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-pic
-        position: relative
+    .i-a-pic
         overflow: hidden
         border:1px solid
+        border-bottom:none
 
         &:before,&:after
-            position: absolute
             background-color: currentColor
 
         &:before

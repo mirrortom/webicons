@@ -1,29 +1,18 @@
 ﻿// 三角形箭头
 
-.ico-triarr
-    width: 0
-    height: 0
-    border: .5em solid transparent
-
-
-    &.down
-        border-top: .866em solid
-        border-bottom: none
-        margin: .067em 0
-
-
-    &.up
-        border-bottom: .866em solid
+.i-f-triarr
+    &:before
+        width: 0
+        height: 0
+        border: .5em solid transparent
+        border-bottom: .866em solid currentColor
         border-top: none
-        margin: .067em 0
 
-    &.left
-        border-right: .866em solid
-        border-left: none
-        margin: 0 .067em
+    &.down:before
+        transform: rotate(180deg)
 
+    &.left:before
+        transform: rotate(-90deg)
 
-    &.right
-        border-left: .866em solid
-        border-right: none
-        margin: 0 .067em
+    &.right:before
+        transform: rotate(90deg)

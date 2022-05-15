@@ -2,12 +2,12 @@
   <h2>8号球</h2>
   <p>台球8号黑球</p>
   <div class="mg-20">
-    <i class="ico ico-ball8 text-md"></i>
-    <i class="ico ico-ball8 text-xxxl text-primary"></i>
+    <i class="i-a-ball8 text-md"></i>
+    <i class="i-a-ball8 text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-ball8</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-a-ball8</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -15,17 +15,15 @@
   <p>8字是用2个圆圈组成,上圈(.16em)比下圈(.20em)直径小25%.2个圈水平居中,交点位于空白圆的圆心上.这样,8字就位于空白圆的中间.</p>
   <p>上圈的top值就是: .4em - .16em = .24em, 下圈设计top值: .4em .2个圈在交点处有些重叠,这样8字显得紧凑,故下圈实际top值设置为.38em</p>
   <br />
-  <p><i class="ico ico-ball8 fs100"></i></p>
+  <p><i class="i-a-ball8 fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-ball8
-        position: relative
+    .i-a-ball8
         border-radius: 50%
         background-image: radial-gradient(circle at 50% .4em,transparent .3em, currentColor .32em)
 
         &:before,&:after
-            position: absolute
             left: 50%
             border:.03em solid
             border-radius:50%

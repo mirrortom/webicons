@@ -2,13 +2,13 @@
   <h2>电脑</h2>
   <p>pc 台式电脑图标</p>
   <div class="mg-20">
-    <i class="ico ico-pc text-xl"></i>
-    <i class="ico ico-pc text-xxl text-primary"></i>
+    <i class="i-fv-pc text-xl"></i>
+    <i class="i-fv-pc text-xxl text-primary"></i>
   </div>
 
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-pc</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-fv-pc</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -18,19 +18,15 @@
   <p>显示器和键盘之间的距离设计为容器的5%.键盘高度为容器的20%,下边框占用15%.空出的5%就是这个距离.</p>
   <p>容器使用flex布局,列排布,中心对齐.</p>
   <br />
-  <p><i class="ico ico-pc fs100"></i></p>
+  <p><i class="i-fv-pc fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-pc
-        display: inline-flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-    
+    .i-fv-pc
         &:before
             width: .7em
-            height: calc(.7em * 3 / 4)
+            // .7em * 3 / 4
+            height: .525em
             border: .06em solid currentColor
 
         &:after

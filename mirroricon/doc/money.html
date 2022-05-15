@@ -2,12 +2,12 @@
   <h2>美元</h2>
   <p>美元图标,钱.</p>
   <div class="mg-20">
-    <i class="ico ico-money text-md"></i>
-    <i class="ico ico-money text-xxxl text-primary"></i>
+    <i class="i-fv-money text-md"></i>
+    <i class="i-fv-money text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-money</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-fv-money</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -55,33 +55,29 @@
   <p>美元图标是一个S字母被竖线穿透.</p>
   <p>S字符弄了很久.参考了一些做法,最后用:after,:before做成3个圆角一个直角的样子拼接而成.</p>
   <p>3边圆角border,1边不变,直角.</p>
-  <div><i class="ico moneydemo moneydemo-1"></i></div>
+  <div><i class="moneydemo moneydemo-1"></i></div>
   <br />
   <p>一个是右下角直角,一个是左上角直角.将2个这样的图形旋转-45度后,在直角处对接起来,形成一个8字图案.</p>
   <div>
-    <i class="ico moneydemo moneydemo-1 moneydemo-2"></i>
-    <i class="ico moneydemo moneydemo-1 moneydemo-2 moneydemo-3 mg-l-10"></i>
+    <i class="moneydemo moneydemo-1 moneydemo-2"></i>
+    <i class="moneydemo moneydemo-1 moneydemo-2 moneydemo-3 mg-l-10"></i>
   </div>
   <br />
   <p>对齐:after和:befer时,用flex布局,水平垂直居中即可,不必绝对定位计算top值.</p>
   <p>S字母左下和右上是空口,将对应边透明就可以了,然后再微调下角度,让衔接处看起来平滑过渡.</p>
   <div>
-    <i class="ico moneydemo moneydemo-1 moneydemo-2 moneydemo-3 moneydemo-4"></i>
-    <i class="ico moneydemo moneydemo-1 moneydemo-2 moneydemo-3 moneydemo-4 moneydemo-5"></i>
+    <i class="moneydemo moneydemo-1 moneydemo-2 moneydemo-3 moneydemo-4"></i>
+    <i class="moneydemo moneydemo-1 moneydemo-2 moneydemo-3 moneydemo-4 moneydemo-5"></i>
   </div>
   <br />
   <p>最后,细微改变下S的形状,将线条厚度改为.08em和.06em,盒模型长宽比例为5:4 这样,S的转弯处有点突出,线条粗细平滑过渡.</p>
   <p>竖线是用渐变实现了,在图标中间位置.</p>
   <br />
-  <p><i class="ico ico-money fs100"></i></p>
+  <p><i class="i-fv-money fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-money
-        display: inline-flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
+    .i-fv-money
         background-image: linear-gradient(90deg,transparent .48em, currentColor .48em .54em,transparent .54em)
 
         &:before,&:after

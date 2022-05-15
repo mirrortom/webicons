@@ -2,25 +2,30 @@
   <h2>网络</h2>
   <p>用于语种或网络的图标</p>
   <div class="mg-20">
-    <i class="ico ico-lang text-md"></i>
-    <i class="ico ico-lang text-xxxl text-primary"></i>
+    <i class="i-ac-lang text-md"></i>
+    <i class="i-ac-lang text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-lang</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-ac-lang</b>"&gt;&lt;/i&gt;
 
 </pre>
   <style>
     .demolang {
+      display:inline-block;
       position: relative;
+      width:1em;
+      height:1em;
       font-size: 100px;
       border: 1px solid;
       border-radius: 50%;
     }
 
-      .demolang:before, .demolang:after {
-        position: absolute;
-      }
+    .demolang:before, .demolang:after {
+      content:'';
+      display: inline-block;
+      position: absolute;
+    }
 
     .demolang-1:before {
       top: 0;
@@ -63,23 +68,16 @@
   <p>经线的盒模型是长宽比为1:2的竖直长方形,长度(高)等于容器高度,边框设置圆角.经纬线的宽度为容器的4%.</p>
   <p><i class="ico demolang demolang-2"></i></p>
   <br />
-  <p><i class="ico ico-lang fs100"></i></p>
+  <p><i class="i-ac-lang fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-lang
-        position: relative
-        border: .04em solid currentColor
+    .i-ac-lang
+        border: 1px solid currentColor
         border-radius: 50%
 
         &:before, &:after
-            position: absolute
-            top: 0
-            left: 0
-            right: 0
-            bottom: 0
-            margin: auto
-            border: .04em solid currentColor
+            border: 1px solid currentColor
          
         &:before
             height: .4em

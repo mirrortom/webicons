@@ -2,13 +2,13 @@
   <h2>手机</h2>
   <p>phone 手机图标</p>
   <div class="mg-20">
-    <i class="ico ico-phone text-xxl"></i>
-    <i class="ico ico-phone text-xxxl text-primary"></i>
+    <i class="i-a-phone text-md"></i>
+    <i class="i-a-phone text-xxxl text-primary"></i>
   </div>
 
   <pre class="bg-gray-lt">
 
-  &lt;i class="ico <b>ico-phone</b>"&gt;&lt;/i&gt;
+  &lt;i class="<b>i-a-phone</b>"&gt;&lt;/i&gt;
 
 </pre>
   <br />
@@ -17,22 +17,18 @@
   <p>机身轮廓就是一个长方形,上下边有一些厚度,这个是参考老式的非全面屏手机的样子.下边部分使用阴影(长方形在外),上边部分使用内阴影(在长方形内).</p>
   <p>设计home键位于底部1.5%(容器)的距离.app图9个,从手机上方大概1/4的位置开始.home键就是:after,app图标则是它的阴影实现的.</p>
   <br />
-  <p><i class="ico ico-phone fs100"></i></p>
+  <p><i class="i-a-phone fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 
-    .ico-phone
-        position: relative
-    
+    .i-a-phone
         &:before, &:after
-            position: absolute
-            left: 0
-            right: 0
-            margin: auto
+            left:50%
+            transform: translateX(-50%)
 
         &:before
-            top: 0
-            bottom: 0
+            top:50%
+            transform: translate(-50%,-50%)
             width: calc(.8em * .618)
             height: .8em
             border: .02em solid currentColor
@@ -43,8 +39,8 @@
             bottom: .15em
             width: .06em
             height: .06em
-            border: .01em solid currentColor
-            border-radius: .02em
+            border: 1px solid currentColor
+            border-radius: .01em
             box-shadow: .12em -.24em,0 -.24em,-.12em -.24em,
                         .12em -.36em,0 -.36em,-.12em -.36em,
                         .12em -.48em,0 -.48em,-.12em -.48em

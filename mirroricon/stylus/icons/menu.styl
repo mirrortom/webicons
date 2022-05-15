@@ -1,14 +1,11 @@
 ﻿// 菜单,3横杠图标
 
-.ico-menu
-    display: inline-flex
-    justify-content:center
-    align-items:center
-
+.i-f-menu
     &:before
         width: 1em
-        height: .16em
-        box-shadow: inset .16em .16em,0 .32em,0 -.32em
+        height: @css{max(.1em,2px)}
+        background-color:currentColor
+        box-shadow: 0 .25em,0 -.25em
     // 3个点菜单,就是改width就可
     &.dot:before
-        width: .16em
+        width: @css{max(.1em,2px)}

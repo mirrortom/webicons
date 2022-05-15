@@ -2,19 +2,39 @@
 // css图标样式基类
 // ================================
 
-.ico
-    &,&:before,&:after
-        box-sizing: border-box
+// 基本
+i[class^=i-]
+    display: inline-block
+    pointer-events: none
+    width: 1em
+    height: 1em
+    box-sizing: border-box
 
-    // 图片默认都是块级行内元素
-    display:inline-block
-    pointer-events:none
-    // 垂直居中,面积1emX1em
-    vertical-align:middle
-    width:1em
-    height:1em
-
-    // 
-    &:before,&:after
+    &:before, &::after
         content: ''
         display: inline-block
+        box-sizing: border-box
+
+// 布局定位公用样式
+// flex布局,VH居中
+i[class^=i-f]
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    
+// flex布局,VH居中,竖直排布
+i[class^=i-fv]
+    flex-direction: column
+    
+// 绝对定位 absolute
+i[class^=i-a]
+    position: relative
+
+i[class^=i-a]:before, i[class^=i-a]:after
+    position: absolute
+
+// 绝对定位 absolute,VH居中
+i[class^=i-ac]:before, i[class^=i-ac]:after
+    left:50%
+    top:50%
+    transform: translate(-50%,-50%)
