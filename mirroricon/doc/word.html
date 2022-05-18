@@ -1,0 +1,136 @@
+﻿<div class="doc-page">
+  <h2>word</h2>
+  <p>office word图标</p>
+  <div class="mg-20">
+    <i class="i-a-word text-md"></i>
+    <i class="i-a-word text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-word</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>图标设计是模仿word文件的图标.左上方一个W,右边和下方被文字围绕.</p>
+  <p>图标整体位于容器中间,上下左右留出0.1em的空白.</p>
+  <p>文字围绕使用:after的box-shadow实现,这个容易.长度为0.3em,W右侧3排阴影,下方2条长阴影是由3个阴影叠在一起的.总共9个阴影.</p>
+  <p>W开始用字体实现,但浏览器最小字体显示为10px,如果是16px的图标,那么W会占据整个图标位置.后来改用clip-path实现了.</p>
+  <canvas id="canva1"></canvas>
+  <br />
+  <p>将W看作是多边形,从左上角开始(1),从外围到内围,最后到左上角的右边(13),结束.这13个点围起来的形状就是W.</p>
+  <p>观察了W字体比例,选择width:height = 6:5 的矩形作为W的参考框架,13个点的坐标,和矩形的关系数据如下:</p>
+  <pre class="bg-gray-lt">
+
+    // 1. 以矩形为坐标系,以左上角(1)点为坐标系(0,0)点,下为y轴正方向,右为x轴正方向. 
+    // 2. W形的点位坐标数据: 数据是百分比位置.
+    
+    // wblod: W的线条厚度
+
+    // 1,2,3
+          [0, 0], [25, 100], [25 + wblod, 100],
+
+    // 3,4,6
+          [50, 2 * wblod], [75 - wblod, 100], [75, 100],
+
+    // 7,8,9
+          [100, 0], [100 - wblod, 0], [75 - wblod / 2, 100 - 2 * wblod],
+
+    // 10,11,12
+          [50 + wblod / 2, 0], [50 - wblod / 2, 0], [25 + wblod / 2, 100 - 2 * wblod],
+
+    // 13
+          [wblod, 0]
+
+    // 例如第2点 [25,100],表示这点在x轴的25%处,y轴的100%处.假如矩形为60px X 50px,那么坐标为
+    // (60*25%,50*100) = (15px, 50px)
+
+</pre>
+  <br />
+  <p><i class="i-a-word fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-word
+        &:before
+            top: .1em
+            left: .05em
+            width: .54em
+            // width * 5/6
+            height: .45em
+            background-color: currentColor
+            clip-path: polygon(0% 0%,25% 100%,41% 100%,
+                              50% 32%,59% 100%,75% 100%,
+                              100% 0%,84% 0%,67% 68%,
+                              58% 0%,42% 0%,33% 68%,
+                              16% 0%)
+ 
+        &:after
+            top: 0
+            left: 0
+            width: .3em
+            height: .08em
+            box-shadow: .6em 0.10em,.6em 0.28em,.6em 0.46em,
+                        .1em 0.64em,.35em 0.64em,.6em 0.64em,
+                        .1em 0.82em,.35em 0.82em,.6em 0.82em
+
+</pre>
+  <script>
+    ((win) => {
+      canva1();
+      function canva1() {
+        let cav = win.cavlib('canva1').style();
+        let ctx = cav.ctx;
+        //
+        let w = 300, h = 300;
+        ctx.canvas.width = ctx.canvas.height = w;
+        ctx.font = '18px serial';
+
+        // x,y轴 原始
+        cav.xyAxis();
+        // 原点移动到中心
+        ctx.translate(w / 2, h / 2);
+        ctx.strokeStyle = 'green';
+        // 矩形
+        let rw = 240, rh = 200;
+        ctx.beginPath();
+        ctx.rect(-rw / 2, -rh / 2, rw, rh);
+        ctx.stroke();
+
+        // W
+        // w线厚度
+        let wblod = rw * 0.04;
+        // 13个点的百分比位置,左起,从外围到内围,最后与左起点右边wblod距离处会和
+        // 坐标原点为W的左上角
+        let ps = [
+          [0, 0], [25, 100], [25 + wblod, 100],
+          [50, 2 * wblod], [75 - wblod, 100], [75, 100],
+          [100, 0], [100 - wblod, 0], [75 - wblod / 2, 100 - 2 * wblod],
+          [50 + wblod / 2, 0], [50 - wblod / 2, 0], [25 + wblod / 2, 100 - 2 * wblod],
+          [wblod, 0]
+        ];
+        ctx.save();
+        ctx.translate(-rw / 2, -rh / 2);
+        ctx.beginPath();
+        for (var i = 0, len = ps.length; i < len; i++) {
+          let p = ps[i];
+          ctx.lineTo(rw * p[0] / 100, rh * p[1] / 100);
+        }
+        ctx.strokeStyle = 'red';
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fillStyle = 'skyblue';
+        ctx.fill();
+        ctx.restore();
+        // 点位标注
+        ctx.save();
+        ctx.fillStyle = 'blue';
+        ctx.translate(-rw / 2, -rh / 2);
+        for (var i = 0, len = ps.length; i < len; i++) {
+          let p = ps[i];
+          ctx.fillText(i + 1, rw * p[0] / 100-10, rh * p[1] / 100);
+        }
+        ctx.restore();
+      }
+    })(window);
+  </script>
+</div>
