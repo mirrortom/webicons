@@ -1,0 +1,41 @@
+﻿<div class="doc-page">
+  <h2>层次</h2>
+  <p>组织架构层次关系</p>
+  <div class="mg-20">
+    <i class="i-a-hierarchy text-md"></i>
+    <i class="i-a-hierarchy text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-hierarchy</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>图标结构像树,有一个根节点.节点是方块,关系是线条.</p>
+  <p>方块是边长为20%的正方形,5个方块位于容器的角落和中间位置.由:before的阴影实现.</p>
+  <p>线条由2部分组成,连接下排的左右2个方块的线条实际是:after的3条边.连接中间上中下3个方块的线是容器的线性渐变实现,在50%的位置画了1px的渐变过渡.</p>
+  <br />
+  <p><i class="i-a-hierarchy fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-hierarchy
+        background-image: linear-gradient(90deg,transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%);
+
+        &:before
+            left: 0
+            top: 0
+            width: .2em
+            height: .2em
+            box-shadow: .4em 0,.4em .4em,0 .8em,.4em .8em,.8em .8em
+
+        &:after
+            top: .5em
+            left: .1em
+            width: .8em
+            height: .3em
+            border: 1px solid
+            border-bottom: none
+
+</pre>
+</div>

@@ -733,3 +733,21 @@ i[class^=i-ac]:after {
   height: 0.1em;
   box-shadow: 0.7em 0.08em, 0.7em 0.26em, 0.7em 0.44em, 0.1em 0.62em, 0.4em 0.62em, 0.7em 0.62em, 0.1em 0.8em, 0.4em 0.8em, 0.7em 0.8em;
 }
+.i-a-hierarchy {
+  background-image: linear-gradient(90deg, transparent calc(50% - 0.5px), currentColor calc(50% + 0.5px), transparent 50%);
+}
+.i-a-hierarchy:before {
+  left: 0;
+  top: 0;
+  width: 0.2em;
+  height: 0.2em;
+  box-shadow: 0.4em 0, 0.4em 0.4em, 0 0.8em, 0.4em 0.8em, 0.8em 0.8em;
+}
+.i-a-hierarchy:after {
+  top: 0.5em;
+  left: 0.1em;
+  width: 0.8em;
+  height: 0.3em;
+  border: 1px solid;
+  border-bottom: none;
+}
