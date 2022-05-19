@@ -41,6 +41,7 @@
     <None Include="stylus\icons\bookmark.styl" />
     <None Include="stylus\icons\chart.styl" />
     <None Include="stylus\icons\cny.styl" />
+    <None Include="stylus\icons\music.styl" />
     <None Include="stylus\icons\excel.styl" />
     <None Include="stylus\icons\hierarchy.styl" />
     <None Include="stylus\icons\word.styl" />
@@ -81,6 +82,7 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\music.html" />
     <Content Include="doc\hierarchy.html" />
     <Content Include="doc\excel.html" />
     <Content Include="doc\word.html" />

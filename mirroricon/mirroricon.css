@@ -751,3 +751,21 @@ i[class^=i-ac]:after {
   border: 1px solid;
   border-bottom: none;
 }
+.i-a-music:before {
+  left: 55%;
+  top: 0.1em;
+  width: 0.5em;
+  height: 0.7em;
+  transform: translateX(-50%);
+  border: 1px solid;
+  border-top: 0.1em solid;
+  border-bottom: none;
+}
+.i-a-music:after {
+  top: 0;
+  left: 0;
+  width: max(.2em,4px);
+  height: max(.1em,3px);
+  border-radius: 50%;
+  box-shadow: 0.12em 0.75em, 0.6em 0.75em;
+}

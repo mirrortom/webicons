@@ -1,0 +1,41 @@
+﻿<div class="doc-page">
+  <h2>音乐</h2>
+  <p>音符图标,表示音乐</p>
+  <div class="mg-20">
+    <i class="i-a-music text-md"></i>
+    <i class="i-a-music text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-music</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>方框是:before,上边框加粗了.底边去掉,左右为1px.长宽为: .5em : .7em.水平居中但偏右5%,离上边0.1em</p>
+  <p>音符蝌蚪形是:after,长宽比例为2:1的椭圆.box-shadow实现.</p>
+  <br />
+  <p><i class="i-a-music fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-music
+        &:before
+            left: 55%
+            top: .1em
+            width: .5em
+            height: .7em
+            transform: translateX(-50%)
+            border: 1px solid
+            border-top: .1em solid
+            border-bottom: none
+ 
+        &:after
+            top: 0
+            left: 0
+            width: @css{max(.2em,4px)}
+            height: @css{max(.1em,3px)}
+            border-radius: 50%
+            box-shadow: .12em .75em,.6em .75em
+
+</pre>
+</div>
