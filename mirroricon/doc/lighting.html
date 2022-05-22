@@ -1,0 +1,255 @@
+﻿<div class="doc-page">
+  <h2>闪电</h2>
+  <p>闪电图标,常用于提示,警示.</p>
+  <div class="mg-20">
+    <i class="i-a-lighting text-md"></i>
+    <i class="i-a-lighting text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-lighting</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>观察研究了闪电图标样子,上下和左右分别是2对平行线,中间的那个部分,就是2对平行线围城的区局,是一个平行四边形.</p>
+  <p>而上下两个尖角,是左右的那对平行线的延长线,但延长到哪里,无法确定.但是,上/下水平的那对平行线是确定的,它与X轴平行.</p>
+  <p>于是做了一个设想,将闪电图形的上下/左右4个端点连起来,那么就有了2条"对角线".垂直(AC蓝色),水平(BD红色).</p>
+  <p>设定推断: </p>
+  <ul class="list abc">
+    <li>AC和BD的交点位于坐标系的原点,A/C/B/D是闪电图形的4个顶点.</li>
+    <li>M/N是Y轴上的2个点,BM/DN是平行于X轴的,所以M/N它的y坐标其实就是,B/D的y坐标.</li>
+    <li>那么,只要确定A/B/C/D,4个顶点坐标,就可以确定闪电形状了(有6个顶点).</li>
+    <li>给定AC,BD的长度,给定AC与Y轴的夹角,BD与X轴夹角,可以确定ABCD坐标.</li>
+  </ul>
+  <canvas id="canva1"></canvas>
+  <br />
+  <p>看图可见,AC决定了闪电的高度,BD决定宽度,AC与Y轴夹角决定闪电倾斜度,BD与X轴夹角决定闪电中间部分的厚度.</p>
+  <p>所以采用规定这些参数来确定闪电的图形.</p>
+  <p>计算设定:</p>
+  <ul class="list abc">
+    <li>AC: 竖轴,h</li>
+    <li>BD: 横轴,w</li>
+    <li>AC与Y轴夹角: 竖轴夹角,hyAngle [0~90)</li>
+    <li>BD与X轴夹角: 横轴夹角,wxAngle [0~90)</li>
+  </ul>
+  <br />
+  <pre class="bg-gray-lt">
+
+    // 横轴(w)端点坐标绝对值
+    wx = w / 2 * Math.cos(wxAngle);
+    wy = w /2  * Math.sin(wxAngle);
+    // 竖轴(h)端点坐标绝对值
+    hx = hlen * Math.sin(hyAngle) / 2;
+    hy = hlen * Math.cos(hyAngle) / 2;
+
+    // 由于A与C对称,所以x,y坐标绝对值相对,符号相反.
+    // 闪电图形 6个点位坐标(坐标系原点为横轴竖轴交点),从上方顶点,顺时针到左下顶点.
+      A: [hx, -hy]
+      M: [0, -wy]
+      B: [wx, -wy]
+      C: [-hx, hy]
+      N: [0, wy]
+      D: [-wx, wy]
+
+</pre>
+  <br />
+  <p>画布150X150,几组参数画出的样子.</p>
+  <canvas id="canva2"></canvas>
+  <p>w=30 , h=150 , wxAngle=60, yhAngle=0</p>
+  <canvas id="canva3"></canvas>
+  <p>w=30 , h=150 , wxAngle=0, yhAngle=60</p>
+  <canvas id="canva4"></canvas>
+  <p>w=30 , h=150 , wxAngle=0, yhAngle=0</p>
+  <canvas id="canva5"></canvas>
+  <p>w=30 , h=150 , wxAngle=45, yhAngle=45</p>
+  <canvas id="canva6"></canvas>
+  <p>w=30 , h=150 , wxAngle=60, yhAngle=60</p>
+  <canvas id="canva7"></canvas>
+  <p>w=150 , h=150 , wxAngle=30, yhAngle=10</p>
+  <p>可见,参数设置不当,会产生很多歪瓜裂枣.</p>
+  <canvas id="canva8"></canvas>
+  <p>w=75 , h=150 , wxAngle=18, yhAngle=18 (图标使用: 竖横轴比例2:1,倾斜18度)</p>
+  <p>css使用clip-path:polygon()实现.由于盒模型坐标系原点在左上角,polygon()参数用百分比,所以需要转换.</p>
+  <p>先坐标转换: 坐标系原点从中心点转移到左上角,用平移变换. p1.x = p.x - Z1.x, p1.y = p.y - Z1.y</p>
+  <p>再将坐标值转为百分比: x / 画布width, y / 画布height</p>
+  <pre class="bg-gray-lt">
+
+    // 图标大小 1em X 1em
+    // 图形参数 w=.5em h=1em wxAngle=18 hyAngle=18
+    // clip-path:polygon()坐标. 6个点,上方开始,顺时针方向
+          65.5% 2.4%,
+          50.0% 42.3%,
+          73.8% 42.3%,
+          34.5% 97.6%,
+          50.0% 57.7%,
+          26.2% 57.7%
+
+</pre>
+  <br />
+  <p><i class="i-a-lighting fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-lighting
+        &:before
+            top: 0
+            left: 0
+            width: 1em
+            height: 1em
+            background-color: currentColor
+            clip-path: polygon(65.5% 2.4%,50.0% 42.3%,73.8% 42.3%,34.5% 97.6%,50.0% 57.7%,26.2% 57.7%)
+
+</pre>
+  <script>
+    ((win) => {
+
+      canva1();
+      canva2x();
+      function canva1() {
+        let cav = win.cavlib('canva1').style();
+        let ctx = cav.ctx;
+        //
+        let w = 200, h = 200;
+        ctx.canvas.width = ctx.canvas.height = w;
+        ctx.font = '18px serial';
+
+        // x,y轴 原始
+        cav.xyAxis();
+        ctx.strokeStyle = 'red';
+        // 原点
+        ctx.translate(w / 2, h / 2);
+
+        // 闪电形状
+        // 水平,垂直对称线长度
+        let wlen = w / 2, hlen = h;
+        // 水平线与X轴夹角(0~90)
+        let wxangle = Math.PI / 10;
+        // 垂直线与Y轴夹角[0-90)
+        let hyangle = Math.PI / 10;
+        ctx.strokeStyle = 'green';
+        let fpoints = drawLighting(ctx, 0, 0, wlen, hlen, wxangle, hyangle);
+
+        // 填充
+        //ctx.beginPath();
+        //for (var i = 0, len = fpoints.length; i < len; i++) {
+        //  let p = fpoints[i];
+        //  ctx.lineTo(p[0], p[1]);
+        //}
+        //ctx.closePath();
+        ctx.fillStyle = '#d9ad3c8a';
+        ctx.fill();
+
+        // 标注
+        // Y轴上2点
+        ctx.beginPath();
+        ctx.fillStyle = 'brown';
+        ctx.fillText('M', fpoints[1][0] + 10, fpoints[1][1] - 5);
+        ctx.fillText('N', fpoints[4][0] - 25, fpoints[4][1] + 20);
+        // A,B,C,D 4端点
+        ctx.fillStyle = 'blue';
+        ctx.fillText('A', fpoints[0][0] + 10, fpoints[0][1] + 10);
+        ctx.fillText('C', fpoints[3][0] - 15, fpoints[3][1]);
+        ctx.fillStyle = 'red';
+        ctx.fillText('B', fpoints[2][0] + 10, fpoints[2][1] + 10);
+        ctx.fillText('D', fpoints[5][0] - 15, fpoints[5][1] + 10);
+
+        // AC(blue),BD(red)连线
+        ctx.beginPath();
+        ctx.moveTo(fpoints[0][0], fpoints[0][1]);
+        ctx.lineTo(fpoints[3][0], fpoints[3][1])
+        ctx.strokeStyle = 'blue';
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(fpoints[2][0], fpoints[2][1]);
+        ctx.lineTo(fpoints[5][0], fpoints[5][1])
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+      }
+      function canva2x() {
+        let w = 150, h = 150;
+        //
+        let datas = [
+          { cavid: 'canva2', w: 30, h: 150, wxAngle: Math.PI / 3, hyAngle: 0 },
+          { cavid: 'canva3', w: 30, h: 150, wxAngle: 0, hyAngle: Math.PI / 3 },
+          { cavid: 'canva4', w: 30, h: 150, wxAngle: 0, hyAngle: 0 },
+          { cavid: 'canva5', w: 30, h: 150, wxAngle: Math.PI / 4, hyAngle: Math.PI / 4 },
+          { cavid: 'canva6', w: 30, h: 150, wxAngle: Math.PI / 3, hyAngle: Math.PI / 3 },
+          { cavid: 'canva7', w: 150, h: 150, wxAngle: Math.PI / 6, hyAngle: Math.PI / 18 },
+          { cavid: 'canva8', w: 75, h: 150, wxAngle: Math.PI / 10, hyAngle: Math.PI / 10 }
+        ];
+        for (var i = 0, len = datas.length; i < len; i++) {
+          let d = datas[i];
+          let cav = win.cavlib(d.cavid).style();
+          let ctx = cav.ctx;
+          ctx.canvas.width = ctx.canvas.height = w;
+          // x,y轴
+          cav.xyAxis();
+          // 闪电形状
+          drawLighting(ctx, w / 2, h / 2, d.w, d.h, d.wxAngle, d.hyAngle);
+          ctx.fillStyle = 'orange';
+          ctx.fill();
+        }
+      }
+
+      function canvasToCss(points) {
+        // 坐标转换为左上交为原点的坐标系的,再x,y转换为占据的盒模型的百分比
+        // 1.坐标系转换
+        let newpoints = [];
+        for (var index in points) {
+          let p = fpoints[index];
+          // p1.x = p.x - Z1.x, p1.y = p.y - Z1.y
+          newpoints.push([p[0] - (-w / 2), p[1] - (-h / 2)]);
+        }
+        //console.log(newfpoints);
+        // 2.转换xy为百分比
+        let csspoints = '';
+        for (var index in newpoints) {
+          let p = newpoints[index];
+          csspoints += `${(100 * p[0] / w).toFixed(1)}% ${(100 * p[1] / h).toFixed(1)}%,`;
+        }
+        //console.log(csspoints);
+      }
+      /**
+       * 给定长轴短轴和夹角,绘画闪电图案,返回6个顶点坐标(上方开始顺时针方向)
+       * @param ctx
+       * @param x 横竖轴交点x坐标
+       * @param y 横竖轴交点y坐标
+       * @param w 横轴
+       * @param h 竖轴
+       * @param wxAngle 横轴X轴夹角
+       * @param hyAngle 竖轴Y轴夹角
+       */
+      function drawLighting(ctx, x, y, w, h, wxAngle, hyAngle) {
+        // 水平对称线端点坐标绝对值
+        let wx = w * Math.cos(wxAngle) / 2;
+        let wy = w * Math.sin(wxAngle) / 2;
+        // 垂直对称线端点坐标绝对值
+        let hx = h * Math.sin(hyAngle) / 2;
+        let hy = h * Math.cos(hyAngle) / 2;
+
+        // 闪电图形 6个点位坐标,从上方顶点,顺时针到左下顶点.
+        let points = [
+          [hx, -hy],
+          [0, -wy],
+          [wx, -wy],
+          [-hx, hy],
+          [0, wy],
+          [-wx, wy]
+        ];
+
+        // 绘画
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.beginPath();
+        for (var i = 0, len = points.length; i < len; i++) {
+          let p = points[i];
+          ctx.lineTo(p[0], p[1]);
+        }
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
+        return points;
+      }
+    })(window);
+  </script>
+</div>
