@@ -25,10 +25,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 1em;
+      height: 1em;
       font-size: 100px;
     }
 
       .demonum:before, .demonum:after {
+        content: '';
         width: .4em;
         height: .4em;
         border: .1em solid;
@@ -95,7 +98,7 @@
   <p>数字图标模仿了LCD数字,观察LCD数字显示电路,它是7个发光二极管,排列成数字8的形状,通过点亮组合这7个LCD,可以显示10个数字.如果要显示8,那么就点亮全部7个LCD,如果要显示0,就将中间的LCD熄灭.其它数字都可以用这个办法显示.</p>
   <p>用:before和:after的边框模拟LCD.设计边框厚度为容器的10%,盒模型为正方形,边长为容器的40%.容器采用flex,列排布,水平垂直居中.这样:before和:after形成一个1:2的长方形,就是数字的轮廓.</p>
   <p>中间的边是:before的底边(红色)和:after的上边(蓝色)叠在一起的,这两个边框的厚度加起来要与其它边框厚度相同.也就是说这2个边框的厚度要是其它边厚度的一半.</p>
-  <p><i class="ico demonum"></i></p>
+  <p><i class="demonum"></i></p>
   <p>没有能完全模仿LCD数字,它的转角有分界线,不是连在一起的,这没有实现.</p>
   <div class="demonum2">
     <i class="demonum2-1"></i><i class="demonum2-2"></i>
