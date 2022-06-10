@@ -9,7 +9,7 @@
   <style>
     .container {
       display: grid;
-      grid-template-columns: 268px calc(100% - 268px);
+      grid-template-columns: 332px calc(100% - 332px);
     }
 
     .menu-box {
@@ -64,7 +64,7 @@
   <div class="container">
     <div class="menu-box" id="main_menubox">
       <a class="btn link d-block bg-gray-lt" id="main_about"><i class="i-star4"></i>&nbsp;About Css Icon</a>
-      <div class="grids-1 grids-md-4">
+      <div class="grids-1 grids-md-5">
         <div class="iconitem" urlid="moon" title="月牙"><i class="i-moon text-xxl"></i></div>
         <div class="iconitem" urlid="sun" title="太阳"><i class="i-a-sun text-xxl text-warning"></i></div>
         <div class="iconitem" urlid="star4" title="4角星"><i class="i-a-star4 text-xxl"></i></div>
@@ -123,6 +123,7 @@
         <div class="iconitem" urlid="hierarchy" title="层级"><i class="i-a-hierarchy text-xxl"></i></div>
         <div class="iconitem" urlid="music" title="音乐"><i class="i-a-music text-xxl"></i></div>
         <div class="iconitem" urlid="lighting" title="闪电"><i class="i-a-lighting text-xxl"></i></div>
+        <div class="iconitem" urlid="sound" title="声音"><i class="i-a-sound text-xxl"></i></div>
       </div>
     </div>
     <div class="content-box">
@@ -146,14 +147,12 @@
 
       // 主菜单
       let sidemenu1 = $('#main_menubox .iconitem').each((item, index) => {
-        let urlid = $(item).prop('urlid');
         item.onclick = () => {
+          let urlid = $(item).prop('urlid');
           if (!urlid) return;
           let title = $(item).prop('title');
           cpg.load(urlid, title);
         };
-        // 加一个title属性:页面名字和索引
-        $(item).prop('title', urlid+''+index);
       });
 
       //  (item, i) => {
@@ -163,8 +162,8 @@
         cpg.load('about', 'css图标');
       };
 
-      //$('#main_about')[0].click();
-      $('#main_menubox .iconitem')[36].click();
+      $('#main_about')[0].click();
+      //$('#main_menubox .iconitem')[45].click();
 
     })(window);
   </script>

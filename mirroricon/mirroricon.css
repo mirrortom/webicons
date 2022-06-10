@@ -777,3 +777,24 @@ i[class^=i-ac]:after {
   background-color: currentColor;
   clip-path: polygon(65.5% 2.4%, 50% 42.3%, 73.8% 42.3%, 34.5% 97.6%, 50% 57.7%, 26.2% 57.7%);
 }
+.i-a-sound:before,
+.i-a-sound:after {
+  top: 50%;
+}
+.i-a-sound:before {
+  left: 10%;
+  transform: translateY(-50%);
+  width: 0.2em;
+  height: 0.6em;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0.15em 0.2em 0.15em 0;
+  border-right-color: currentColor;
+}
+.i-a-sound:after {
+  right: 0;
+  width: 0.6em;
+  height: 0.6em;
+  transform: translateY(-50%) rotate(45deg);
+  background-image: radial-gradient(circle 0.6em at left bottom, transparent 30%, currentColor 32% calc(32% + max(0.04em, 1px)), transparent calc(34% + max(0.04em, 1px)) 60%, currentColor 62% calc(62% + max(0.04em, 1px)), transparent calc(64% + max(0.04em, 1px)) 90%, currentColor 92% calc(92% + max(0.04em, 1px)), transparent);
+}
