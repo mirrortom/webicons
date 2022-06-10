@@ -623,7 +623,7 @@ i[class^=i-ac]:after {
   width: 0.7em;
   height: 0.7em;
   transform: translate(-50%, -50%) rotate(-135deg);
-  background-image: radial-gradient(at 0 0, transparent 0.22em, currentColor 0.23em 0.3em, transparent 0.31em 0.42em, currentColor 0.43em 0.5em, transparent 0.51em 0.62em, currentColor 0.63em 0.7em, transparent 0.71em);
+  background-image: radial-gradient(circle 0.7em at 0 0, transparent 32%, currentColor 34% calc(34% + max(0.06em, 1px)), transparent calc(36% + max(0.06em, 1px)) 60%, currentColor 62% calc(62% + max(0.06em, 1px)), transparent calc(64% + max(0.06em, 1px)) 90%, currentColor 92% calc(92% + max(0.06em, 1px)), transparent calc(94% + max(0.06em, 1px)));
 }
 .i-a-wlan:after {
   top: 84%;
