@@ -37,6 +37,7 @@
     <None Include="compilerconfig.json" />
     <None Include="stylus\base.styl" />
     <None Include="stylus\icons\anglearr.styl" />
+    <None Include="stylus\icons\headphone.styl" />
     <None Include="stylus\icons\edit.styl" />
     <None Include="stylus\icons\ball8.styl" />
     <None Include="stylus\icons\bookmark.styl" />
@@ -85,6 +86,7 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\headphone.html" />
     <Content Include="doc\edit.html" />
     <Content Include="doc\sound.html" />
     <Content Include="doc\lighting.html" />

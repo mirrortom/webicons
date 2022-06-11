@@ -816,3 +816,23 @@ i[class^=i-ac]:after {
   height: 0.2em;
   box-shadow: 0.3em 0;
 }
+.i-a-headphone:before,
+.i-a-headphone:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.i-a-headphone:before {
+  top: 10%;
+  width: 0.6em;
+  height: 0.6em;
+  border: max(.04em,1px) solid;
+  border-radius: 50% 50% 0 0;
+  border-bottom: none;
+}
+.i-a-headphone:after {
+  top: 60%;
+  width: 0.2em;
+  height: 0.3em;
+  border-radius: 50%;
+  box-shadow: 0.3em 0, -0.3em 0;
+}
