@@ -1,0 +1,19 @@
+﻿// 笔
+
+.i-a-edit
+    &:before,&:after
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%) rotate(-45deg)
+
+    &:before
+        width: 1em
+        height: .2em
+        box-shadow: inset .2em 0,inset -.1em 0
+        border: 1px solid
+        clip-path: polygon(0 50%,20% 0,100% 0,100% 100%,20% 100%)
+ 
+    &:after
+        width: .05em
+        height: .2em
+        box-shadow:.3em 0

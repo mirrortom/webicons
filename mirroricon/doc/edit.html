@@ -1,0 +1,43 @@
+﻿<div class="doc-page">
+  <h2>笔</h2>
+  <p>笔图标,表示编辑,书写</p>
+  <div class="mg-20">
+    <i class="i-a-edit text-md"></i>
+    <i class="i-a-edit text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-edit</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>图案由2部分组成,笔身,和笔中间的线条.</p>
+  <p>笔身是:before,设计长度为1em,高(宽)度0.2em,旋转45度.位于图标容器的对角线上,水平垂直居中.</p>
+  <p>笔尾和笔尖都是box-shadow,inset的.笔尖阴影长度设计为0.2em,一个笔身宽度,即笔尖是一个等边三角形.笔尾是0.1em,半个宽度.</p>
+  <p>笔身用了clip-path画出等边三角形的笔尖.路径起点在左边中点处(0 50%),再上下边取(20%,0/100%)处的两个点,构成三角形.</p>
+  <p>中间线条是:after的box-shadow,这个用于装饰笔身,位于笔尾大约1个笔身高度处.</p>
+  <br />
+  <p><i class="i-a-edit fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-edit
+        &:before,&:after
+            left: 50%
+            top: 50%
+            transform: translate(-50%,-50%) rotate(-45deg)
+
+        &:before
+            width: 1em
+            height: .2em
+            box-shadow: inset .2em 0,inset -.1em 0
+            border: 1px solid
+            clip-path: polygon(0 50%,20% 0,100% 0,100% 100%,20% 100%)
+ 
+        &:after
+            width: .05em
+            height: .2em
+            box-shadow:.3em 0
+
+</pre>
+</div>
