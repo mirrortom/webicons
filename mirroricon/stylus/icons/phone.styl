@@ -3,22 +3,20 @@
 .i-a-phone
     &:before, &:after
         left:50%
-        transform: translateX(-50%)
+        transform: translate(-50%,-50%)
 
     &:before
-        top:50%
-        transform: translate(-50%,-50%)
-        width: calc(.8em * .618)
-        height: .8em
-        border: .02em solid currentColor
-        border-radius: .03em
-        box-shadow: 0 .04em,inset 0 .01em
+        top: 50%
+        width: .6em
+        height: 1em
+        border: 1px solid
+        border-radius: .06em
+        box-shadow: inset 0 .04em
 
     &:after
-        bottom: .15em
-        width: .06em
-        height: .06em
-        border: 1px solid currentColor
-        border-radius: .01em
-        box-shadow: .12em -.24em,0 -.24em,-.12em -.24em,.12em -.36em,0 -.36em,-.12em -.36em,.12em -.48em,0 -.48em,-.12em -.48em
+        top: 92%
+        width: .6em
+        height: .16em
+        border-radius:0 0 .06em .06em
+        background-image:radial-gradient(circle .05em,transparent 96%,currentColor)
    

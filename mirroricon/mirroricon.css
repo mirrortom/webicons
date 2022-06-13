@@ -256,24 +256,22 @@ i[class^=i-ac]:after {
 .i-a-phone:before,
 .i-a-phone:after {
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 .i-a-phone:before {
   top: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(0.8em * 0.618);
-  height: 0.8em;
-  border: 0.02em solid currentColor;
-  border-radius: 0.03em;
-  box-shadow: 0 0.04em, inset 0 0.01em;
+  width: 0.6em;
+  height: 1em;
+  border: 1px solid;
+  border-radius: 0.06em;
+  box-shadow: inset 0 0.04em;
 }
 .i-a-phone:after {
-  bottom: 0.15em;
-  width: 0.06em;
-  height: 0.06em;
-  border: 1px solid currentColor;
-  border-radius: 0.01em;
-  box-shadow: 0.12em -0.24em, 0 -0.24em, -0.12em -0.24em, 0.12em -0.36em, 0 -0.36em, -0.12em -0.36em, 0.12em -0.48em, 0 -0.48em, -0.12em -0.48em;
+  top: 92%;
+  width: 0.6em;
+  height: 0.16em;
+  border-radius: 0 0 0.06em 0.06em;
+  background-image: radial-gradient(circle 0.05em, transparent 96%, currentColor);
 }
 .i-fv-user:before,
 .i-fv-user:after {
