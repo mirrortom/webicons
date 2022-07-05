@@ -1,0 +1,19 @@
+﻿// measure 尺,测量
+
+.i-a-measure
+    &:before, &:after
+        left:50%
+        top:50%
+      
+    &:before
+        transform: translate(-50%,-50%) rotate(-45deg)
+        width: 1em
+        height: .3em
+        border: 1px solid
+
+    &:after
+        transform: translate(-50%,-50%) rotate(-45deg) translateY(-.075em)
+        width: 1px
+        height: .15em
+        background-color: currentColor
+        box-shadow: .16em 0,.32em 0,-.16em 0,-.32em 0

@@ -834,3 +834,21 @@ i[class^=i-ac]:after {
   border-radius: 50%;
   box-shadow: 0.3em 0, -0.3em 0;
 }
+.i-a-measure:before,
+.i-a-measure:after {
+  left: 50%;
+  top: 50%;
+}
+.i-a-measure:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 1em;
+  height: 0.3em;
+  border: 1px solid;
+}
+.i-a-measure:after {
+  transform: translate(-50%, -50%) rotate(-45deg) translateY(-0.075em);
+  width: 1px;
+  height: 0.15em;
+  background-color: currentColor;
+  box-shadow: 0.16em 0, 0.32em 0, -0.16em 0, -0.32em 0;
+}

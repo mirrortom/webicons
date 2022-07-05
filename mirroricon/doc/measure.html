@@ -1,0 +1,86 @@
+﻿<div class="doc-page">
+  <h2>尺</h2>
+  <p>测量</p>
+  <div class="mg-20">
+    <i class="i-a-measure text-md"></i>
+    <i class="i-a-measure text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-measure</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <style>
+    .mesdemo {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      font-size: 100px;
+      position: relative;
+    }
+
+      .mesdemo:before, .mesdemo:after {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) rotate(-45deg);
+      }
+
+      .mesdemo:before {
+        width: 1em;
+        height: .3em;
+        border: 1px solid green;
+      }
+
+      .mesdemo:after {
+        width: 1px;
+        height: .15em;
+        background-color: red;
+        box-shadow: .16em 0,.32em 0,-.16em 0,-.32em 0;
+      }
+
+    .mesdemo-1:after {
+      transform: translate(-50%,-50%) rotate(-45deg) translateY(-.075em);
+    }
+  </style>
+  <br />
+  <p>尺身是:before,长度1em与容器等长,宽度0.3em,旋转45度.水平垂直居中.</p>
+  <p>刻度是:after和它的阴影,宽度1px,高度为尺高度一半:0.15em.也居中.</p>
+  <p>刻度要对齐在尺的上边线.只设置居中时如下.</p>
+  <div>
+    <span class="mesdemo"></span>
+  </div>
+  <br />
+  <p>刻度离尺边有一定距离,由于尺和刻度都是居中,所以,刻度在尺中也是居中的,那么刻度离上边的距离就是 (尺-刻度)/2 = (.3em - .15em) / 2 = 0.075em</p>
+  <p>css变换的效果是叠加的,所以,先是居中,再旋转,然后移动Y坐标0.075em即可.</p>
+  <div>
+    <span class="mesdemo mesdemo-1"></span>
+  </div>
+  <p>transform: translate(-50%,-50%) rotate(-45deg) translateY(-.075em)</p>
+  <br />
+  <p><i class="i-a-measure fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-measure
+        &:before, &:after
+            left:50%
+            top:50%
+      
+        &:before
+            transform: translate(-50%,-50%) rotate(-45deg)
+            width: 1em
+            height: .3em
+            border: 1px solid
+
+        &:after
+            transform: translate(-50%,-50%) rotate(-45deg) translateY(-.075em)
+            width: 1px
+            height: .15em
+            background-color: currentColor
+            box-shadow: .16em 0,.32em 0,-.16em 0,-.32em 0
+
+</pre>
+</div>
