@@ -1,0 +1,21 @@
+﻿// 水杯 cup
+
+.i-a-cup
+    &:before
+        top: 50%
+        left: 20%
+        transform: translateY(-50%)
+        width: .5em
+        height: .8em
+        border: 1px solid
+        border-radius: 50% 50% 30% 30%/20%
+        background-image: radial-gradient(ellipse .25em .12em at center .12em, transparent calc(100% - 1px),currentColor 100% calc(100% + 1px),transparent)
+
+    &:after
+        top: 35%
+        left: 70%
+        width: .15em
+        height: .4em
+        border-radius: 0 30% 100% 0
+        border: 1px solid currentColor
+        border-left-color: transparent
