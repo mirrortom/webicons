@@ -36,6 +36,7 @@
     <None Include="publish.json" />
     <None Include="compilerconfig.json" />
     <None Include="stylus\base.styl" />
+    <None Include="stylus\icons\usb.styl" />
     <None Include="stylus\icons\cup.styl" />
     <None Include="stylus\icons\anglearr.styl" />
     <None Include="stylus\icons\headphone.styl" />
@@ -88,6 +89,7 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\usb.html" />
     <Content Include="doc\cup.html" />
     <Content Include="doc\measure.html" />
     <Content Include="doc\headphone.html" />

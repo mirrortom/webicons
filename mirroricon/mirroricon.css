@@ -871,3 +871,20 @@ i[class^=i-ac]:after {
   border: 1px solid currentColor;
   border-left-color: transparent;
 }
+.i-fv-usb:before,
+.i-fv-usb:after {
+  border: 1px solid;
+}
+.i-fv-usb:before {
+  width: 0.3em;
+  height: 0.2em;
+  padding-bottom: 0.06em;
+  border-bottom: none;
+  background-clip: content-box;
+  background-image: repeating-linear-gradient(90deg, transparent 0 20%, currentColor 20% 40%);
+}
+.i-fv-usb:after {
+  width: 0.4em;
+  height: 0.6em;
+  border-radius: 0 0 20% 20%;
+}
