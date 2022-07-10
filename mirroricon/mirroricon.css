@@ -888,3 +888,10 @@ i[class^=i-ac]:after {
   height: 0.6em;
   border-radius: 0 0 20% 20%;
 }
+.i-f-send:before {
+  width: 0.45em;
+  height: 0.9em;
+  clip-path: polygon(50% 0, 100% 100%, 50% 85%, 0% 100%);
+  background-color: currentColor;
+  transform: rotate(45deg);
+}

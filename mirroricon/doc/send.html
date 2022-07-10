@@ -1,0 +1,85 @@
+﻿<div class="doc-page">
+  <h2>发送</h2>
+  <p>发送,邮件发送图标</p>
+  <div class="mg-20">
+    <i class="i-f-send text-md"></i>
+    <i class="i-f-send text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-f-send</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>研究了一下这个图标,由4个顶点(ABCD)组成,可以用一个矩形为参考系,生成图标.</p>
+  <p>绿色矩形中,图形的ABD3个点位于矩形上,B和D就是矩形的顶点,A点是矩形上边的中点.</p>
+  <p>C点需要确定,观察得出,C点是矩形中线高的一点,它将中线分为2部分,那么就有一个比例 AC:高.</p>
+  <canvas id="canva1"></canvas>
+  <p>这样,要确定这个图形,给定矩形的高和宽(w,h),以及AC长度就可以了.</p>
+  <p>经过调整,最后确定的参数为: w : h = 0.45em : 0.9em , AC = h * 85%</p>
+  <p>polygon的点位,从尖顶点(A)开始,顺时针方向依次是: 50% 0, 100% 100%, 50% 85%, 0% 100%</p>
+  <br />
+  <p><i class="i-f-send fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-f-send
+        &:before
+            width: .45em
+            height: .9em
+            clip-path: polygon(50% 0,100% 100%,50% 85%,0% 100%)
+            background-color:currentColor
+            transform:rotate(45deg)
+
+</pre>
+  <script>
+    ((win) => {
+      canva1();
+      function canva1() {
+        let cav = win.cavlib('canva1').style();
+        let ctx = cav.ctx;
+        //
+        let w = 160, h = 160;
+        ctx.canvas.width = ctx.canvas.height = w;
+        ctx.font = '18px serial';
+        // 坐标轴
+        cav.xyAxis();
+
+        // 矩形宽,高
+        let rh = h * 0.9;// 为容器高度的0.9倍
+        let rw = rh / 2;// 高:宽=2:1
+        let btheight = rh * 0.15;// 底边到凹顶点距离
+
+        // 矩形中点位于坐标系原点
+        ctx.translate(w / 2, h / 2);
+
+        // 绘画矩形
+        ctx.beginPath();
+        ctx.rect(-rw / 2, -rh / 2, rw, rh);
+        ctx.strokeStyle = 'green';
+        ctx.stroke();
+
+        // 顶点坐标,顶点开始,顺时针方向依次
+        let points = [{ x: 0, y: -rh / 2 }, { x: rw / 2, y: rh / 2 },
+        { x: 0, y: rh / 2 - btheight }, { x: -rw / 2, y: rh / 2 }];
+
+        // 绘画
+        ctx.beginPath();
+        for (var i = 0, len = points.length; i < len; i++) {
+          ctx.lineTo(points[i].x, points[i].y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = 'skyblue';
+        ctx.stroke();
+        // 标注
+        ctx.beginPath();
+        ctx.fillStyle = 'blue';
+        ctx.fillText('A', points[0].x + 10, points[0].y + 10);
+        ctx.fillText('B', points[1].x + 10, points[1].y);
+        ctx.fillText('C', points[2].x, points[2].y);
+        ctx.fillText('D', points[3].x - 20, points[3].y);
+
+      }
+    })(window);
+  </script>
+</div>
