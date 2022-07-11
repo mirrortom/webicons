@@ -1,0 +1,33 @@
+﻿<div class="doc-page">
+  <h2>水</h2>
+  <p>水,水滴</p>
+  <div class="mg-20">
+    <i class="i-a-water text-md"></i>
+    <i class="i-a-water text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-water</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>水滴,模仿水滴其中一种形状,右下角突出白色部分表示光泽</p>
+  <p>使用边长0.6em(容器60%)的正方形盒模型,3边圆角,一边直角,再旋转45度,将直角竖直向上.水平居中,垂直方向上近似居中(通过观察调整,未计算).</p>
+  <p>光泽部分是阴影的空隙,盒模型有2个内阴影,分别从上方和下方开始,上方走过0.4em距离,下方0.1em距离,这样还差0.1em空隙就是光泽部分.</p>
+  <br />
+  <p><i class="i-a-water fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-water
+        &:before
+            top: 25%
+            left: 50%
+            transform: translateX(-50%) rotate(45deg)
+            width: .6em
+            height: .6em
+            border-radius: 0 50% 50%
+            box-shadow: inset -.1em 0,inset .4em 0
+
+</pre>
+</div>
