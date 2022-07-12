@@ -17,4 +17,19 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 </pre>
+  <script>
+    ((win) => {
+      canva1();
+      function canva1() {
+        let cav = win.cavlib('canva1').style();
+        let ctx = cav.ctx;
+        //
+        let w = 160, h = 160;
+        ctx.canvas.width = ctx.canvas.height = w;
+        ctx.font = '18px serial';
+        // 坐标轴
+        cav.xyAxis();
+      }
+    })(window);
+  </script>
 </div>

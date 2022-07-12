@@ -36,6 +36,7 @@
     <None Include="publish.json" />
     <None Include="compilerconfig.json" />
     <None Include="stylus\base.styl" />
+    <None Include="stylus\icons\heart.styl" />
     <None Include="stylus\icons\water.styl" />
     <None Include="stylus\icons\send.styl" />
     <None Include="stylus\icons\usb.styl" />
@@ -91,6 +92,7 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\heart.html" />
     <Content Include="doc\water.html" />
     <Content Include="doc\send.html" />
     <Content Include="doc\usb.html" />

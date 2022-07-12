@@ -1,0 +1,132 @@
+﻿<div class="doc-page">
+  <h2>心</h2>
+  <p>心形,红桃</p>
+  <div class="mg-20">
+    <i class="i-a-heart text-md"></i>
+    <i class="i-a-heart text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-heart</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>网上查看了一些心形状的实现,由1个正方形(蓝色的旋转了45度)和2个圆形(红色)实现.圆心位于正方形边的中点上,直径等于边长.</p>
+  <p>2个圆用:before和它的阴影实现,正方形用:after实现.需要计算top和left定位数据,让心形居中于容器.</p>
+  <p>设定正方形边长为容器的50%即 L = 0.5em.那么,圆的直径也是0.5em.</p>
+  <canvas id="canva1"></canvas>
+  <br />
+  <p>left值计算.水平居中位置</p>
+  <p>对于正方形,直接水平居中就可以了.</p>
+  <p>2个圆形看成一个图形,它的宽度是线段AB的长度, AB = AO1 + O1O2 + O2B</p>
+  <p>而AO1+O2B就是圆直径(L), 故 AB = L + O1O2 , 而O1O2和正方形上顶点组成了一个等腰直角三角形,且腰长是 L/2,故 O1O2= L/2 * sqrt(2) = 0.3535</p>
+  <p>AB = L + L/2 * sqrt(2) = 0.5 + 0.3535 = 0.8535 . 定位left = (1 - 0.8535)/2 = 0.07325 .</p>
+  <p>圆形:before的box-shadow水平偏移量是AE的长度,AE = AO1 + O1E = AO1 + O1O2 - EO2 = O1O2 = 0.3535</p>
+  <p>top值计算,垂直居中位置</p>
+  <p>心形整体高度CD的长度, CD = CF + FD, FD是正方形对角线长度的一半, CF = CO1 + O1F, 而O1F是正方形左边与XY轴围城的等腰直角三角形的中线,所以 O1F = 对角线长度/4.</p>
+  <p>CD = L/2 + (L * 1.414) / 2 + (L * 1.414) / 4 = L * (1/2 + 1.414/2 + 1.414/4) = 0.78025 .定位top = (1 - 0.78025)/2 = 0.109875</p>
+  <p>对于圆形,top值就是10.98%.</p>
+  <p>对于正方形,先求出上顶点到容器上边距离,squareTop = top(C点到容器上边距离) + CD - 对角线长度 = 0.109875 + 0.78025 - 0.5*1.414 = 0.183125</p>
+  <p>那么,求边长L(0.5em)正方形top值.使它旋转45度后,上顶点离容器的距离是0.183125</p>
+  <p>根据"直角箭头"图标的经验,这个值是: 0.183125 + L/2 * (1.414 - 1) = 0.286625</p>
+  <br />
+  <p><i class="i-a-heart fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-heart
+        &:before,&:after
+            width: .5em
+            height: .5em
+            background-color: currentColor
+
+        &:before
+            top: 10.98%
+            left: 7.33%
+            border-radius: 50%
+            box-shadow: .35em 0
+ 
+        &:after
+            top:28.66%
+            left: 50%
+            transform: translateX(-50%) rotate(45deg)
+
+</pre>
+  <script>
+    ((win) => {
+      canva1();
+      function canva1() {
+        let cav = win.cavlib('canva1').style();
+        let ctx = cav.ctx;
+        //
+        let w = 200, h = 200;
+        ctx.canvas.width = ctx.canvas.height = w;
+        ctx.font = '18px serial';
+        // 坐标轴
+        cav.xyAxis();
+
+        // 正方形边长
+        let len = w * 0.5;
+
+        // 绘画
+        ctx.translate(w / 2, h / 2);
+        //
+        ctx.save();
+        ctx.rotate(Math.PI / 4);
+        // 正方形中心位于原点,旋转45度
+        ctx.beginPath();
+        ctx.strokeStyle = 'blue';
+        ctx.rect(-len / 2, -len / 2, len, len);
+        ctx.stroke();
+
+        // 上方2个边上的圆形
+        ctx.strokeStyle = ctx.fillStyle = 'red';
+        ctx.beginPath();
+        ctx.arc(0, -len / 2, len / 2, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(-len / 2, 0, len / 2, 0, 2 * Math.PI);
+        ctx.stroke();
+        // 圆心点
+        ctx.beginPath();
+        ctx.arc(0, -len / 2, 4, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(-len / 2, 0, 4, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.restore();
+
+        // 心形宽度: 2圆形圆心连线的延长线到圆弧的交点,有2个
+        let cirY = len * Math.sqrt(2) / 4;
+        let cirX = cirY + len / 2;
+        ctx.beginPath();
+        ctx.moveTo(-cirX, -cirY);
+        ctx.lineTo(cirX, -cirY);
+        ctx.stroke();
+        // 心形高度: 圆形最上部到正方形下方顶角垂直距离
+        let cirTopY = cirY + len/2;
+        let sqrBottomY = cirY * 2;
+        ctx.beginPath();
+        ctx.moveTo(-cirY, -cirTopY);
+        ctx.lineTo(-cirY, sqrBottomY);
+        ctx.stroke();
+
+        // 标注点.
+        // 2圆组合图形最左最右点
+        ctx.beginPath();
+        ctx.fillText('A', -cirX - 10, -cirY - 5);
+        ctx.fillText('B', cirX, -cirY - 5);
+        // 2圆心
+        ctx.fillText('O1', -cirY - 15, -cirY - 5);
+        ctx.fillText('O2', cirY, -cirY - 5);
+        // 左圆水平直径与右圆在左圆内部的交点E
+        ctx.fillText('E', -cirY + 20, -cirY + 20);
+        // 左圆竖直直径与X轴交点
+        ctx.fillText('F', -cirY+5, 8);
+        // 高度,高低点
+        ctx.fillText('C', -cirY, -cirTopY);
+        ctx.fillText('D', -cirY, sqrBottomY+15);
+      }
+    })(window);
+  </script>
+</div>
