@@ -1,0 +1,21 @@
+﻿// 温度计
+
+.i-a-thermometer
+    background-image: radial-gradient(circle .15em at 50% 80%,currentColor 0 96%,transparent)
+
+    &:before,&:after
+        left: 50%
+        width: @css{max(.1em,3px)}
+        transform: translateX(-50%)
+
+    &:before
+        top: 10%
+        height: .6em
+        border: 1px solid
+        border-radius: .1em .1em 0 0
+        border-bottom: .25em solid
+ 
+    &:after
+        top: 20%
+        height: 1px
+        box-shadow: .15em 0, .15em .1em,.15em .2em,.15em .3em, -.15em .05em,-.15em .15em, -.15em .25em,-.15em .35em
