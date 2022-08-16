@@ -942,3 +942,24 @@ i[class^=i-ac]:after {
   height: 1px;
   box-shadow: 0.15em 0, 0.15em 0.1em, 0.15em 0.2em, 0.15em 0.3em, -0.15em 0.05em, -0.15em 0.15em, -0.15em 0.25em, -0.15em 0.35em;
 }
+.i-a-link {
+  background-clip: content-box;
+  padding: 0 0.3em;
+  background-image: linear-gradient(transparent calc(50% - 0.5px), currentColor calc(50% + 0.5px), transparent 50%);
+}
+.i-a-link:before,
+.i-a-link:after {
+  top: 0.35em;
+  width: 0.4em;
+  height: 0.3em;
+  border: 1px solid;
+  border-radius: 0.15em;
+}
+.i-a-link:before {
+  left: 0.1em;
+  border-right-color: transparent;
+}
+.i-a-link:after {
+  right: 0.1em;
+  border-left-color: transparent;
+}
