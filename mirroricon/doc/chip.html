@@ -1,0 +1,37 @@
+﻿<div class="doc-page">
+  <h2>芯片</h2>
+  <p>集成电路芯片</p>
+  <div class="mg-20">
+    <i class="i-ac-chip text-md"></i>
+    <i class="i-ac-chip text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-ac-chip</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>芯片图标显示封装块和引脚2个部分.</p>
+  <p>封装块位于容器中间,长宽是容器的60%.由容器的背景颜色实现,剪切范围是盒模型内容区.</p>
+  <p>引脚用:after和:before及其阴影实现,长度是容器的80%,水平垂直居中.3个引脚均分封装块为4部分,即封装块的25%,50%,75%这3个位置.</p>
+  <br />
+  <p><i class="i-ac-chip fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-ac-chip
+        background-clip: content-box
+        padding: .2em
+        &,&:before,&:after
+            background-color: currentColor
+        &:before
+            width: .8em
+            height: 1px
+            box-shadow: 0 .15em,0 -.15em
+        &:after
+            width: 1px
+            height: .8em
+            box-shadow: .15em 0,-.15em 0
+
+</pre>
+</div>

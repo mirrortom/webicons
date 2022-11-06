@@ -963,3 +963,22 @@ i[class^=i-ac]:after {
   right: 0.1em;
   border-left-color: transparent;
 }
+.i-ac-chip {
+  background-clip: content-box;
+  padding: 0.2em;
+}
+.i-ac-chip,
+.i-ac-chip:before,
+.i-ac-chip:after {
+  background-color: currentColor;
+}
+.i-ac-chip:before {
+  width: 0.8em;
+  height: 1px;
+  box-shadow: 0 0.15em, 0 -0.15em;
+}
+.i-ac-chip:after {
+  width: 1px;
+  height: 0.8em;
+  box-shadow: 0.15em 0, -0.15em 0;
+}
