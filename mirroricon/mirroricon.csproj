@@ -36,6 +36,7 @@
     <None Include="publish.json" />
     <None Include="compilerconfig.json" />
     <None Include="stylus\base.styl" />
+    <None Include="stylus\icons\camera.styl" />
     <None Include="stylus\icons\chip.styl" />
     <None Include="stylus\icons\link.styl" />
     <None Include="stylus\icons\thermometer.styl" />
@@ -95,6 +96,7 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\camera.html" />
     <Content Include="doc\chip.html" />
     <Content Include="doc\link.html" />
     <Content Include="doc\thermometer.html" />

@@ -1,0 +1,25 @@
+﻿// 照相机
+
+.i-a-camera[class^=i-]
+    height: .75em
+    margin: .2em 0 .05em
+    border: 1px solid
+    border-radius: .08em
+    background-image: radial-gradient(circle .04em at 85% 15%,currentColor 0 100%,transparent calc(100% + 1px))
+
+    &:before
+        top: 55%
+        left: 50%
+        width: 1em
+        height: .375em
+        background-image: radial-gradient(circle .18em at 40% 50%,transparent 0 70%,currentColor calc(70% + 1px),transparent calc(70% + 2px) 100%,currentColor calc(100% + 1px))
+        transform: translate(-50%,-50%)
+ 
+    &:after
+        top: calc(-.15em - 1px)
+        left: 15%
+        padding: 0 .1em
+        border-style: solid
+        border-color: transparent
+        border-width: 0 .1em .15em
+        border-bottom-color: currentColor

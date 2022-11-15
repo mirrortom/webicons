@@ -1,0 +1,116 @@
+﻿<div class="doc-page">
+  <h2>照相机</h2>
+  <p>照相机图标,常见数码相机.</p>
+  <div class="mg-20">
+    <i class="i-a-camera text-md"></i>
+    <i class="i-a-camera text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+
+  &lt;i class="<b>i-a-camera</b>"&gt;&lt;/i&gt;
+
+</pre>
+  <br />
+  <p>相机图标设计3个部分,中间的镜头圈圈,上方的快门按钮,右上角的闪光灯.图标展示相机正面.</p>
+  <p>机身比例4:3,用图标容器i,宽高1em:0.75em.图标高度不再是1em了,为了占地1emX1em,设置了上下margin.</p>
+  <p>中间镜头所在的矩形是:before,高度为0.375em(机身的50%),宽度同机身.镜头圈圈是:before的径向渐变,圆心点位于40%位置,是2个圆形,外侧圆直径同矩形高度,内侧为外侧的70%.top定位在机身中间55%.</p>
+  <p>快门按钮是:after的bottom边框,宽为0.4em(机身长度40%),高度为0.15em(机身高度的20%),边框形状为梯形,上底为0.2em(下底的50%).left定位在机身左起15%的位置.top定位在机身上方,贴着机身上边.</p>
+  <p>闪光灯是图标容器的一个径向渐变,中心点位于机身的右上角(85%,15%),直径为.08em(机身宽度的8%)</p>
+  <canvas id="canva1"></canvas>
+  <br />
+  <p><i class="i-a-camera fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+
+    .i-a-camera[class^=i-]
+        height: .75em
+        margin: .2em 0 .05em
+        border: 1px solid
+        border-radius: .08em
+        background-image: radial-gradient(circle .04em at 85% 15%,currentColor 0 100%,transparent calc(100% + 1px))
+
+        &:before
+            top: 55%
+            left: 50%
+            width: 1em
+            height: .375em
+            background-image: radial-gradient(circle .18em at 40% 50%,transparent 0 70%,currentColor calc(70% + 1px),
+                                              transparent calc(70% + 2px) 100%,currentColor calc(100% + 1px))
+            transform: translate(-50%,-50%)
+ 
+        &:after
+            top: calc(-.15em - 1px)
+            left: 15%
+            padding: 0 .1em
+            border-style: solid
+            border-color: transparent
+            border-width: 0 .1em .15em
+            border-bottom-color: currentColor
+
+</pre>
+  <script>
+    ((win) => {
+      canva1();
+      function canva1() {
+        let cav = win.cavlib('canva1').style();
+        let ctx = cav.ctx;
+        //
+        ctx.font = '14px arial';
+        //
+        cav.xyAxis();
+        //
+        // 机身
+        let w = 120, h = w * 75 / 100;
+        ctx.translate((cav.width - w) / 2, (cav.height - h) / 2);
+        cav.pointChar(0, 0, '(0,0)', 160);
+        //
+        cav.p2Rect(0, 0, w, h, 1);
+        // 闪光
+        let lcolor = 'green', lx = w * 85 / 100, ly = h * 15 / 100;
+        ctx.save();
+        ctx.setLineDash([4, 4]);
+        cav.line(0, ly, lx, ly, lcolor);
+        cav.line(lx, 0, lx, ly, lcolor);
+        cav.pointTag(lx, ly, lcolor);
+        ctx.restore();
+        cav.pointChar(lx, ly, '(85%,15%)', 0, lcolor, 60);
+        // 镜头
+        let ccolor = 'blue', cw = w, ch = h / 2, ctop = (h - ch) / 2 + h * 5 / 100;
+        ctx.strokeStyle = ccolor;
+        let ccir = ch / 2, ccir2 = ccir * 70 / 100;
+        // 横线
+        cav.line(0, ctop, cw, ctop, ccolor);
+        cav.line(0, ctop + ch, cw, ctop + ch, ccolor);
+        // 竖线
+        cav.line(cw * 40 / 100 - ch / 2, ctop, cw * 40 / 100 - ch / 2, h, ccolor);
+        cav.line(cw * 40 / 100 + ch / 2, ctop, cw * 40 / 100 + ch / 2, h, ccolor);
+        // 外圈
+        ctx.beginPath();
+        ctx.arc(cw * 40 / 100, ctop + ch / 2, ch / 2, 0, Math.PI * 2);
+        ctx.stroke();
+        // 内圈
+        ctx.beginPath();
+        ctx.arc(cw * 40 / 100, ctop + ch / 2, ch / 2 * 70 / 100, 0, Math.PI * 2);
+        ctx.stroke();
+        // 圆心
+        let cirx = cw * 40 / 100, ciry = ctop + ch / 2;
+        cav.pointTag(cirx, ciry, ccolor);
+        cav.line(cirx, ciry, cirx, h + 10, ccolor);
+        cav.pointChar(cw * 40 / 100, h, '(40%,50%)', 90, ccolor);
+        // 快门
+        let bcolor = 'red', bw = w * 40 / 100, bh = h * 20 / 100, bx = w * 15 / 100;
+        ctx.beginPath();
+        ctx.moveTo(bx, 0);
+        ctx.lineTo(bx + bw, 0);
+        ctx.lineTo(bx + bw - bw / 4, -bh);
+        ctx.lineTo(bx + bw / 4, -bh);
+        ctx.closePath();
+        ctx.strokeStyle = bcolor;
+        ctx.stroke();
+        cav.pointTag(bx, 0, bcolor);
+        cav.pointChar(bx, 0, '(15%)', 270, bcolor);
+        //
+      }
+    })(window);
+  </script>
+</div>
