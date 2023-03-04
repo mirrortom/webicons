@@ -6,9 +6,7 @@
     <i class="i-a-ball8 text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-ball8</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-ball8</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>球体用径向渐变实现,中心空白圆的圆心坐标在(left:50%,top:40%)位置,直径是容器的30%.空白圆到黑色背景之间有.02em的渐变过渡,为了显得平滑.</p>
@@ -18,26 +16,24 @@
   <p><i class="i-a-ball8 fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-ball8
+border-radius: 50%
+background-image: radial-gradient(circle at 50% .4em,transparent .3em, currentColor .32em)
 
-    .i-a-ball8
-        border-radius: 50%
-        background-image: radial-gradient(circle at 50% .4em,transparent .3em, currentColor .32em)
+&:before,&:after
+    left: 50%
+    border:.03em solid
+    border-radius:50%
+    transform: translateX(-50%)
 
-        &:before,&:after
-            left: 50%
-            border:.03em solid
-            border-radius:50%
-            transform: translateX(-50%)
+&:before
+    top:.24em
+    width:.16em
+    height:.16em
 
-        &:before
-            top:.24em
-            width:.16em
-            height:.16em
- 
-        &:after
-            top: .38em
-            width: .2em
-            height: .2em
-
+&:after
+    top: .38em
+    width: .2em
+    height: .2em
 </pre>
 </div>

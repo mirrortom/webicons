@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-ac-powonff</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-ac-powonff</b>"&gt;&lt;/i&gt;
 </pre>
   <style>
     .powonffdemo {
@@ -67,20 +65,18 @@
   <p><i class="i-ac-powonff fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-ac-powonff
+&:before
+    width: .8em
+    height: .8em
+    border: .08em solid currentColor
+    border-radius: 50%
+    border-top-color: transparent
 
-    .i-ac-powonff
-        &:before
-            width: .8em
-            height: .8em
-            border: .08em solid currentColor
-            border-radius: 50%
-            border-top-color: transparent
-
-        &[class^=i-]:after
-            top: 30%
-            width: .08em
-            height: .5em
-            background-color: currentColor
-
+&[class^=i-]:after
+    top: 30%
+    width: .08em
+    height: .5em
+    background-color: currentColor
 </pre>
 </div>

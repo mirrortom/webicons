@@ -6,9 +6,7 @@
     <i class="i-a-envelop text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-envelop</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-envelop</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <style>
@@ -63,26 +61,24 @@
   <p><i class="i-a-envelop fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-envelop
+&:before,&:after
+    left: 50%
+    width: .8em
+    border: 1px solid currentColor
 
-    .i-a-envelop
-        &:before,&:after
-            left: 50%
-            width: .8em
-            border: 1px solid currentColor
+&:before
+    top: 50%
+    height: .6em
+    border-radius:.04em
+    transform: translate(-50%,-50%)
 
-        &:before
-            top: 50%
-            height: .6em
-            border-radius:.04em
-            transform: translate(-50%,-50%)
-
-        &:after
-            top: calc(50% - .26em)
-            width: .566em
-            height: .566em
-            border-left:none
-            border-top:none
-            transform: translate(-50%,-50%) scaleY(.75) rotate(45deg)
-
+&:after
+    top: calc(50% - .26em)
+    width: .566em
+    height: .566em
+    border-left:none
+    border-top:none
+    transform: translate(-50%,-50%) scaleY(.75) rotate(45deg)
 </pre>
 </div>

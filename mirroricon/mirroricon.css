@@ -1006,3 +1006,32 @@ i[class^=i-ac]:after {
   border-width: 0 0.1em 0.15em;
   border-bottom-color: currentColor;
 }
+.i-ac-sight {
+  border-radius: 50%;
+  background-image: radial-gradient(circle 0.06em, currentColor 0 100%, transparent calc(100% + 1px)), linear-gradient(90deg, transparent calc(50% - 0.5px), currentColor calc(50% + 0.5px), transparent 50%), linear-gradient(transparent calc(50% - 0.5px), currentColor calc(50% + 0.5px), transparent 50%);
+}
+.i-ac-sight,
+.i-ac-sight:before,
+.i-ac-sight:after {
+  border: 1px solid;
+}
+.i-ac-sight:before {
+  width: 0.5em;
+  height: 0.12em;
+  border-bottom: none;
+  border-top: none;
+}
+.i-ac-sight:after {
+  width: 0.12em;
+  height: 0.5em;
+  border-left: none;
+  border-right: none;
+}
+.i-f-pill:before {
+  width: 0.3em;
+  height: 0.9em;
+  border: 1px solid;
+  border-radius: 0.3em;
+  transform: rotate(45deg);
+  background-image: linear-gradient(transparent 0 50%, currentColor 50%);
+}

@@ -6,9 +6,7 @@
     <i class="i-a-hierarchy text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-hierarchy</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-hierarchy</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>图标结构像树,有一个根节点.节点是方块,关系是线条.</p>
@@ -18,24 +16,22 @@
   <p><i class="i-a-hierarchy fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-hierarchy
+background-image: linear-gradient(90deg,transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%);
 
-    .i-a-hierarchy
-        background-image: linear-gradient(90deg,transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%);
+&:before
+    left: 0
+    top: 0
+    width: .2em
+    height: .2em
+    box-shadow: .4em 0,.4em .4em,0 .8em,.4em .8em,.8em .8em
 
-        &:before
-            left: 0
-            top: 0
-            width: .2em
-            height: .2em
-            box-shadow: .4em 0,.4em .4em,0 .8em,.4em .8em,.8em .8em
-
-        &:after
-            top: .5em
-            left: .1em
-            width: .8em
-            height: .3em
-            border: 1px solid
-            border-bottom: none
-
+&:after
+    top: .5em
+    left: .1em
+    width: .8em
+    height: .3em
+    border: 1px solid
+    border-bottom: none
 </pre>
 </div>

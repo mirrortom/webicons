@@ -6,9 +6,7 @@
     <i class="i-a-excel text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-excel</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-excel</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>和word一样,图标设计是模仿excel文件的图标.左上方一个X,右边和下方被表格围绕.</p>
@@ -20,54 +18,50 @@
   <p>将X看作是多边形,从左上角开始(1),从外围到内围,最后到左上角的右边(12),结束.这12个点围起来的形状就是X.</p>
   <p>观察了X字体比例,为7:9,但实际上选择了1:1的正方形.以下是点坐标和矩形的关系数据:</p>
   <pre class="bg-gray-lt">
+// 1. 以矩形为坐标系,以左上角(1)点为坐标系(0,0)点,下为y轴正方向,右为x轴正方向. 
+// 2. X形的点位坐标数据: 数据是百分比位置.
 
-    // 1. 以矩形为坐标系,以左上角(1)点为坐标系(0,0)点,下为y轴正方向,右为x轴正方向. 
-    // 2. X形的点位坐标数据: 数据是百分比位置.
-    
-    // xblod: X的线条百分比厚度.例如 8, 表示厚度是 8%, 矩形宽度 * 8%
+// xblod: X的线条百分比厚度.例如 8, 表示厚度是 8%, 矩形宽度 * 8%
 
-    // 1,2,3
-          [0, 0], [50 - xblod / 2, 50], [0, 100],
+// 1,2,3
+  [0, 0], [50 - xblod / 2, 50], [0, 100],
 
-    // 3,4,6
-          [xblod, 100], [50, 50 + xblod / 2], [100 - xblod, 100],
+// 3,4,6
+  [xblod, 100], [50, 50 + xblod / 2], [100 - xblod, 100],
 
-    // 7,8,9
-          [100, 100], [50 + xblod/2, 50], [100, 0],
+// 7,8,9
+  [100, 100], [50 + xblod/2, 50], [100, 0],
 
-    // 10,11,12
-          [100 - xblod, 0], [50, 50 - xblod / 2], [xblod, 0]
+// 10,11,12
+  [100 - xblod, 0], [50, 50 - xblod / 2], [xblod, 0]
 
-    // 例如第2点 [50 - xblod / 2, 50],表示这点在x轴的(50 - xblod / 2)%处,y轴的50%处.假如矩形为60px X 60px,xblod为10,那么坐标为
-    // (60*45%,60*50%) = (27px, 30px)
-
+// 例如第2点 [50 - xblod / 2, 50],表示这点在x轴的(50 - xblod / 2)%处,y轴的50%处.假如矩形为60px X 60px,xblod为10,那么坐标为
+// (60*45%,60*50%) = (27px, 30px)
 </pre>
   <br />
   <p><i class="i-a-excel fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-excel
+&:before
+    top: .1em
+    left: .1em
+    width: .45em
+    height: .45em
+    background-color: currentColor
+    clip-path: polygon(0% 0%,35% 50%,0% 100%,
+                      30% 100%,50% 65%,70% 100%,
+                      100% 100%,65% 50%,100% 0%,
+                      70% 0%,50% 35%,30% 0%)
 
-    .i-a-excel
-        &:before
-            top: .1em
-            left: .1em
-            width: .45em
-            height: .45em
-            background-color: currentColor
-            clip-path: polygon(0% 0%,35% 50%,0% 100%,
-                              30% 100%,50% 65%,70% 100%,
-                              100% 100%,65% 50%,100% 0%,
-                              70% 0%,50% 35%,30% 0%)
- 
-        &:after
-            top: 0
-            left: 0
-            width: .2em
-            height: .1em
-            box-shadow: .7em 0.08em,.7em 0.26em,.7em 0.44em,
-                        .1em 0.62em,.4em 0.62em,.7em 0.62em,
-                        .1em 0.80em,.4em 0.80em,.7em 0.80em
-
+&:after
+    top: 0
+    left: 0
+    width: .2em
+    height: .1em
+    box-shadow: .7em 0.08em,.7em 0.26em,.7em 0.44em,
+                .1em 0.62em,.4em 0.62em,.7em 0.62em,
+                .1em 0.80em,.4em 0.80em,.7em 0.80em
 </pre>
   <script>
     ((win) => {

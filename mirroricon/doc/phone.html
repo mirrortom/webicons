@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-phone</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-phone</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>手机样子变化太大了,老式的苹果机下方有个home键.后来又是全面屏了.思考一番无结果,就体现一个home键.</p>
@@ -19,26 +17,24 @@
   <p><i class="i-a-phone fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-phone
+&:before, &:after
+    left:50%
+    transform: translate(-50%,-50%)
 
-    .i-a-phone
-        &:before, &:after
-            left:50%
-            transform: translate(-50%,-50%)
+&:before
+    top: 50%
+    width: .6em
+    height: 1em
+    border: 1px solid
+    border-radius: .06em
+    box-shadow: inset 0 .04em
 
-        &:before
-            top: 50%
-            width: .6em
-            height: 1em
-            border: 1px solid
-            border-radius: .06em
-            box-shadow: inset 0 .04em
-
-        &:after
-            top: 92%
-            width: .6em
-            height: .16em
-            border-radius:0 0 .06em .06em
-            background-image:radial-gradient(circle .05em,transparent 96%,currentColor)
-
+&:after
+    top: 92%
+    width: .6em
+    height: .16em
+    border-radius:0 0 .06em .06em
+    background-image:radial-gradient(circle .05em,transparent 96%,currentColor)
 </pre>
 </div>

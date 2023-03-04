@@ -6,9 +6,7 @@
     <i class="i-a-star4 text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-star4</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-star4</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>4角星图标由2个菱形拼合而成.</p>
@@ -21,21 +19,19 @@
   <p><i class="i-a-star4 fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-star4
+&:before,&:after
+    left: 0
+    top: 0
+    width: 1em
+    height: 1em
+    background-color: currentColor
 
-    .i-a-star4
-        &:before,&:after
-            left: 0
-            top: 0
-            width: 1em
-            height: 1em
-            background-color: currentColor
+&:before
+    clip-path: polygon(50% 0,75% 50%,50% 100%,25% 50%)
 
-        &:before
-            clip-path: polygon(50% 0,75% 50%,50% 100%,25% 50%)
-
-        &:after
-            clip-path: polygon(50% 25%,100% 50%,50% 75%,0 50%)
-
+&:after
+    clip-path: polygon(50% 25%,100% 50%,50% 75%,0 50%)
 </pre>
   <script>
     ((win) => {

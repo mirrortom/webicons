@@ -6,9 +6,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-    &lt;i class="<b>i-ac-plus</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-ac-plus</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <style scoped>
@@ -47,35 +45,31 @@
     <i class="plusdemo"></i>
   </p>
   <pre class="bg-gray-lt">
+display: inline-block;
+  width: 100px;
+  height: 100px;
 
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      
-      // 横线
-      :before,:after
-          width:100px;
-          height:10px;
+  // 横线
+  :before,:after
+  width:100px;
+  height:10px;
 
-      // 竖线
-      :after
-          transform: rotate(90deg)
-
+  // 竖线
+  :after
+  transform: rotate(90deg)
 </pre>
   <br />
   <p><i class="i-ac-plus fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-  
-    .i-ac-plus
-    
-        &:before, &:after
-            background-color: currentColor
-            width: 1em
-            height: @css{max(.1em,2px)}
+.i-ac-plus
 
-        &[class^=i-]:after
-            transform: translate(-50%,-50%) rotate(90deg)
+&:before, &:after
+    background-color: currentColor
+    width: 1em
+    height: @css{max(.1em,2px)}
 
+&[class^=i-]:after
+    transform: translate(-50%,-50%) rotate(90deg)
 </pre>
 </div>

@@ -6,9 +6,7 @@
     <i class="i-a-word text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-word</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-word</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>图标设计是模仿word文件的图标.左上方一个W,右边和下方被文字围绕.</p>
@@ -20,59 +18,55 @@
   <p>将W看作是多边形,从左上角开始(1),从外围到内围,最后到左上角的右边(13),结束.这13个点围起来的形状就是W.</p>
   <p>观察了W字体比例,选择width:height = 6:5 的矩形作为W的参考框架,线的厚度为矩形的16%, 13个点的坐标,和矩形的关系数据如下:</p>
   <pre class="bg-gray-lt">
+// 1. 以矩形为坐标系,以左上角(1)点为坐标系(0,0)点,下为y轴正方向,右为x轴正方向. 
+// 2. W形的点位坐标数据: 数据是百分比位置.
 
-    // 1. 以矩形为坐标系,以左上角(1)点为坐标系(0,0)点,下为y轴正方向,右为x轴正方向. 
-    // 2. W形的点位坐标数据: 数据是百分比位置.
-    
-    // wblod: W的线条百分比厚度.例如 8, 表示厚度是 8%, 矩形宽度 * 8%
+// wblod: W的线条百分比厚度.例如 8, 表示厚度是 8%, 矩形宽度 * 8%
 
-    // 1,2,3
-          [0, 0], [25, 100], [25 + wblod, 100],
+// 1,2,3
+  [0, 0], [25, 100], [25 + wblod, 100],
 
-    // 3,4,6
-          [50, 2 * wblod], [75 - wblod, 100], [75, 100],
+// 3,4,6
+  [50, 2 * wblod], [75 - wblod, 100], [75, 100],
 
-    // 7,8,9
-          [100, 0], [100 - wblod, 0], [75 - wblod / 2, 100 - 2 * wblod],
+// 7,8,9
+  [100, 0], [100 - wblod, 0], [75 - wblod / 2, 100 - 2 * wblod],
 
-    // 10,11,12
-          [50 + wblod / 2, 0], [50 - wblod / 2, 0], [25 + wblod / 2, 100 - 2 * wblod],
+// 10,11,12
+  [50 + wblod / 2, 0], [50 - wblod / 2, 0], [25 + wblod / 2, 100 - 2 * wblod],
 
-    // 13
-          [wblod, 0]
+// 13
+  [wblod, 0]
 
-    // 例如第2点 [25,100],表示这点在x轴的25%处,y轴的100%处.假如矩形为60px X 50px,那么坐标为
-    // (60*25%,50*100%) = (15px, 50px)
-
+// 例如第2点 [25,100],表示这点在x轴的25%处,y轴的100%处.假如矩形为60px X 50px,那么坐标为
+// (60*25%,50*100%) = (15px, 50px)
 </pre>
   <br />
   <p><i class="i-a-word fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-word
+&:before
+    top: .1em
+    left: .05em
+    width: .54em
+    // width * 5/6
+    height: .45em
+    background-color: currentColor
+    clip-path: polygon(0% 0%,25% 100%,41% 100%,
+                      50% 32%,59% 100%,75% 100%,
+                      100% 0%,84% 0%,67% 68%,
+                      58% 0%,42% 0%,33% 68%,
+                      16% 0%)
 
-    .i-a-word
-        &:before
-            top: .1em
-            left: .05em
-            width: .54em
-            // width * 5/6
-            height: .45em
-            background-color: currentColor
-            clip-path: polygon(0% 0%,25% 100%,41% 100%,
-                              50% 32%,59% 100%,75% 100%,
-                              100% 0%,84% 0%,67% 68%,
-                              58% 0%,42% 0%,33% 68%,
-                              16% 0%)
- 
-        &:after
-            top: 0
-            left: 0
-            width: .3em
-            height: .08em
-            box-shadow: .6em 0.10em,.6em 0.28em,.6em 0.46em,
-                        .1em 0.64em,.35em 0.64em,.6em 0.64em,
-                        .1em 0.82em,.35em 0.82em,.6em 0.82em
-
+&:after
+    top: 0
+    left: 0
+    width: .3em
+    height: .08em
+    box-shadow: .6em 0.10em,.6em 0.28em,.6em 0.46em,
+                .1em 0.64em,.35em 0.64em,.6em 0.64em,
+                .1em 0.82em,.35em 0.82em,.6em 0.82em
 </pre>
   <script>
     ((win) => {

@@ -6,9 +6,7 @@
     <i class="i-fv-usb text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-fv-usb</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-fv-usb</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>参考USB盘的样子,分为插口和盘体2部分</p>
@@ -19,22 +17,20 @@
   <p><i class="i-fv-usb fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-fv-usb
+&:before,&:after
+    border: 1px solid
+&:before
+    width: .3em
+    height: .2em
+    padding-bottom:.06em
+    border-bottom: none
+    background-clip: content-box
+    background-image:repeating-linear-gradient(90deg,transparent 0 20%,currentColor 20% 40%)
 
-    .i-fv-usb
-        &:before,&:after
-            border: 1px solid
-        &:before
-            width: .3em
-            height: .2em
-            padding-bottom:.06em
-            border-bottom: none
-            background-clip: content-box
-            background-image:repeating-linear-gradient(90deg,transparent 0 20%,currentColor 20% 40%)
-
-        &:after
-            width: .4em
-            height: .6em
-            border-radius: 0 0 20% 20%
-
+&:after
+    width: .4em
+    height: .6em
+    border-radius: 0 0 20% 20%
 </pre>
 </div>

@@ -8,25 +8,21 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-f-disabled</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-f-disabled</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>比较简单的图标,外侧圆圈就是i标记,边框变成圆角.里面的斜杠用:before,旋转45度得到.容器使用inline-flex,项目居中对齐.</p>
   <p><i class="i-f-disabled fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-f-disabled
+border: .08em solid currentColor
+border-radius: 50%
 
-    .i-f-disabled
-        border: .08em solid currentColor
-        border-radius: 50%
-    
-        &:before
-            width: 1em
-            height: .08em
-            background-color:currentColor
-            transform: rotate(45deg)
-
+&:before
+    width: 1em
+    height: .08em
+    background-color:currentColor
+    transform: rotate(45deg)
 </pre>
 </div>

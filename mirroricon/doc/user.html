@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-fv-user</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-fv-user</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>用户图标比较抽象,分为头和上半身两个部分.圆形表示头,用:before.上半身:after,是一个圆角矩形.</p>
@@ -19,20 +17,18 @@
   <p><i class="i-fv-user fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-fv-user
+&:before, &:after
+    background-color: currentColor
 
-    .i-fv-user
-        &:before, &:after
-            background-color: currentColor
+&:before
+    width: .4em
+    height: .4em
+    border-radius: 50%
 
-        &:before
-            width: .4em
-            height: .4em
-            border-radius: 50%
-
-        &:after
-            width: .8em
-            height: .4em
-            border-radius: 50% 50% 0 0/70% 70% 0 0
-
+&:after
+    width: .8em
+    height: .4em
+    border-radius: 50% 50% 0 0/70% 70% 0 0
 </pre>
 </div>

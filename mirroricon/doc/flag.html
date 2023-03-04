@@ -6,9 +6,7 @@
     <i class="i-a-flag text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-flag</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-flag</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>旗帜飘扬图标分为旗杆和旗帜两部分,整体在效果上水平居中于容器.旗杆用:before,旗帜:after,使用绝对定位.</p>
@@ -18,25 +16,23 @@
   <p><i class="i-a-flag fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-flag
+&:before
+    left: .15em
+    top: .1em
+    width: .08em
+    height: .9em
+    background-color: currentColor
+    border-radius: .04em .04em 0 0
 
-     .i-a-flag
-        &:before
-            left: .15em
-            top: .1em
-            width: .08em
-            height: .9em
-            background-color: currentColor
-            border-radius: .04em .04em 0 0
-
-        &:after
-            left: .2em
-            top: .2em
-            width: .4em
-            height: .4em
-            border-radius: 0 .05em
-            background-color: currentColor
-            box-shadow: .24em .12em
-            transform: rotate(5deg)
-
+&:after
+    left: .2em
+    top: .2em
+    width: .4em
+    height: .4em
+    border-radius: 0 .05em
+    background-color: currentColor
+    box-shadow: .24em .12em
+    transform: rotate(5deg)
 </pre>
 </div>

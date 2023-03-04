@@ -6,9 +6,7 @@
     <i class="i-a-face text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-face</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-face</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>face图标外层圆是i标记.眼睛:before,嘴吧:after.使用绝对定位,位置计算如下.</p>
@@ -20,31 +18,29 @@
   <p><i class="i-a-face fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-face
+border-radius: 50%
+border: @css{max(.05em,1px)} solid currentColor
 
-     .i-a-face
-        border-radius: 50%
-        border: @css{max(.05em,1px)} solid currentColor
-    
-        &:before,&:after
-            border-radius: 50%
+&:before,&:after
+    border-radius: 50%
 
-        &:before
-            top: .3em
-            left: .18em
-            width: @css{max(.1em,2px)}
-            height: @css{max(.15em,3px)}
-            background-color: currentColor
-            box-shadow: .46em 0
+&:before
+    top: .3em
+    left: .18em
+    width: @css{max(.1em,2px)}
+    height: @css{max(.15em,3px)}
+    background-color: currentColor
+    box-shadow: .46em 0
 
-        &:after
-            left: 50%
-            top: 0
-            transform:translateX(-50%)
-            width: .8em
-            height: .8em
-            border: @css{max(.04em,2px)} solid transparent
-            border-bottom-color: currentColor
-
+&:after
+    left: 50%
+    top: 0
+    transform:translateX(-50%)
+    width: .8em
+    height: .8em
+    border: @css{max(.04em,2px)} solid transparent
+    border-bottom-color: currentColor
 </pre>
   <script>
     ((win) => {

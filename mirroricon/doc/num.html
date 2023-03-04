@@ -14,10 +14,8 @@
     <i class="i-fv-num n9"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  // n0 - n9 没有n8
+// n0 - n9 没有n8
   &lt;i class="<b>i-fv-num n0</b>"&gt;&lt;/i&gt;
-
 </pre>
   <style>
     .demonum {
@@ -119,33 +117,31 @@
   </p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-fv-num
+&:before,&:after
+    width: .4em
+    height: .4em
+    border: .1em solid currentColor
 
-    .i-fv-num
-        &:before,&:after
-            width: .4em
-            height: .4em
-            border: .1em solid currentColor
+&:before
+    border-bottom-width: .05em
 
-        &:before
-            border-bottom-width: .05em
+&:after
+    border-top-width: .05em
 
-        &:after
-            border-top-width: .05em
+&.n0:after, &.n1:before, &.n1:after, &.n4:before, &.n7:after
+    border-top-color: transparent
 
-        &.n0:after, &.n1:before, &.n1:after, &.n4:before, &.n7:after
-            border-top-color: transparent
+&.n0:before, &.n1:before, &.n1:after
+  , &.n4:after, &.n7:before, &.n7:after, &.n9:after
+    border-bottom-color: transparent
 
-        &.n0:before, &.n1:before, &.n1:after
-      , &.n4:after, &.n7:before, &.n7:after, &.n9:after
-            border-bottom-color: transparent
+&.n1:before, &.n1:after, &.n2:before
+  , &.n3:before, &.n3:after, &.n4:after
+  , &.n5:after, &.n7:before, &.n7:after, &.n9:after
+    border-left-color: transparent
 
-        &.n1:before, &.n1:after, &.n2:before
-      , &.n3:before, &.n3:after, &.n4:after
-      , &.n5:after, &.n7:before, &.n7:after, &.n9:after
-            border-left-color: transparent
-
-        &.n2:after, &.n5:before, &.n6:before
-            border-right-color: transparent
-
+&.n2:after, &.n5:before, &.n6:before
+    border-right-color: transparent
 </pre>
 </div>

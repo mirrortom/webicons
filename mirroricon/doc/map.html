@@ -6,9 +6,7 @@
     <i class="i-a-map text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>ico ico-map</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>ico ico-map</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>地图图标的外形看起来是一个圆加上一个尖角.很像一种算角度的工具,那种带有刻度的圆环,环外面有个可以滑动的尖角.</p>
@@ -39,29 +37,27 @@
   <p><i class="i-a-map fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-map
+&:before,&:after
+    left: 50%
+    transform: translateX(-50%)
 
-    .i-a-map
-        &:before,&:after
-            left: 50%
-            transform: translateX(-50%)
+&:before
+    top: .08em
+    // 2 * h / 3
+    width: .56em
+    height: .56em
+    border-radius: 50%
+    background-image: radial-gradient(transparent 18%,currentColor 20%)
 
-        &:before
-            top: .08em
-            // 2 * h / 3
-            width: .56em
-            height: .56em
-            border-radius: 50%
-            background-image: radial-gradient(transparent 18%,currentColor 20%)
-
-        &:after
-            // .08 + h / 2
-            top: .5em
-            border-style: solid
-            border-color: currentColor transparent transparent
-            // 高: h/2 ,底(半): cos30*h/3
-            border-width: .42em .242em 0
-            border-bottom: none
-
+&:after
+    // .08 + h / 2
+    top: .5em
+    border-style: solid
+    border-color: currentColor transparent transparent
+    // 高: h/2 ,底(半): cos30*h/3
+    border-width: .42em .242em 0
+    border-bottom: none
 </pre>
   <br />
   <script>

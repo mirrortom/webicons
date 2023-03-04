@@ -6,9 +6,7 @@
     <i class="i-a-search text-info text-xxl"></i>
   </div>
   <pre class="bg-gray-lt">
-
-    &lt;i class="<b>i-a-search</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-search</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>圆圈表示放大镜(:before),直线表示支架(:after),支架是旋转45度后得到.这两个部分位于图标方块(边长为 L )的对角线上,所以,圆圈的直径加上支架的长度不会超过对角线长度.(L * 1.414)</p>
@@ -20,27 +18,25 @@
   <p><i class="i-a-search fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-
-    .i-a-search
-        // 放大镜圈圈
-        &:before
-            left: 5%
-            top: 5%
-            width: 0.6em
-            height: 0.6em
-            border: .08em solid currentColor
-            border-radius: 50%
-        // 放大镜支架
-        &:after
-            top: 55%
-            left: 55%
-            width: .5em
-            height: .08em
-            background-color: currentColor
-            border-radius: 50% 0 0 50%
-            transform-origin: 0 0
-            transform: rotate(45deg)
-
+.i-a-search
+// 放大镜圈圈
+&:before
+    left: 5%
+    top: 5%
+    width: 0.6em
+    height: 0.6em
+    border: .08em solid currentColor
+    border-radius: 50%
+// 放大镜支架
+&:after
+    top: 55%
+    left: 55%
+    width: .5em
+    height: .08em
+    background-color: currentColor
+    border-radius: 50% 0 0 50%
+    transform-origin: 0 0
+    transform: rotate(45deg)
 </pre>
   <script>
     ((win) => {

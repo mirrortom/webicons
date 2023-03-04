@@ -54,9 +54,7 @@
     <i class="i-a-star5 text-xxl text-danger"></i>
   </p>
   <pre class="bg-gray-lt">
-
-    &lt;i class="<b>i-a-star5</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-star5</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>开始做这个感觉比较复杂,研究后发现,正五角星可以由3个同样的等腰三角形叠在一起得到.而且这3个三角形的摆放位子,可以由其中任何一个三角形旋转得到.</p>
@@ -79,16 +77,14 @@
   <p>then,三角形底边长度的一半(RH)是 cos18 * 100 = 95px , 高(AH)是 tan36 * RH = 69px</p>
   <p><i class="demotri1"></i></p>
   <pre class="bg-gray-lt">
-
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-width: 69px 95px;
-      border-style: solid;
-      border-color: transparent;
-      border-top-color: rgba(128,8,64,.7);
-      border-bottom: none;
-
+display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 69px 95px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: rgba(128,8,64,.7);
+  border-bottom: none;
 </pre>
   <br />
   <p>根据前面的观察,将这个三角形旋转72度和144度,就得到了剩下的2个三角形.这个自然是用css的 transform: rotate(0deg) 实现.</p>
@@ -101,11 +97,9 @@
     <i class="demotri1" style="border-top-color:rgba(8,64,128,.7);transform-origin:95px calc(0.31 * 100px);transform:rotate(144deg)"></i>
   </p>
   <pre class="bg-gray-lt">
-
-    transform-origin:95px calc(0.31 * 100px)
-    transform:rotate(72deg)
-    transform:rotate(144deg)
-
+transform-origin:95px calc(0.31 * 100px)
+transform:rotate(72deg)
+transform:rotate(144deg)
 </pre>
   <br />
   <p>到此,画五角星的数据都计算出来了.3个三角形使用一个&lt;i&gt;标记和它的:before,:after2个伪类实现.</p>
@@ -125,42 +119,38 @@
   <p>要实现设定font-size : Xpx的字体大小,产生Xpx * Xpx大小的图标,那么css里的半径值要设置为 100/190em = 0.53em</p>
 
   <pre class="bg-gray-lt">
-
-  // 底边水平三角形的margin
+// 底边水平三角形的margin
   margin-top:calc(0.726 * calc(0.95 * .53em))
   margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
 
   // 三角形边长计算,.53em是五角星半径
   border-width: calc(0.726 * calc(0.95 * .53em)) calc(0.95 * .53em);
-
 </pre>
   <br />
   <p><i class="i-a-star5 fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-star5
+margin-top:calc(0.726 * calc(0.951 * .53em))
+margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
 
-    .i-a-star5
-        margin-top:calc(0.726 * calc(0.951 * .53em))
-        margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
+&[class^=i-], &:before, &:after
+    width: 0
+    height: 0
+    border-width: calc(0.726 * calc(0.951 * .53em)) calc(0.951 * .53em)
+    border-style: solid
+    border-color: transparent
+    border-bottom: 0
+    border-top-color: currentColor
+    transform-origin: calc(0.951 * .53em) calc(0.31 * .53em)
 
-        &[class^=i-], &:before, &:after
-            width: 0
-            height: 0
-            border-width: calc(0.726 * calc(0.951 * .53em)) calc(0.951 * .53em)
-            border-style: solid
-            border-color: transparent
-            border-bottom: 0
-            border-top-color: currentColor
-            transform-origin: calc(0.951 * .53em) calc(0.31 * .53em)
-
-        &:before, &:after
-            top: calc(-0.726 * calc(0.951 * .53em))
-            left: calc(-0.951 * .53em)
-        &:before
-            transform: rotate(72deg)
-        &:after
-            transform: rotate(144deg)
-
+&:before, &:after
+    top: calc(-0.726 * calc(0.951 * .53em))
+    left: calc(-0.951 * .53em)
+&:before
+    transform: rotate(72deg)
+&:after
+    transform: rotate(144deg)
 </pre>
   <br />
   <script>

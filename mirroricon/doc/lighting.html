@@ -6,9 +6,7 @@
     <i class="i-a-lighting text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-lighting</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-lighting</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>观察研究了闪电图标样子,上下和左右分别是2对平行线,中间的那个部分,就是2对平行线围城的区局,是一个平行四边形.</p>
@@ -34,23 +32,21 @@
   </ul>
   <br />
   <pre class="bg-gray-lt">
+// 横轴(w)端点坐标绝对值
+wx = w / 2 * Math.cos(wxAngle);
+wy = w /2  * Math.sin(wxAngle);
+// 竖轴(h)端点坐标绝对值
+hx = hlen * Math.sin(hyAngle) / 2;
+hy = hlen * Math.cos(hyAngle) / 2;
 
-    // 横轴(w)端点坐标绝对值
-    wx = w / 2 * Math.cos(wxAngle);
-    wy = w /2  * Math.sin(wxAngle);
-    // 竖轴(h)端点坐标绝对值
-    hx = hlen * Math.sin(hyAngle) / 2;
-    hy = hlen * Math.cos(hyAngle) / 2;
-
-    // 由于A与C对称,所以x,y坐标绝对值相等,符号相反.
-    // 闪电图形 6个点位坐标(坐标系原点为横轴竖轴交点),从上方顶点,顺时针到左下顶点.
-      A: [hx, -hy]
-      M: [0, -wy]
-      B: [wx, -wy]
-      C: [-hx, hy]
-      N: [0, wy]
-      D: [-wx, wy]
-
+// 由于A与C对称,所以x,y坐标绝对值相等,符号相反.
+// 闪电图形 6个点位坐标(坐标系原点为横轴竖轴交点),从上方顶点,顺时针到左下顶点.
+  A: [hx, -hy]
+  M: [0, -wy]
+  B: [wx, -wy]
+  C: [-hx, hy]
+  N: [0, wy]
+  D: [-wx, wy]
 </pre>
   <br />
   <p>画布150X150,几组参数画出的样子.</p>
@@ -73,32 +69,28 @@
   <p>先坐标转换: 坐标系原点从中心点转移到左上角,用平移变换. p1.x = p.x - Z1.x, p1.y = p.y - Z1.y</p>
   <p>再将坐标值转为百分比: x / 画布width, y / 画布height</p>
   <pre class="bg-gray-lt">
-
-    // 图标大小 1em X 1em
-    // 图形参数 w=.5em h=1em wxAngle=18 hyAngle=18
-    // clip-path:polygon()坐标. 6个点,上方开始,顺时针方向
-          65.5% 2.4%,
-          50.0% 42.3%,
-          73.8% 42.3%,
-          34.5% 97.6%,
-          50.0% 57.7%,
-          26.2% 57.7%
-
+// 图标大小 1em X 1em
+// 图形参数 w=.5em h=1em wxAngle=18 hyAngle=18
+// clip-path:polygon()坐标. 6个点,上方开始,顺时针方向
+  65.5% 2.4%,
+  50.0% 42.3%,
+  73.8% 42.3%,
+  34.5% 97.6%,
+  50.0% 57.7%,
+  26.2% 57.7%
 </pre>
   <br />
   <p><i class="i-a-lighting fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-
-    .i-a-lighting
-        &:before
-            top: 0
-            left: 0
-            width: 1em
-            height: 1em
-            background-color: currentColor
-            clip-path: polygon(65.5% 2.4%,50.0% 42.3%,73.8% 42.3%,34.5% 97.6%,50.0% 57.7%,26.2% 57.7%)
-
+.i-a-lighting
+&:before
+    top: 0
+    left: 0
+    width: 1em
+    height: 1em
+    background-color: currentColor
+    clip-path: polygon(65.5% 2.4%,50.0% 42.3%,73.8% 42.3%,34.5% 97.6%,50.0% 57.7%,26.2% 57.7%)
 </pre>
   <script>
     ((win) => {

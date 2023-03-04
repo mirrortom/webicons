@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-ac-eye</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-ac-eye</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>密码框显示*号内容,点击眼睛可看到明文.眼睛图标设计用于这种场景.</p>
@@ -18,20 +16,18 @@
   <p><i class="i-ac-eye fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-ac-eye
+&[class^=i-]:before
+    width: .8em
+    height: .5em
+    border: 1px solid currentColor
+    border-radius:0 100% 0 100%/0 100% 0 100%
+    transform: translate(-50%,-50%) rotate(-28deg)
 
-    .i-ac-eye
-        &[class^=i-]:before
-            width: .8em
-            height: .5em
-            border: 1px solid currentColor
-            border-radius:0 100% 0 100%/0 100% 0 100%
-            transform: translate(-50%,-50%) rotate(-28deg)
- 
-        &:after
-            width: .3em
-            height:.3em
-            border-radius:50%
-            background-color:currentColor
-
+&:after
+    width: .3em
+    height:.3em
+    border-radius:50%
+    background-color:currentColor
 </pre>
 </div>

@@ -10,12 +10,10 @@
   </div>
 
 <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-anglearr up</b>"&gt;&lt;/i&gt;
+&lt;i class="<b>i-a-anglearr up</b>"&gt;&lt;/i&gt;
   &lt;i class="i-a-anglearr down"&gt;&lt;/i&gt;
   &lt;i class="i-a-anglearr left"&gt;&lt;/i&gt;
   &lt;i class="i-a-anglearr right text-info"&gt;&lt;/i&gt;
-
 </pre>
   <br />
   <style scoped>
@@ -151,36 +149,34 @@
   </p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-  
-    .i-a-anglearr
-        &:before
-            width: .7em
-            height: .7em
-            border: .1em solid currentColor
-            border-right: none
-            border-bottom: none
+.i-a-anglearr
+&:before
+    width: .7em
+    height: .7em
+    border: .1em solid currentColor
+    border-right: none
+    border-bottom: none
 
-        &.down:before
-            // L/4 + L/2 - L/2 * sin45,下同
-            bottom: .396em
-            left:50%
-            transform: translateX(-50%) rotate(-135deg)
+&.down:before
+    // L/4 + L/2 - L/2 * sin45,下同
+    bottom: .396em
+    left:50%
+    transform: translateX(-50%) rotate(-135deg)
 
-        &.up:before
-            top: .396em
-            left:50%
-            transform: translateX(-50%) rotate(45deg)
+&.up:before
+    top: .396em
+    left:50%
+    transform: translateX(-50%) rotate(45deg)
 
-        &.left:before
-            left: .396em
-            top:50%
-            transform: translateY(-50%) rotate(-45deg)
+&.left:before
+    left: .396em
+    top:50%
+    transform: translateY(-50%) rotate(-45deg)
 
-        &.right:before
-            right: .396em
-            top:50%
-            transform: translateY(-50%) rotate(135deg)
-
+&.right:before
+    right: .396em
+    top:50%
+    transform: translateY(-50%) rotate(135deg)
 </pre>
   <script>
     ((win) => {

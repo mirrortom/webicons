@@ -6,9 +6,7 @@
     <i class="i-ac-lang text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-ac-lang</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-ac-lang</b>"&gt;&lt;/i&gt;
 </pre>
   <style>
     .demolang {
@@ -71,22 +69,20 @@
   <p><i class="i-ac-lang fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-ac-lang
+border: 1px solid currentColor
+border-radius: 50%
 
-    .i-ac-lang
-        border: 1px solid currentColor
-        border-radius: 50%
+&:before, &:after
+    border: 1px solid currentColor
 
-        &:before, &:after
-            border: 1px solid currentColor
-         
-        &:before
-            height: .4em
-            width: .916em
-            border-color: currentColor transparent
-        &:after
-            height: 1em
-            width: .5em
-            border-radius: 50%
-
+&:before
+    height: .4em
+    width: .916em
+    border-color: currentColor transparent
+&:after
+    height: 1em
+    width: .5em
+    border-radius: 50%
 </pre>
 </div>

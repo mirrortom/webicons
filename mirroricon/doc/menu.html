@@ -11,11 +11,9 @@
   </div>
 
   <pre class="bg-gray-lt">
+&lt;i class="<b>i-f-menu</b>"&gt;&lt;/i&gt;
 
-    &lt;i class="<b>i-f-menu</b>"&gt;&lt;/i&gt;
-
-    &lt;i class="<b>i-f-menu dot</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-f-menu dot</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>菜单图标就是在减号图标的基础上加了两个阴影,就变成3条横杠了.减号(中间横杠)的长度还是1em,厚度也是.1em.</p>
@@ -46,40 +44,34 @@
   <p>
     <i class="menudemo"></i>
   </p>
-  <pre class="bg-gray-lt"> 
-      
-      width: 100px;
-      height: 10px;
-      // 上,下横杠(阴影)位置,离减号(中间横杠)1.5个减号厚度的距离
-      box-shadow: 0 25px #00000060,0 -25px #00000060;
-      
+  <pre class="bg-gray-lt">
+width: 100px;
+  height: 10px;
+  // 上,下横杠(阴影)位置,离减号(中间横杠)1.5个减号厚度的距离
+  box-shadow: 0 25px #00000060,0 -25px #00000060;
 </pre>
   <br />
   <p>3个点的形式就是改变了横杠的长度,将长度和宽度改成一样的就实现了,其它不变.</p>
   <p>
     <i class="menudemo menudot"></i>
   </p>
-  <pre class="bg-gray-lt"> 
-      
-    .dot
-      width: 10px;
-      height: 10px;
-      
+  <pre class="bg-gray-lt">
+.dot
+  width: 10px;
+  height: 10px;
 </pre>
   <br />
   <p><i class="i-f-menu fs100"></i><i class="i-f-menu dot fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-  
-    .i-f-menu
-        &:before
-            width: 1em
-            height: @css{max(.1em,2px)}
-            background-color:currentColor
-            box-shadow: 0 .25em,0 -.25em
-        // 3个点菜单,就是改width就可
-        &.dot:before
-            width: @css{max(.1em,2px)}
-
+.i-f-menu
+&:before
+    width: 1em
+    height: @css{max(.1em,2px)}
+    background-color:currentColor
+    box-shadow: 0 .25em,0 -.25em
+// 3个点菜单,就是改width就可
+&.dot:before
+    width: @css{max(.1em,2px)}
 </pre>
 </div>

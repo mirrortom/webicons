@@ -8,9 +8,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-sun</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-sun</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <style scoped>
@@ -51,9 +49,7 @@
     <i class="sundemo text-xxl  mg-l-20"><i style="width:8px;box-shadow:24px 0,0 24px,-24px 0,0 -24px" class="sundemo-light"></i></i>
   </p>
   <pre class="bg-gray-lt">
-
-  box-shadow:24px 0,0 24px,-24px 0,0 -24px
-
+box-shadow:24px 0,0 24px,-24px 0,0 -24px
 </pre>
   <br />
   <p>这是4个方向的,正好是和坐标轴平行的方向.另外4个方向也不难,就是旋转一下坐标系45度就可以了.这个用到css2D变换规则,transform: rotate(45deg).</p>
@@ -62,10 +58,8 @@
     <i class="sundemo text-xxl mg-l-20"><i style="transform: rotate(45deg); width: 8px; box-shadow: 24px 0,0 24px,-24px 0,0 -24px" class="sundemo-light"></i></i>
   </p>
   <pre class="bg-gray-lt">
-
-  transform: rotate(45deg)
+transform: rotate(45deg)
   box-shadow: 24px 0,0 24px,-24px 0,0 -24px
-
 </pre>
   <br />
   <p>这里有个问题,光线要与太阳圆面垂直,这个在光线点是正方形时,没有这个问题.但是长方形时,就不行了.有2个方向的光线与太阳平行.当时想了半天没解决的就是这个问题,试过矩阵变化没成功.最后找到了参考项目看了作者的代码才明白.</p>
@@ -80,11 +74,9 @@
   </p>
 
   <pre class="bg-gray-lt">
-
-  // 多个正方形的阴影叠在一起,就是长方形了
+// 多个正方形的阴影叠在一起,就是长方形了
   box-shadow: 24px 0,0 24px,-24px 0,0 -24px,
-              28px 0,0 28px,-28px 0,0 -28px  
-
+      28px 0,0 28px,-28px 0,0 -28px
 </pre>
   <br />
   <p>这8个方向的光线其实是两组阴影,所以用到两个伪类:before和:after.使用绝对定位并且垂直居中,让2个伪类置于太阳的中心,并且是叠起的.然后设置它们的box-shadow,4个阴影一组,设置2层.光线实现了.</p>
@@ -93,30 +85,28 @@
   <p><i class="i-a-sun fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-sun
+// [class^=i-]优先高,叠加后超过它
+&[class^=i-]
+    width: .6em
+    height: .6em
+&
+    border-radius: 50%
+    margin: .2em
+    background-color: currentColor
 
-    .i-a-sun
-        // [class^=i-]优先高,叠加后超过它
-        &[class^=i-]
-            width: .6em
-            height: .6em
-        &
-            border-radius: 50%
-            margin: .2em
-            background-color: currentColor
+&:before, &:after
+    left:50%
+    top:50%
+    width: .1em
+    height: .1em
+    background-color: transparent
+    transform: translate(-50%,-50%)
 
-        &:before, &:after
-            left:50%
-            top:50%
-            width: .1em
-            height: .1em
-            background-color: transparent
-            transform: translate(-50%,-50%)
-      
-        &:before
-            box-shadow: .45em 0, 0 .45em, -.45em 0, 0 -.45em, .38em 0, 0 .38em, -.38em 0, 0 -.38em
-        &:after
-            transform: translate(-50%,-50%) rotate(45deg)
-            box-shadow: .45em 0, 0 .45em, -.45em 0, 0 -.45em, .38em 0, 0 .38em, -.38em 0, 0 -.38em
-
+&:before
+    box-shadow: .45em 0, 0 .45em, -.45em 0, 0 -.45em, .38em 0, 0 .38em, -.38em 0, 0 -.38em
+&:after
+    transform: translate(-50%,-50%) rotate(45deg)
+    box-shadow: .45em 0, 0 .45em, -.45em 0, 0 -.45em, .38em 0, 0 .38em, -.38em 0, 0 -.38em
 </pre>
 </div>

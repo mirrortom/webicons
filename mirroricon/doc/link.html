@@ -6,9 +6,7 @@
     <i class="i-a-link text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-link</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-link</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>超链接图标,模仿锁链环的样子,有两个环,中间的连线表示连接.</p>
@@ -18,24 +16,22 @@
   <p><i class="i-a-link fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-link
+background-clip: content-box
+padding: 0 .3em
+background-image: linear-gradient(transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%)
+&:before,&:after
+    top: .35em
+    width: .4em
+    height: .3em
+    border: 1px solid
+    border-radius: .15em
+&:before
+    left: .1em
+    border-right-color: transparent
 
-    .i-a-link
-        background-clip: content-box
-        padding: 0 .3em
-        background-image: linear-gradient(transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%)
-        &:before,&:after
-            top: .35em
-            width: .4em
-            height: .3em
-            border: 1px solid
-            border-radius: .15em
-        &:before
-            left: .1em
-            border-right-color: transparent
-
-        &:after
-            right: .1em
-            border-left-color: transparent
-
+&:after
+    right: .1em
+    border-left-color: transparent
 </pre>
 </div>

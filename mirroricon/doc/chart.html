@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-chart</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-chart</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>图表有很多种,柱状图比较常见.结合一些柱状图的印象,将图标设计为体现柱状图表的3个元素,柱子,坐标轴,参考线.</p>
@@ -19,28 +17,26 @@
   <p><i class="i-a-chart fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-chart
+border: 1px solid currentColor
+border-top: none
+border-right: none
+overflow: hidden
 
-    .i-a-chart
-        border: 1px solid currentColor
-        border-top: none
-        border-right: none
-        overflow: hidden
+&:before
+    left:50%
+    transform: translateX(-50%)
+    bottom: 0
+    width: .1em
+    height: .6em
+    border: 1px solid currentColor
+    box-shadow: -.32em .4em,-.16em .2em,.16em .1em,.32em .3em
 
-        &:before
-            left:50%
-            transform: translateX(-50%)
-            bottom: 0
-            width: .1em
-            height: .6em
-            border: 1px solid currentColor
-            box-shadow: -.32em .4em,-.16em .2em,.16em .1em,.32em .3em
- 
-        &:after
-            top: .3em
-            width: .8em
-            height: 1px
-            background-color: currentColor
-            transform: rotate(-30deg)
-
+&:after
+    top: .3em
+    width: .8em
+    height: 1px
+    background-color: currentColor
+    transform: rotate(-30deg)
 </pre>
 </div>

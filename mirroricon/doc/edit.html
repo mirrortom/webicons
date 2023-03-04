@@ -6,9 +6,7 @@
     <i class="i-a-edit text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-edit</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-edit</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>图案由2部分组成,笔身,和笔中间的线条.</p>
@@ -20,24 +18,22 @@
   <p><i class="i-a-edit fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-edit
+&:before,&:after
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%) rotate(-45deg)
 
-    .i-a-edit
-        &:before,&:after
-            left: 50%
-            top: 50%
-            transform: translate(-50%,-50%) rotate(-45deg)
+&:before
+    width: 1em
+    height: .2em
+    box-shadow: inset .2em 0,inset -.1em 0
+    border: 1px solid
+    clip-path: polygon(0 50%,20% 0,100% 0,100% 100%,20% 100%)
 
-        &:before
-            width: 1em
-            height: .2em
-            box-shadow: inset .2em 0,inset -.1em 0
-            border: 1px solid
-            clip-path: polygon(0 50%,20% 0,100% 0,100% 100%,20% 100%)
- 
-        &:after
-            width: .05em
-            height: .2em
-            box-shadow:.3em 0
-
+&:after
+    width: .05em
+    height: .2em
+    box-shadow:.3em 0
 </pre>
 </div>

@@ -8,14 +8,12 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-moon</b>"&gt;&lt;/i&gt;
+&lt;i class="<b>i-moon</b>"&gt;&lt;/i&gt;
 
   // 颜色和大小添加工具样式实现
   &lt;i class="i-moon text-xl"&gt;&lt;/i&gt;
 
   &lt;i class="i-moon text-danger"&gt;&lt;/i&gt;
-
 </pre>
   <br />
   <style scoped>
@@ -31,12 +29,10 @@
     <i class="moondemo text-xxl bg-gray"></i>
   </p>
   <pre class="bg-gray-lt">
-
-      display: inline-block;
-      border-radius: 50%;
-      width: 1em;
-      height: 1em;
-
+display: inline-block;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
 </pre>
   <br />
   <p>边框阴影也会跟随圆角是一个圆形.设置box-shadow的x-offset,y-offset让阴影显露出来,调整x,y值改变月牙的大小和位子.</p>
@@ -49,11 +45,9 @@
     <i style="box-shadow: 10px 10px;" class="moondemo text-xxl bg-gray mg-l-20"></i>
   </p>
   <pre class="bg-gray-lt">
-
-  box-shadow: 0 0;
+box-shadow: 0 0;
   box-shadow: 10px 0;
   box-shadow: 10px 5px;
-
 </pre>
   <br />
   <p>由于阴影在元素面积外,而阴影不占元素面积,所以月牙部分是在图标范围外的.这比较不妥.</p>
@@ -66,11 +60,9 @@
     <i style="box-shadow: inset -10px -10px;" class="moondemo text-xxl bg-gray mg-l-20"></i>
   </p>
   <pre class="bg-gray-lt">
-
-  box-shadow: 0 0;
+box-shadow: 0 0;
   box-shadow: inset -10px 0;
   box-shadow: inset -10px -5px;
-
 </pre>
   <br />
   <p>阴影的颜色跟随color属性,大小用em单位.添加工具样式就可以改大小和颜色.完整css规则.</p>
@@ -84,10 +76,8 @@
   <p><i class="i-moon fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-
-    .i-moon
-        border-radius: 50%
-        box-shadow: inset -.4em -.1em
-
+.i-moon
+border-radius: 50%
+box-shadow: inset -.4em -.1em
 </pre>
 </div>

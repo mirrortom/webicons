@@ -6,9 +6,7 @@
     <i class="i-f-send text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-f-send</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-f-send</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>研究了一下这个图标,由4个顶点(ABCD)组成,可以用一个矩形为参考系,生成图标.</p>
@@ -22,15 +20,13 @@
   <p><i class="i-f-send fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-
-    .i-f-send
-        &:before
-            width: .45em
-            height: .9em
-            clip-path: polygon(50% 0,100% 100%,50% 85%,0% 100%)
-            background-color:currentColor
-            transform:rotate(45deg)
-
+.i-f-send
+&:before
+    width: .45em
+    height: .9em
+    clip-path: polygon(50% 0,100% 100%,50% 85%,0% 100%)
+    background-color:currentColor
+    transform:rotate(45deg)
 </pre>
   <script>
     ((win) => {

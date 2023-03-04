@@ -9,12 +9,10 @@
   </div>
 
 <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-f-triarr</b>"&gt;&lt;/i&gt;
+&lt;i class="<b>i-f-triarr</b>"&gt;&lt;/i&gt;
   &lt;i class="i-f-triarr down"&gt;&lt;/i&gt;
   &lt;i class="i-f-triarr left"&gt;&lt;/i&gt;
   &lt;i class="i-f-triarr right text-info"&gt;&lt;/i&gt;
-
 </pre>
   <br />
   <style scoped>
@@ -70,14 +68,12 @@
     <i class="triarrdemo bottom"></i>
   </p>
 <pre class="bg-gray-lt">
-
-      width: 0;
-      height: 0;
-      border: 50px solid transparent;
-      // 上边框厚度就是三角形的高,下边框去掉
-      border-top: calc(0.866 * 100px) solid;
-      border-bottom: none;
-
+width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  // 上边框厚度就是三角形的高,下边框去掉
+  border-top: calc(0.866 * 100px) solid;
+  border-bottom: none;
 </pre>
   <br />
   <p>方向向下(bottom)的三角形箭头,需要的是top边框,并且要去掉bottom边框,这是个规律.据此画出其它3个方向的.</p>
@@ -103,23 +99,21 @@
   </p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
-  
-    .i-f-triarr
-        &:before
-            width: 0
-            height: 0
-            border: .5em solid transparent
-            border-bottom: .866em solid currentColor
-            border-top: none
+.i-f-triarr
+&:before
+    width: 0
+    height: 0
+    border: .5em solid transparent
+    border-bottom: .866em solid currentColor
+    border-top: none
 
-        &.down:before
-            transform: rotate(180deg)
+&.down:before
+    transform: rotate(180deg)
 
-        &.left:before
-            transform: rotate(-90deg)
+&.left:before
+    transform: rotate(-90deg)
 
-        &.right:before
-            transform: rotate(90deg)
-
+&.right:before
+    transform: rotate(90deg)
 </pre>
 </div>

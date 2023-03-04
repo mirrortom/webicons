@@ -6,9 +6,7 @@
     <i class="i-a-heart text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-heart</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-heart</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>网上查看了一些心形状的实现,由1个正方形(蓝色的旋转了45度)和2个圆形(红色)实现.圆心位于正方形边的中点上,直径等于边长.</p>
@@ -33,24 +31,22 @@
   <p><i class="i-a-heart fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-heart
+&:before,&:after
+    width: .5em
+    height: .5em
+    background-color: currentColor
 
-    .i-a-heart
-        &:before,&:after
-            width: .5em
-            height: .5em
-            background-color: currentColor
+&:before
+    top: 10.98%
+    left: 7.33%
+    border-radius: 50%
+    box-shadow: .35em 0
 
-        &:before
-            top: 10.98%
-            left: 7.33%
-            border-radius: 50%
-            box-shadow: .35em 0
- 
-        &:after
-            top:28.66%
-            left: 50%
-            transform: translateX(-50%) rotate(45deg)
-
+&:after
+    top:28.66%
+    left: 50%
+    transform: translateX(-50%) rotate(45deg)
 </pre>
   <script>
     ((win) => {

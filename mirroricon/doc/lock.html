@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-fv-lock</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-fv-lock</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>常见用到锁图标的地方有密码输入框前面,https协议的网址前面有个绿色锁.</p>
@@ -20,19 +18,17 @@
   <p><i class="i-fv-lock fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-fv-lock
+&:before
+    width: .6em
+    height: .4em
+    border-radius: 50% 50% 0 0
+    border: .1em solid currentColor
+    border-bottom:none
 
-    .i-fv-lock
-        &:before
-            width: .6em
-            height: .4em
-            border-radius: 50% 50% 0 0
-            border: .1em solid currentColor
-            border-bottom:none
- 
-        &:after
-            width: .8em
-            height: .4em
-            background-image: radial-gradient(circle,transparent .06em,currentColor .07em)
-
+&:after
+    width: .8em
+    height: .4em
+    background-image: radial-gradient(circle,transparent .06em,currentColor .07em)
 </pre>
 </div>

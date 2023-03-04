@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-info</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-info</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>外侧圆圈是i标记,方点是:before,竖线是:after.绝对定位居中,上下位置设置圆点的top值和竖线的bottom值.</p>
@@ -17,26 +15,24 @@
   <p><i class="i-a-info fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-info
+border: .08em solid currentColor
+border-radius: 50%
 
-    .i-a-info
-        border: .08em solid currentColor
-        border-radius: 50%
-    
-        &:before, &:after
-            background-color: currentColor
-            left: 50%
-            transform: translateX(-50%)
+&:before, &:after
+    background-color: currentColor
+    left: 50%
+    transform: translateX(-50%)
 
-        &:before
-            top: 15%
-            width: .1em
-            height: .1em
-            box-shadow: -0.04em 0.17em,-0.05em .47em,0.05em .47em
+&:before
+    top: 15%
+    width: .1em
+    height: .1em
+    box-shadow: -0.04em 0.17em,-0.05em .47em,0.05em .47em
 
-        &:after
-            top: 35%
-            width: .1em
-            height: .4em
-
+&:after
+    top: 35%
+    width: .1em
+    height: .4em
 </pre>
 </div>

@@ -43,9 +43,7 @@
     <i class="i-a-pic text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-pic</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-pic</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>月亮:before,设计直径为容器的20%,位置在左上坐标(left:30%,top:30%)</p>
@@ -58,32 +56,30 @@
   <p><i class="i-a-pic fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-pic
+overflow: hidden
+border:1px solid
+border-bottom:none
 
-    .i-a-pic
-        overflow: hidden
-        border:1px solid
-        border-bottom:none
+&:before,&:after
+    background-color: currentColor
 
-        &:before,&:after
-            background-color: currentColor
+&:before
+    left: .3em
+    top: .3em
+    width: .2em
+    height: .2em
+    border-radius: 50%
+    transform: translate(-50%,-50%)
 
-        &:before
-            left: .3em
-            top: .3em
-            width: .2em
-            height: .2em
-            border-radius: 50%
-            transform: translate(-50%,-50%)
- 
-        &:after
-            left: .3em
-            top: .6em
-            width: .6em
-            height: .6em
-            // (.4em - .1em ) * 0.707  (-.4em - .1em ) * 0.707
-            box-shadow: .212em -.353em
-            transform-origin: 0 0
-            transform: rotate(45deg)
-
+&:after
+    left: .3em
+    top: .6em
+    width: .6em
+    height: .6em
+    // (.4em - .1em ) * 0.707  (-.4em - .1em ) * 0.707
+    box-shadow: .212em -.353em
+    transform-origin: 0 0
+    transform: rotate(45deg)
 </pre>
 </div>

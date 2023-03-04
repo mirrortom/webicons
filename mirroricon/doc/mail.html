@@ -7,9 +7,7 @@
   </div>
 
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-ac-mail</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-ac-mail</b>"&gt;&lt;/i&gt;
 </pre>
   <style>
     .maildemo {
@@ -78,21 +76,19 @@
   <p><i class="i-ac-mail fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-ac-mail
+&:before, &:after
+    width: .8em
+    height: .5em
+    border-style: solid
 
-    .i-ac-mail
-        &:before, &:after
-            width: .8em
-            height: .5em
-            border-style: solid
+&:before
+    border-width: .2em .3em .3em
+    border-color: transparent currentColor
 
-        &:before
-            border-width: .2em .3em .3em
-            border-color: transparent currentColor
-
-        &:after
-            height:.56em
-            border-width: .22em .32em .32em
-            border-color: currentColor transparent
-
+&:after
+    height:.56em
+    border-width: .22em .32em .32em
+    border-color: currentColor transparent
 </pre>
 </div>

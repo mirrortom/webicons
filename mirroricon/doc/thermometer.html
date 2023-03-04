@@ -6,9 +6,7 @@
     <i class="i-a-thermometer text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-thermometer</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-thermometer</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>观察了一些温度计,一般有3部分,水银球,柱子,刻度.图标也显示这3个部分.</p>
@@ -20,27 +18,25 @@
   <p><i class="i-a-thermometer fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-thermometer
+background-image: radial-gradient(circle .15em at 50% 80%,currentColor 0 96%,transparent)
 
-    .i-a-thermometer
-        background-image: radial-gradient(circle .15em at 50% 80%,currentColor 0 96%,transparent)
+&:before,&:after
+    left: 50%
+    width: @css{max(.1em,3px)}
+    transform: translateX(-50%)
 
-        &:before,&:after
-            left: 50%
-            width: @css{max(.1em,3px)}
-            transform: translateX(-50%)
+&:before
+    top: 10%
+    height: .6em
+    border: 1px solid
+    border-radius: .1em .1em 0 0
+    border-bottom: .25em solid
 
-        &:before
-            top: 10%
-            height: .6em
-            border: 1px solid
-            border-radius: .1em .1em 0 0
-            border-bottom: .25em solid
- 
-        &:after
-            top: 20%
-            height: 1px
-            box-shadow: .15em 0, .15em .1em,.15em .2em,.15em .3em,
-                        -.15em .05em,-.15em .15em, -.15em .25em,-.15em .35em
-
+&:after
+    top: 20%
+    height: 1px
+    box-shadow: .15em 0, .15em .1em,.15em .2em,.15em .3em,
+                -.15em .05em,-.15em .15em, -.15em .25em,-.15em .35em
 </pre>
 </div>

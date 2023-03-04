@@ -6,9 +6,7 @@
     <i class="i-a-headphone text-xxxl text-primary"></i>
   </div>
   <pre class="bg-gray-lt">
-
-  &lt;i class="<b>i-a-headphone</b>"&gt;&lt;/i&gt;
-
+&lt;i class="<b>i-a-headphone</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
   <p>头戴式耳机分为圆圈和耳机喇叭两部分.圆圈部分:before为0.6em正方形,上边圆角,下边无.水平居中.</p>
@@ -17,26 +15,24 @@
   <p><i class="i-a-headphone fs100"></i></p>
   <p>完整样式</p>
   <pre class="bg-gray-lt">
+.i-a-headphone
+&:before,&:after
+    left: 50%
+    transform: translateX(-50%)
 
-    .i-a-headphone
-        &:before,&:after
-            left: 50%
-            transform: translateX(-50%)
+&:before
+    top: 10%
+    width: .6em
+    height: .6em
+    border: @css{max(.04em,1px)} solid
+    border-radius: 50% 50% 0 0
+    border-bottom: none
 
-        &:before
-            top: 10%
-            width: .6em
-            height: .6em
-            border: @css{max(.04em,1px)} solid
-            border-radius: 50% 50% 0 0
-            border-bottom: none
- 
-        &:after
-            top: 60%
-            width: .2em
-            height: .3em
-            border-radius: 50%
-            box-shadow: .3em 0,-.3em 0
-
+&:after
+    top: 60%
+    width: .2em
+    height: .3em
+    border-radius: 50%
+    box-shadow: .3em 0,-.3em 0
 </pre>
 </div>
