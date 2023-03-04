@@ -922,23 +922,24 @@ i[class^=i-ac]:after {
   transform: translateX(-50%) rotate(45deg);
 }
 .i-a-thermometer {
-  background-image: radial-gradient(circle 0.15em at 50% 80%, currentColor 0 96%, transparent);
+  background-image: radial-gradient(circle max(.12em,3px) at 50% 80%, currentColor 0 96%, transparent);
 }
 .i-a-thermometer:before,
 .i-a-thermometer:after {
   left: 50%;
-  width: max(.1em,3px);
   transform: translateX(-50%);
 }
 .i-a-thermometer:before {
   top: 10%;
   height: 0.6em;
+  width: max(.1em,4px);
   border: 1px solid;
   border-radius: 0.1em 0.1em 0 0;
   border-bottom: 0.25em solid;
 }
 .i-a-thermometer:after {
   top: 20%;
+  width: max(.1em,2px);
   height: 1px;
   box-shadow: 0.15em 0, 0.15em 0.1em, 0.15em 0.2em, 0.15em 0.3em, -0.15em 0.05em, -0.15em 0.15em, -0.15em 0.25em, -0.15em 0.35em;
 }

@@ -46,27 +46,27 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-a-word
-&:before
-    top: .1em
-    left: .05em
-    width: .54em
-    // width * 5/6
-    height: .45em
-    background-color: currentColor
-    clip-path: polygon(0% 0%,25% 100%,41% 100%,
-                      50% 32%,59% 100%,75% 100%,
-                      100% 0%,84% 0%,67% 68%,
-                      58% 0%,42% 0%,33% 68%,
-                      16% 0%)
+    &:before
+        top: .1em
+        left: .05em
+        width: .54em
+        // width * 5/6
+        height: .45em
+        background-color: currentColor
+        clip-path: polygon(0% 0%,25% 100%,41% 100%,
+                          50% 32%,59% 100%,75% 100%,
+                          100% 0%,84% 0%,67% 68%,
+                          58% 0%,42% 0%,33% 68%,
+                          16% 0%)
 
-&:after
-    top: 0
-    left: 0
-    width: .3em
-    height: .08em
-    box-shadow: .6em 0.10em,.6em 0.28em,.6em 0.46em,
-                .1em 0.64em,.35em 0.64em,.6em 0.64em,
-                .1em 0.82em,.35em 0.82em,.6em 0.82em
+    &:after
+        top: 0
+        left: 0
+        width: .3em
+        height: .08em
+        box-shadow: .6em 0.10em,.6em 0.28em,.6em 0.46em,
+                    .1em 0.64em,.35em 0.64em,.6em 0.64em,
+                    .1em 0.82em,.35em 0.82em,.6em 0.82em
 </pre>
   <script>
     ((win) => {

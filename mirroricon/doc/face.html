@@ -19,28 +19,28 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-a-face
-border-radius: 50%
-border: @css{max(.05em,1px)} solid currentColor
-
-&:before,&:after
     border-radius: 50%
+    border: @css{max(.05em,1px)} solid currentColor
 
-&:before
-    top: .3em
-    left: .18em
-    width: @css{max(.1em,2px)}
-    height: @css{max(.15em,3px)}
-    background-color: currentColor
-    box-shadow: .46em 0
+    &:before,&:after
+        border-radius: 50%
 
-&:after
-    left: 50%
-    top: 0
-    transform:translateX(-50%)
-    width: .8em
-    height: .8em
-    border: @css{max(.04em,2px)} solid transparent
-    border-bottom-color: currentColor
+    &:before
+        top: .3em
+        left: .18em
+        width: @css{max(.1em,2px)}
+        height: @css{max(.15em,3px)}
+        background-color: currentColor
+        box-shadow: .46em 0
+
+    &:after
+        left: 50%
+        top: 0
+        transform:translateX(-50%)
+        width: .8em
+        height: .8em
+        border: @css{max(.04em,2px)} solid transparent
+        border-bottom-color: currentColor
 </pre>
   <script>
     ((win) => {

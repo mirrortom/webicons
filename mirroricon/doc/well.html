@@ -53,18 +53,18 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-ac-well
-&:before,&:after
-    background-color: transparent
+    &:before,&:after
+        background-color: transparent
 
-&:before
-    width: .8em
-    height: @css{max(.04em,1px)}
-    box-shadow: 0 -.16em,0 .16em
+    &:before
+        width: .8em
+        height: @css{max(.04em,1px)}
+        box-shadow: 0 -.16em,0 .16em
 
-&[class^=i-]:after
-    width: @css{max(.04em,1px)}
-    height: .8em
-    box-shadow: -.16em 0,.16em -.04em
-    transform: translate(-50%,-50%) rotate(8deg)
+    &[class^=i-]:after
+        width: @css{max(.04em,1px)}
+        height: .8em
+        box-shadow: -.16em 0,.16em -.04em
+        transform: translate(-50%,-50%) rotate(8deg)
 </pre>
 </div>

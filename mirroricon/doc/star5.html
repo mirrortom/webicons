@@ -131,26 +131,26 @@ transform:rotate(144deg)
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-a-star5
-margin-top:calc(0.726 * calc(0.951 * .53em))
-margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
+    margin-top:calc(0.726 * calc(0.951 * .53em))
+    margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
 
-&[class^=i-], &:before, &:after
-    width: 0
-    height: 0
-    border-width: calc(0.726 * calc(0.951 * .53em)) calc(0.951 * .53em)
-    border-style: solid
-    border-color: transparent
-    border-bottom: 0
-    border-top-color: currentColor
-    transform-origin: calc(0.951 * .53em) calc(0.31 * .53em)
+    &[class^=i-], &:before, &:after
+        width: 0
+        height: 0
+        border-width: calc(0.726 * calc(0.951 * .53em)) calc(0.951 * .53em)
+        border-style: solid
+        border-color: transparent
+        border-bottom: 0
+        border-top-color: currentColor
+        transform-origin: calc(0.951 * .53em) calc(0.31 * .53em)
 
-&:before, &:after
-    top: calc(-0.726 * calc(0.951 * .53em))
-    left: calc(-0.951 * .53em)
-&:before
-    transform: rotate(72deg)
-&:after
-    transform: rotate(144deg)
+    &:before, &:after
+        top: calc(-0.726 * calc(0.951 * .53em))
+        left: calc(-0.951 * .53em)
+    &:before
+        transform: rotate(72deg)
+    &:after
+        transform: rotate(144deg)
 </pre>
   <br />
   <script>

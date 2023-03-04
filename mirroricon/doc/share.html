@@ -70,25 +70,25 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-a-share
-&:before
-    left: .1em
-    top: 50%
-    width: @css{max(.2em,4px)}
-    height: @css{max(.2em,4px)}
-    border-radius: 50%
-    background-color: currentColor
-    box-shadow: .62em .32em,.62em -.32em
-    transform: translateY(-50%)
+    &:before
+        left: .1em
+        top: 50%
+        width: @css{max(.2em,4px)}
+        height: @css{max(.2em,4px)}
+        border-radius: 50%
+        background-color: currentColor
+        box-shadow: .62em .32em,.62em -.32em
+        transform: translateY(-50%)
 
-&:after
-    left: .54em
-    top: 50%
-    width: .424em
-    height: .424em
-    border: 1px solid
-    border-top: none
-    border-right: none
-    transform: translateY(-50%) scaleX(2) rotate(45deg)
+    &:after
+        left: .54em
+        top: 50%
+        width: .424em
+        height: .424em
+        border: 1px solid
+        border-top: none
+        border-right: none
+        transform: translateY(-50%) scaleX(2) rotate(45deg)
 </pre>
   <br />
   <script>

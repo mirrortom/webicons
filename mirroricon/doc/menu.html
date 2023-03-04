@@ -65,13 +65,13 @@ width: 100px;
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-f-menu
-&:before
-    width: 1em
-    height: @css{max(.1em,2px)}
-    background-color:currentColor
-    box-shadow: 0 .25em,0 -.25em
-// 3个点菜单,就是改width就可
-&.dot:before
-    width: @css{max(.1em,2px)}
+    &:before
+        width: 1em
+        height: @css{max(.1em,2px)}
+        background-color:currentColor
+        box-shadow: 0 .25em,0 -.25em
+    // 3个点菜单,就是改width就可
+    &.dot:before
+        width: @css{max(.1em,2px)}
 </pre>
 </div>

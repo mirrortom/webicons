@@ -22,21 +22,21 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-ac-code
-&[class^=i-]:before
-    width: @css{max(.06em,1px)}
-    height: .8em
-    background-color:currentColor
-    transform: translate(-50%,-50%) rotate(15deg)
+    &[class^=i-]:before
+        width: @css{max(.06em,1px)}
+        height: .8em
+        background-color:currentColor
+        transform: translate(-50%,-50%) rotate(15deg)
 
-&:after
-    width: .9em
-    height: .4em
-    background-image:
-        // 线厚度0.06em,以0.14em渐变点为分界,前后各0.06/2.
-        linear-gradient(45deg,transparent .11em,currentColor .11em .17em,transparent .17em),
-        linear-gradient(-45deg,transparent .11em,currentColor .11em .17em,transparent .17em),
-        linear-gradient(135deg,transparent .11em,currentColor .11em .17em,transparent .17em),
-        linear-gradient(-135deg,transparent .11em,currentColor .11em .17em,transparent .17em)
+    &:after
+        width: .9em
+        height: .4em
+        background-image:
+            // 线厚度0.06em,以0.14em渐变点为分界,前后各0.06/2.
+            linear-gradient(45deg,transparent .11em,currentColor .11em .17em,transparent .17em),
+            linear-gradient(-45deg,transparent .11em,currentColor .11em .17em,transparent .17em),
+            linear-gradient(135deg,transparent .11em,currentColor .11em .17em,transparent .17em),
+            linear-gradient(-135deg,transparent .11em,currentColor .11em .17em,transparent .17em)
 </pre>
   <br />
   <script>

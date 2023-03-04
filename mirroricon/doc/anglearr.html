@@ -150,33 +150,33 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-a-anglearr
-&:before
-    width: .7em
-    height: .7em
-    border: .1em solid currentColor
-    border-right: none
-    border-bottom: none
+    &:before
+        width: .7em
+        height: .7em
+        border: .1em solid currentColor
+        border-right: none
+        border-bottom: none
 
-&.down:before
-    // L/4 + L/2 - L/2 * sin45,下同
-    bottom: .396em
-    left:50%
-    transform: translateX(-50%) rotate(-135deg)
+    &.down:before
+        // L/4 + L/2 - L/2 * sin45,下同
+        bottom: .396em
+        left:50%
+        transform: translateX(-50%) rotate(-135deg)
 
-&.up:before
-    top: .396em
-    left:50%
-    transform: translateX(-50%) rotate(45deg)
+    &.up:before
+        top: .396em
+        left:50%
+        transform: translateX(-50%) rotate(45deg)
 
-&.left:before
-    left: .396em
-    top:50%
-    transform: translateY(-50%) rotate(-45deg)
+    &.left:before
+        left: .396em
+        top:50%
+        transform: translateY(-50%) rotate(-45deg)
 
-&.right:before
-    right: .396em
-    top:50%
-    transform: translateY(-50%) rotate(135deg)
+    &.right:before
+        right: .396em
+        top:50%
+        transform: translateY(-50%) rotate(135deg)
 </pre>
   <script>
     ((win) => {

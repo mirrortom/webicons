@@ -72,27 +72,27 @@
   <p>完整样式</p>
   <pre class="bg-gray-lt">
 .i-a-wlan
-&:before,&:after
-    left: 50%
+    &:before,&:after
+        left: 50%
 
-&:before
-    top: 50%
-    width: .7em
-    height: .7em
-    transform: translate(-50%,-50%) rotate(-135deg)
-    background-image: radial-gradient(circle .7em at 0 0,
-                      transparent 32%,currentColor 34% calc(34% + max(.06em,1px)),
-                      transparent calc(36% + max(.06em,1px)) 60%,currentColor 62% calc(62% + max(.06em,1px)),
-                      transparent calc(64% + max(.06em,1px)) 90%,currentColor 92% calc(92% + max(.06em,1px)),
-                      transparent calc(94% + max(.06em,1px)))
+    &:before
+        top: 50%
+        width: .7em
+        height: .7em
+        transform: translate(-50%,-50%) rotate(-135deg)
+        background-image: radial-gradient(circle .7em at 0 0,
+                          transparent 32%,currentColor 34% calc(34% + max(.06em,1px)),
+                          transparent calc(36% + max(.06em,1px)) 60%,currentColor 62% calc(62% + max(.06em,1px)),
+                          transparent calc(64% + max(.06em,1px)) 90%,currentColor 92% calc(92% + max(.06em,1px)),
+                          transparent calc(94% + max(.06em,1px)))
 
-&:after
-    top: 84%
-    width: .14em
-    height: .14em
-    border-radius: 50%
-    background-color: currentColor
-    transform: translateX(-50%)
+    &:after
+        top: 84%
+        width: .14em
+        height: .14em
+        border-radius: 50%
+        background-color: currentColor
+        transform: translateX(-50%)
 </pre>
   <br />
   <script>
