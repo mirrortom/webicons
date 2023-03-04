@@ -1,0 +1,27 @@
+<div class="doc-page">
+  <h2>药</h2>
+  <p>药丸图标</p>
+  <div class="mg-20">
+    <i class="i-f-pill text-md"></i>
+    <i class="i-f-pill text-xxxl text-primary"></i>
+  </div>
+  <pre class="bg-gray-lt">
+&lt;i class="<b>i-f-pill</b>"&gt;&lt;/i&gt;
+</pre>
+  <br />
+  <p>常见的胶囊药丸,一个圆柱体,是两个一半的圆柱体套在一起的,一半是白色一半是其它颜色.</p>
+  <p>图标比较简单,只是用了:before.长度为容器的90%,宽度30%,水平垂直居中,旋转45度,短边圆角.颜色使用线性渐变实现,渐变点就在中线位置.</p>
+  <br />
+  <p><i class="i-f-pill fs100"></i></p>
+  <p>完整样式</p>
+  <pre class="bg-gray-lt">
+.i-f-pill
+&:before
+    width: .3em
+    height: .9em
+    border: 1px solid
+    border-radius: .3em
+    transform:rotate(45deg)
+    background-image:linear-gradient(transparent 0 50%,currentColor 50%)
+</pre>
+</div>

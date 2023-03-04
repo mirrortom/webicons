@@ -1,0 +1,38 @@
+<div class="doc-page">
+    <h2>瞄准镜</h2>
+    <p>准星图标</p>
+    <div class="mg-20">
+        <i class="i-ac-sight text-md"></i>
+        <i class="i-ac-sight text-xxxl text-primary"></i>
+    </div>
+    <pre class="bg-gray-lt">
+&lt;i class="<b>i-ac-sight</b>"&gt;&lt;/i&gt;
+</pre>
+    <br />
+    <p>由准星中心点,十字交叉线,还有交叉线的中点标识线段组成.</p>
+    <p>中心点和交叉线是用背景的径向渐变和线性渐变画出,准星中心点的半径为容器的6%.交叉线为1px,贯穿背景,自然是居中的.</p>
+    <p>水平交叉线的中点线段是:before的左右边框,由于是中点,所以左右边框的距离是背景宽度的50%,就是0.5em.:after水平垂直居中后,左右边框就正好位于水平交叉线的中点位置,而且自己也被交叉线平分.</p>
+    <p>中点线段的长度为容器的12%,和准星的直径相同,厚度是1px(边框厚度).垂直交叉线原理相同.</p>
+    <br />
+    <p><i class="i-ac-sight fs100"></i></p>
+    <p>完整样式</p>
+    <pre class="bg-gray-lt">
+.i-ac-sight
+border-radius:50%
+background-image: radial-gradient(circle .06em,currentColor 0 100%,transparent calc(100% + 1px)),
+linear-gradient(90deg,transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%),
+linear-gradient(transparent calc(50% - .5px),currentColor calc(50% + .5px),transparent 50%)
+&, &:before, &:after
+    border: 1px solid
+&:before
+    width: .5em
+    height: .12em
+    border-bottom: none
+    border-top: none
+&:after
+     width: .12em
+     height: .5em
+     border-left: none
+     border-right: none
+</pre>
+</div>
