@@ -5,7 +5,7 @@
     <p>一个质量很高的项目,参考搬运. <a href="https://viglino.github.io/iconicss" target="_blank">https://viglino.github.io/iconicss</a>&emsp;(github) <a href="https://github.com/Viglino/iconicss" target="_blank">https://github.com/Viglino/iconicss</a></p>
     <h4>公用样式</h4>
     <p>i和:before,:after的box-sizing:border-box</p>
-    <pre class="bg-gray-lt">
+    <pre>
 // 基本
 i[class^=i-]
     display: inline-block
@@ -54,7 +54,7 @@ i[class^=i-ac]:before, i[class^=i-ac]:after
     </ul>
     <p>iconname: 图标样式名字</p>
     <p>用法</p>
-    <pre class="bg-gray-lt">
+    <pre>
 &lt;i class="i-a-home"&gt;&lt;/i&gt;
 // 颜色和大小使用文本颜色和大小的样式类设定
 &lt;i class="i-a-home text-xxl"&gt;&lt;/i&gt;
@@ -241,14 +241,14 @@ i[class^=i-ac]:before, i[class^=i-ac]:after
     <h5>content</h5>
     <p>:before,:after伪类的属性,可以写入符号,可做文字类的图标.</p>
     <p><i class="contentTxt"></i></p>
-    <pre class="bg-gray-lt">
+    <pre>
 content: 'OK!';
 </pre>
     <br />
     <h5>border</h5>
     <p>设置了4条边,为每一条边设置了颜色.</p>
     <i class="borderdemo"></i>
-    <pre class="bg-gray-lt">
+    <pre>
 width: 60px;
 height: 45px;
 border-width:15px;
@@ -290,7 +290,7 @@ border-style:solid;
     <p>旋转角度,作为一个搭配规则非常有用.比如要做一个黑白半球,把边框图案旋转45度看下效果.</p>
     <i class="borderdemo1" style="border-color:#ccc #ccc #333 #333;border-radius:50%;"></i>
     <i class="borderdemo1 mg-l-10" style="border-color: #ccc #ccc #333 #333; border-radius: 50%; transform: rotate(45deg)"></i>
-    <pre class="bg-gray-lt">
+    <pre>
 border-color: #ccc #ccc #333 #333;
 border-radius: 50%;
 transform: rotate(45deg)
@@ -305,7 +305,7 @@ transform: rotate(45deg)
     <p>上图是平移法实现居中,分2步实现.</p>
     <p>先设置left和top都是50%,此时绿色方块的左上角位于容器的中心.但没居中,需要减去方块width和height的一半.</p>
     <p>用translate(-50%,-50%)正好实现.它的-50%参照的就是绿色方块的with和height.于是,省掉了计算的麻烦.</p>
-    <pre class="bg-gray-lt">
+    <pre>
 position: absolute;
 left: 50%;
 top: 50%;
@@ -315,7 +315,7 @@ transform: translate(-50%,-50%);
     <p>scale缩放变换,也可以只按X或Y轴缩放.</p>
     <div class="scale scale-1"></div>
     <p>黑色方块本来是边长100px的,使用缩放后只有50px了</p>
-    <pre class="bg-gray-lt">
+    <pre>
 transform: scale(.5);
 </pre>
     <br />
@@ -326,7 +326,7 @@ transform: scale(.5);
         <div class="scale scale-2 scale-3"></div>
     </div>
     <br />
-    <pre class="bg-gray-lt">
+    <pre>
 transform: scaleX(.5) rotate(45deg);
 </pre>
     <br />
@@ -357,7 +357,7 @@ transform: scaleX(.5) rotate(45deg);
     color:red;
     background-color: currentColor;
   "></i>
-    <pre class="bg-gray-lt">
+    <pre>
 // 背景颜色是红色,通过设置字体颜色
 color:red;
 background-color: currentColor;
@@ -395,7 +395,7 @@ background-color: currentColor;
   "></i>
     <br />
     <br />
-    <pre class="bg-gray-lt">
+    <pre>
 display: inline-block;
 width: 1em;
 height: 1em;
@@ -425,7 +425,7 @@ box-shadow: 1em 0 0 0 #81bc06,1em 1em 0 0 #ffba08,0 1em 0 0 #05a6f0;
         <div class="clippath-1 mg-r-20"></div>
         <div class="clippath-2"></div>
     </div>
-    <pre class="bg-gray-lt">
+    <pre>
 // 长方形4边中点的连线,形成一个菱形
 clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
 </pre>

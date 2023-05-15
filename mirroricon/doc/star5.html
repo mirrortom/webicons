@@ -51,9 +51,9 @@
   <h2>五角星</h2>
   <p>
     <i class="i-a-star5"></i>
-    <i class="i-a-star5 text-xxl text-danger"></i>
+    <i class="i-a-star5 text-3xl text-red-5"></i>
   </p>
-  <pre class="bg-gray-lt">
+  <pre>
 &lt;i class="<b>i-a-star5</b>"&gt;&lt;/i&gt;
 </pre>
   <br />
@@ -76,7 +76,7 @@
   <p>先画出底边水平的那个三角形,设定五角星的半径:OR为100px</p>
   <p>then,三角形底边长度的一半(RH)是 cos18 * 100 = 95px , 高(AH)是 tan36 * RH = 69px</p>
   <p><i class="demotri1"></i></p>
-  <pre class="bg-gray-lt">
+  <pre>
 display: inline-block;
   width: 0;
   height: 0;
@@ -96,7 +96,7 @@ display: inline-block;
     <i class="demotri1" style="margin:50px 0 20px;border-top-color:rgba(8,128,64,.7);transform-origin:95px calc(0.31 * 100px);transform:rotate(72deg)"></i>
     <i class="demotri1" style="border-top-color:rgba(8,64,128,.7);transform-origin:95px calc(0.31 * 100px);transform:rotate(144deg)"></i>
   </p>
-  <pre class="bg-gray-lt">
+  <pre>
 transform-origin:95px calc(0.31 * 100px)
 transform:rotate(72deg)
 transform:rotate(144deg)
@@ -118,7 +118,7 @@ transform:rotate(144deg)
   <p>这个例子的半径为100px,它画出的五角星占地面积(包含margin)是190px * 181px</p>
   <p>要实现设定font-size : Xpx的字体大小,产生Xpx * Xpx大小的图标,那么css里的半径值要设置为 100/190em = 0.53em</p>
 
-  <pre class="bg-gray-lt">
+  <pre>
 // 底边水平三角形的margin
   margin-top:calc(0.726 * calc(0.95 * .53em))
   margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
@@ -129,7 +129,7 @@ transform:rotate(144deg)
   <br />
   <p><i class="i-a-star5 fs100"></i></p>
   <p>完整样式</p>
-  <pre class="bg-gray-lt">
+  <pre>
 .i-a-star5
     margin-top:calc(0.726 * calc(0.951 * .53em))
     margin-bottom:calc(2 * .53em * 0.951 * calc(0.951 - 0.726))
