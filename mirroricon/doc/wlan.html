@@ -60,7 +60,7 @@
   <p>具体实现时,3个圆弧平分盒模型渐变范围,那么每条圆弧的渐变点百分比是33%,66%,99%位置.在透明和圆弧之间可以留出2%的渐变距离,这是为了平滑过渡.</p>
   <p>那么渐变点可以设置为30%,60%,90%.由于第一条圆弧于圆心之间还要放置圆点,所以起点设为32%.以这3个渐变点为参考,再加上圆弧厚度即可.</p>
   <p>例如第一条圆弧: transparent 32%,currentColor 34% calc(34% + max(.06em,1px))</p>
-  <div class="grids">
+  <div class="grid grid-col gap-col-20">
     <div><i class="i-a wlandemo wlandemo-2"></i></div>
     <div><i class="i-a wlandemo wlandemo-2 wlandemo-3 mg-l-10"></i></div>
   </div>

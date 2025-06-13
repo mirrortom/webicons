@@ -13,7 +13,7 @@
   // 颜色和大小添加工具样式实现
   &lt;i class="i-moon txt-xl"&gt;&lt;/i&gt;
 
-  &lt;i class="i-moon txt-danger"&gt;&lt;/i&gt;
+  &lt;i class="i-moon txt-red-5"&gt;&lt;/i&gt;
 </pre>
   <br />
   <style scoped>
@@ -26,7 +26,7 @@
   </style>
   <p>月牙可以看成是一个圆的一部分,所以先做一个圆.这个用border-radius:50%实现.就是圆角边框.</p>
   <p>
-    <i class="moondemo txt-xxl bg-gray"></i>
+    <i class="moondemo txt-2xl bg-gray-3"></i>
   </p>
   <pre>
 display: inline-block;
@@ -38,11 +38,11 @@ display: inline-block;
   <p>边框阴影也会跟随圆角是一个圆形.设置box-shadow的x-offset,y-offset让阴影显露出来,调整x,y值改变月牙的大小和位子.</p>
   <p>x值增大时,阴影再右侧增大,月牙变大.y值增大时,阴影向下倾斜,月牙呈现顺时针旋转</p>
   <p>
-    <i style="box-shadow: 0 0;" class="moondemo txt-xxl bg-gray"></i>
-    <i style="box-shadow: 10px 0;" class="moondemo txt-xxl bg-gray"></i>
-    <i style="box-shadow: 15px 0;" class="moondemo txt-xxl bg-gray mg-l-20"></i>
-    <i style="box-shadow: 10px 5px;" class="moondemo txt-xxl bg-gray mg-l-20"></i>
-    <i style="box-shadow: 10px 10px;" class="moondemo txt-xxl bg-gray mg-l-20"></i>
+    <i style="box-shadow: 0 0;" class="moondemo txt-2xl bg-gray-3"></i>
+    <i style="box-shadow: 10px 0;" class="moondemo txt-2xl bg-gray-3"></i>
+    <i style="box-shadow: 15px 0;" class="moondemo txt-2xl bg-gray-3 mg-l-20"></i>
+    <i style="box-shadow: 10px 5px;" class="moondemo txt-2xl bg-gray-3 mg-l-20"></i>
+    <i style="box-shadow: 10px 10px;" class="moondemo txt-2xl bg-gray-3 mg-l-20"></i>
   </p>
   <pre>
 box-shadow: 0 0;
@@ -53,11 +53,11 @@ box-shadow: 0 0;
   <p>由于阴影在元素面积外,而阴影不占元素面积,所以月牙部分是在图标范围外的.这比较不妥.</p>
   <p>可以改换内阴影inset,与阴影在元素面积外相反,内阴影在元素面积内.这样,月牙就在元素体积内.</p>
   <p>
-    <i style="box-shadow: 0 0;" class="moondemo txt-xxl bg-gray"></i>
-    <i style="box-shadow: inset -10px 0;" class="moondemo txt-xxl bg-gray"></i>
-    <i style="box-shadow: inset -15px 0;" class="moondemo txt-xxl bg-gray mg-l-20"></i>
-    <i style="box-shadow: inset -10px -5px;" class="moondemo txt-xxl bg-gray mg-l-20"></i>
-    <i style="box-shadow: inset -10px -10px;" class="moondemo txt-xxl bg-gray mg-l-20"></i>
+    <i style="box-shadow: 0 0;" class="moondemo txt-xl bg-gray-3"></i>
+    <i style="box-shadow: inset -10px 0;" class="moondemo txt-2xl bg-gray-3"></i>
+    <i style="box-shadow: inset -15px 0;" class="moondemo txt-2xl bg-gray-3 mg-l-20"></i>
+    <i style="box-shadow: inset -10px -5px;" class="moondemo txt-2xl bg-gray-3 mg-l-20"></i>
+    <i style="box-shadow: inset -10px -10px;" class="moondemo txt-2xl bg-gray-3 mg-l-20"></i>
   </p>
   <pre>
 box-shadow: 0 0;
@@ -70,7 +70,7 @@ box-shadow: 0 0;
     <i class="ico ico-moon txt-sm"></i>
     <i class="ico ico-moon txt-md"></i>
     <i class="ico ico-moon txt-xl"></i>
-    <i class="ico ico-moon txt-xxl"></i>
+    <i class="ico ico-moon txt-2xl"></i>
   </p>
   <br />
   <p><i class="i-moon fs100"></i></p>

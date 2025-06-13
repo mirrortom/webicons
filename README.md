@@ -1,7 +1,7 @@
-# css icon
-Ê¹ÓÃcssÑùÊ½»­Ò»Ğ©¼òÒ×µÄÍ¼±ê
+ï»¿# css icon
+ä½¿ç”¨cssæ ·å¼ç”»ä¸€äº›ç®€æ˜“çš„å›¾æ ‡
 
-ÒÑ¾­²»ÔÙÎ¬»¤,×îºó¸üĞÂĞŞÕıÎÄµµ2025/06/13
+å·²ç»ä¸å†ç»´æŠ¤,æœ€åæ›´æ–°ä¿®æ­£æ–‡æ¡£2025/06/13
 
-[DocÎÄµµ](https://mirrortom.github.io/mirroricon/index.html)
+[Docæ–‡æ¡£](https://mirrortom.github.io/mirroricon/index.html)
 
