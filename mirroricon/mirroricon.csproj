@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{127CA60C-CF20-4A21-BB97-8882DEE9FF92}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>mirroricon</RootNamespace>
     <AssemblyName>mirroricon</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
@@ -95,6 +98,7 @@
     <None Include="stylus\icons\user.styl" />
     <None Include="stylus\icons\well.styl" />
     <None Include="stylus\icons\wlan.styl" />
+    <None Include="stylus\index-forblog.styl" />
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +165,7 @@
     <Content Include="doc\wlan.html" />
     <Content Include="index.html" />
     <Content Include="mirroricon.css" />
+    <Content Include="outputcss\blogicon.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

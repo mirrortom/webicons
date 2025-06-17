@@ -1,0 +1,128 @@
+﻿i[class^=i-] {
+  display: inline-block;
+  pointer-events: none;
+  width: 1em;
+  height: 1em;
+}
+i[class^=i-]:before,
+i[class^=i-]::after {
+  content: '';
+  display: inline-block;
+}
+i[class^=i-f] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+i[class^=i-fv] {
+  flex-direction: column;
+}
+i[class^=i-a] {
+  position: relative;
+}
+i[class^=i-a]:before,
+i[class^=i-a]:after {
+  position: absolute;
+}
+i[class^=i-ac]:before,
+i[class^=i-ac]:after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.i-moon {
+  border-radius: 50%;
+  box-shadow: inset -0.4em -0.1em;
+}
+.i-a-sun[class^=i-] {
+  width: 0.6em;
+  height: 0.6em;
+}
+.i-a-sun {
+  border-radius: 50%;
+  margin: 0.2em;
+  background-color: currentColor;
+}
+.i-a-sun:before,
+.i-a-sun:after {
+  left: 50%;
+  top: 50%;
+  width: 0.1em;
+  height: 0.1em;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+}
+.i-a-sun:before {
+  box-shadow: 0.45em 0, 0 0.45em, -0.45em 0, 0 -0.45em, 0.38em 0, 0 0.38em, -0.38em 0, 0 -0.38em;
+}
+.i-a-sun:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0.45em 0, 0 0.45em, -0.45em 0, 0 -0.45em, 0.38em 0, 0 0.38em, -0.38em 0, 0 -0.38em;
+}
+.i-a-star4:before,
+.i-a-star4:after {
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+}
+.i-a-star4:before {
+  clip-path: polygon(50% 0, 75% 50%, 50% 100%, 25% 50%);
+}
+.i-a-star4:after {
+  clip-path: polygon(50% 25%, 100% 50%, 50% 75%, 0 50%);
+}
+.i-a-home[class^=i-] {
+  width: 0.7em;
+  height: 0.7em;
+  box-shadow: inset 0.05em 0.05em;
+  transform: rotate(45deg);
+}
+.i-a-home:before,
+.i-a-home:after {
+  left: 0.1em;
+}
+.i-a-home:before {
+  top: 0.1em;
+  border-width: 0.263em;
+  border-style: solid;
+  border-color: currentColor transparent transparent currentColor;
+}
+.i-a-home:after {
+  top: 0.6em;
+  width: 0.717em;
+  height: 0.4em;
+  border-width: 0.1em 0.25em 0;
+  border-style: solid;
+  border-color: currentColor;
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+}
+.i-a-anglearr:before {
+  width: 0.7em;
+  height: 0.7em;
+  border: 0.1em solid currentColor;
+  border-right: none;
+  border-bottom: none;
+}
+.i-a-anglearr.down:before {
+  bottom: 0.396em;
+  left: 50%;
+  transform: translateX(-50%) rotate(-135deg);
+}
+.i-a-anglearr.up:before {
+  top: 0.396em;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.i-a-anglearr.left:before {
+  left: 0.396em;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.i-a-anglearr.right:before {
+  right: 0.396em;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}

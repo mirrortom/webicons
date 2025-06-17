@@ -5,5 +5,12 @@
     "minify": {
       "enabled": false
     }
+  },
+  {
+    "outputFile": "outputcss/blogicon.css",
+    "inputFile": "stylus/index-forblog.styl",
+    "minify": {
+      "enabled": false
+    }
   }
 ]
