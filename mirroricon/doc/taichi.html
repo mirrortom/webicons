@@ -1,0 +1,85 @@
+﻿<div class="doc-page">
+  <h2>太极</h2>
+  <p>太极阴阳</p>
+  <div class="mg-20">
+    <i class="i-fv-taichi txt-lg"></i>
+    <i class="i-fv-taichi txt-4rem"></i>
+  </div>
+  <pre>
+&lt;i class="<b>i-fv-taichi</b>"&gt;&lt;/i&gt;
+</pre>
+  <style scoped>
+    .taichidemo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 100px;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      background-image: linear-gradient(90deg,black 50%,white 50%, white 100%)
+    }
+
+    .taichidemo-1 {
+      vertical-align: top;
+    }
+    .taichidemo-1:before, .taichidemo-1:after {
+      display: inline-block;
+      content: '';
+      width: .5em;
+      height: .5em;
+      border-radius: 50%;
+      border-style: solid;
+      border-width: .25em;
+    }
+
+    .taichidemo-1:before {
+      border-color: white;
+      background-color: black;
+    }
+
+    .taichidemo-1:after {
+      border-color: black;
+      background-color: white;
+    }
+    .taichidemo-2:before, .taichidemo-2:after {
+      border-width: .165em;
+    }
+  </style>
+  <br />
+  <p>太极图,外层容器使用圆形直径为1em,内部阴和阳2个圆形直径为容器的二分之一0.5em,阴阳眼睛直径为阴阳圆形直径的三分之一大约0.17em.</p>
+  <p>容器边厚度设为1,框是默认颜色.背景色使用渐变从黑到白,阴为黑色,阳为白色.内部阴和阳是after和before,垂直水平居中,无边框,阴为白底黑边框,阳为黑底白边框.</p>
+  <br />
+  <p>1.外层的渐变背景,黑到白,使用线性渐变,黑到白,50%处为渐变点.</p>
+  <p>2.阴和阳的圆形,直径为.5em,圆心在外层圆形的垂直直径上,位于距离上边框的1/4处和3/4处.阴的黑色背景其实是黑色边框,阴中的阳眼睛是白色背景色,阳则是白边黑背景.这样,叠在背景上就形成了太极图的样子.</p>
+  <p>3.阴阳中的眼睛,直径是阴阳的1/3,大约.17em.圆心和阴阳重合.阴阳的直径是.5em,那么它的边框厚度为(0.5-0.17)/2=0.165em.</p>
+  <p>
+    <i class="taichidemo"></i>
+    <i class="taichidemo taichidemo-1"></i>
+    <i class="taichidemo taichidemo-1 taichidemo-2"></i>
+  </p>
+  <br />
+  <p><i class="i-fv-taichi fs100"></i></p>
+  <p>完整样式</p>
+  <pre>
+.i-fv-taichi
+    border-radius: 50%
+    border: 1px solid currentColor
+    background-image: linear-gradient(90deg,black 50%,white 50%, white 100%)
+    &:before, &:after
+        width: .5em
+        height: .5em
+        border-radius: 50%
+        border-style: solid
+        border-width: .165em
+
+    &:before
+        border-color: white
+        background-color: black
+
+    &:after
+        border-color: black
+        background-color: white
+</pre>
+</div>

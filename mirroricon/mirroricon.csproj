@@ -39,6 +39,7 @@
     <None Include="publish.json" />
     <None Include="compilerconfig.json" />
     <None Include="stylus\base.styl" />
+    <None Include="stylus\icons\taichi.styl" />
     <None Include="stylus\icons\camera.styl" />
     <None Include="stylus\icons\chip.styl" />
     <None Include="stylus\icons\pill.styl" />
@@ -102,6 +103,7 @@
     <None Include="stylus\index.styl" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\taichi.html" />
     <Content Include="doc\pill.html" />
     <Content Include="doc\sight.html" />
     <Content Include="doc\camera.html" />

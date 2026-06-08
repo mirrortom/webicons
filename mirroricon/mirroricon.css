@@ -1036,3 +1036,24 @@ i[class^=i-ac]:after {
   transform: rotate(45deg);
   background-image: linear-gradient(transparent 0 50%, currentColor 50%);
 }
+.i-fv-taichi {
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background-image: linear-gradient(90deg, #000 50%, #fff 50%, #fff 100%);
+}
+.i-fv-taichi:before,
+.i-fv-taichi:after {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.165em;
+}
+.i-fv-taichi:before {
+  border-color: #fff;
+  background-color: #000;
+}
+.i-fv-taichi:after {
+  border-color: #000;
+  background-color: #fff;
+}
